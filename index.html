@@ -75,10 +75,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-a001 哈囉" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-a002-簡易加法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/title/" class="article-date">
-  <time class="dt-published" datetime="2024-02-21T14:51:05.000Z" itemprop="datePublished">2024-02-21</time>
+  <time class="dt-published" datetime="2024-02-22T17:53:32.000Z" itemprop="datePublished">2024-02-23</time>
 </a>
     
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/title/">a001 哈囉</a>
+      <a class="p-name article-title" href="/title/">a002. 簡易加法</a>
     </h1>
   
 
@@ -97,14 +97,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="a001-哈囉"><a href="#a001-哈囉" class="headerlink" title="a001. 哈囉"></a><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a001">a001. 哈囉</a></h2><p><strong>解題思路</strong><br>先讀取輸入的字串，再輸出相對應的字串。</p>
-<p>:::info<br><strong>注意事項</strong><br>在C語言裡，字串就是以空字元\0結尾的字元陣列，符號為%s。至於其他的資料型態符號可以參考下表:<br><img src="https://i.imgur.com/2DXPY8W.png"><br>:::</p>
-<p><strong>程式碼</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">/*scanf函式內的變數屬於區域變數，非全域變數，</span></span><br><span class="line"><span class="comment">    變數值的改變無法離開函式，因此需用指標寫法，在變數名稱前加&amp;。</span></span><br><span class="line"><span class="comment">    但陣列名稱本身即為指標，故不須加&amp;。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先偵測輸入的數字，將他們相加後再輸出。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>注意寫在scanf()函數裡的變數名稱前面要加上取址符號&amp;，表示指定儲存空間給輸入的內容，而陣列名稱本身就是指標，故不用在前面加上取址符號&amp;。<br>e.g. <a target="_blank" rel="noopener" href="https://hackmd.io/DwmkclCaTUOO48NYFW8AHw?view#a001%E5%93%88%E5%9B%89">a001</a></p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/title/" data-id="clsxeisk70001v4tk9bge43qn" data-title="a001 哈囉" class="article-share-link">Share</a>
+      <a data-url="https://noah-0831.github.io/title/" data-id="clsxiy90q00019stkf3ho86ng" data-title="a002. 簡易加法" class="article-share-link">Share</a>
       
       
       
@@ -145,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/title/" data-id="clsxeiskr0003v4tk2wgwf853" data-title="一切的開始" class="article-share-link">Share</a>
+      <a data-url="https://noah-0831.github.io/title/" data-id="clsxiy91300039stkdw0z6p1s" data-title="一切的開始" class="article-share-link">Share</a>
       
       
       
@@ -188,7 +187,7 @@
       <ul>
         
           <li>
-            <a href="/title/">a001 哈囉</a>
+            <a href="/title/">a002. 簡易加法</a>
           </li>
         
           <li>
