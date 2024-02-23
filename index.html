@@ -75,6 +75,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a005-Eva的回家作業" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/title/" class="article-date">
+  <time class="dt-published" datetime="2024-02-23T09:02:29.000Z" itemprop="datePublished">2024-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/title/">a005. Eva的回家作業</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/title/" data-id="clsyfh52m0001s8tkdtse8s49" data-title="a005. Eva的回家作業" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-a004-文文的求婚" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/title/" class="article-date">
+  <time class="dt-published" datetime="2024-02-23T09:01:55.000Z" itemprop="datePublished">2024-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/title/">a004. 文文的求婚</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a004">https://zerojudge.tw/ShowProblem?problemid=a004</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據閏年的規則，每4年會有一次閏年，但每100年會是平年，而每400年又會有一次潤年。因此，我們可以利用取餘數的方式判斷輸入的年份是否能被4、100和400整除，進而判斷其是否為閏年。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a target="_blank" rel="noopener" href="https://www.796t.com/content/1544817994.html">EOF寫法</a>判斷程式執行的條件。</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;year)!=EOF) &#123;</span><br><span class="line">        <span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(year%<span class="number">100</span>==<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span>(year%<span class="number">400</span>==<span class="number">0</span>)</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;閏年\n&quot;</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;平年\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;閏年\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;平年\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/title/" data-id="clsyfh52d0000s8tk6rpual7r" data-title="a004. 文文的求婚" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a003-兩光法師占卜術" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/title/" class="article-date">
@@ -198,48 +277,12 @@
 
 
   
-    <article id="post-一切的開始" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/title/" class="article-date">
-  <time class="dt-published" datetime="2023-02-15T14:04:30.428Z" itemprop="datePublished">2023-02-15</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/title/">一切的開始</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在高三的時候，因緣際會參與了「進階程式設計」這門課程。因為在自學程式的過程中發現網路上的程式學習資源難易不均，而有了撰寫程式解題報告的想法。之後在經過一次次活動與課程的淬鍊，對網站的內容有了更多想法，也陸續嘗試了HackMD、Medium等眾多管道。</p>
-<p>兩年後的今天，noah_studying誕生了。這是一個以提供升學經驗與學習知識為定位的小站，主要著重在升大學的備考與申請經驗、各項活動的申請資訊，以及以程式為主的知識彙整。希望能幫助持續在學習路上奮鬥的人們!</p>
-<p>而故事本身，還在繼續…</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/title/" data-id="clsyccqg30005uotk0ovafz7c" data-title="一切的開始" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一頁 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -270,6 +313,14 @@
       <ul>
         
           <li>
+            <a href="/title/">a005. Eva的回家作業</a>
+          </li>
+        
+          <li>
+            <a href="/title/">a004. 文文的求婚</a>
+          </li>
+        
+          <li>
             <a href="/title/">a003. 兩光法師占卜術</a>
           </li>
         
@@ -279,10 +330,6 @@
         
           <li>
             <a href="/title/">a001. 哈囉</a>
-          </li>
-        
-          <li>
-            <a href="/title/">一切的開始</a>
           </li>
         
       </ul>
