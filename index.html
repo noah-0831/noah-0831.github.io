@@ -75,6 +75,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a009-解碼器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/title/" class="article-date">
+  <time class="dt-published" datetime="2024-02-24T04:56:51.000Z" itemprop="datePublished">2024-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/title/">a009 解碼器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a009">https://zerojudge.tw/ShowProblem?problemid=a009</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>所謂「把明碼的每個字元加上某一個整數K而得到密碼的字元」，指的是將原本為字串型態的明碼，經由ASCII碼轉為整數型態後，加上某一個整數K，再轉為字串型態而得到密碼。因此，我們先使用scanf()或fget()函數讀取輸入的明碼，存放到字元陣列arr，再經由ASCII碼轉換以後輸出，就是題目所求的密碼了。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>如何判斷輸入結束，停止讀取的動作呢?因為這裡的輸入是字串型態，而在C語言中，字串就是以空字元\0結尾的字元陣列。因此，只要讀到空字元\0，就代表字輸入已經結束了！</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;arr[i]!=<span class="string">&#x27;\0&#x27;</span>;i++)  <span class="comment">/*字串結尾是以\0作為預設結尾字元，沒有讀到的話程式不會結束</span></span><br><span class="line"><span class="comment">                                    (多行輸入的話可能是\n)*/</span></span><br><span class="line">        arr[i]=arr[i]<span class="number">-7</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/title/" data-id="clszm2a7n0001egtkdeo8f5c9" data-title="a009 解碼器" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-a006-一元二次方程式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/title/" class="article-date">
+  <time class="dt-published" datetime="2024-02-24T04:54:10.000Z" itemprop="datePublished">2024-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/title/">a006 一元二次方程式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式b^2^-4ac&gt;0，代表此方程式有兩相異實根(-b±√b^2^-4ac)&#x2F;2a；若判別式b^2^-4ac&#x3D;0，代表此方程式有兩相同實根(重根)；若判別式b^2^-4ac&lt;0，代表此方程式沒有實根。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了sqrt()函數表示根式寫法。由於sqrt()函數並非標準函式庫裡的函數，使用前須先引用&lt;math.h&gt;函式庫。</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b, c, d, x1, x2;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">    <span class="keyword">if</span>(b*b<span class="number">-4</span>*a*c&lt;<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;No real root\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        d=<span class="built_in">sqrt</span>(b*b<span class="number">-4</span>*a*c);</span><br><span class="line">        x1=(-b+d)/(<span class="number">2</span>*a); <span class="comment">/*!注意運算順序(善用())*/</span></span><br><span class="line">        x2=(-b-d)/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="keyword">if</span>(b*b<span class="number">-4</span>*a*c&gt;<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two different roots x1=%d , x2=%d&quot;</span>, x1, x2);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(b*b<span class="number">-4</span>*a*c==<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two same roots x=%d&quot;</span>, x1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/title/" data-id="clszm2a6y0000egtk5v6v99ib" data-title="a006 一元二次方程式" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a005-Eva的回家作業" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/title/" class="article-date">
@@ -199,88 +281,6 @@
 
 
   
-    <article id="post-a002-簡易加法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/title/" class="article-date">
-  <time class="dt-published" datetime="2024-02-22T17:53:32.000Z" itemprop="datePublished">2024-02-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/title/">a002. 簡易加法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a002">https://zerojudge.tw/ShowProblem?problemid=a002</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先偵測輸入的數字，將他們相加後再輸出。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>注意寫在scanf()函數裡的變數名稱前面要加上取址符號&amp;，表示指定儲存空間給輸入的內容，而陣列名稱本身就是指標，故不用在前面加上取址符號&amp;。<br>e.g. <a target="_blank" rel="noopener" href="https://hackmd.io/DwmkclCaTUOO48NYFW8AHw?view#a001%E5%93%88%E5%9B%89">a001</a></p>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/title/" data-id="clsyccqfn0003uotk65b76g6b" data-title="a002. 簡易加法" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-a001-哈囉" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/title/" class="article-date">
-  <time class="dt-published" datetime="2024-02-21T14:51:05.000Z" itemprop="datePublished">2024-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/title/">a001. 哈囉</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a001">https://zerojudge.tw/ShowProblem?problemid=a001</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先讀取輸入的字串，再輸出相對應的字串。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在C語言裡，字串就是以空字元\0結尾的字元陣列，符號為%s。至於其他的資料型態符號可以參考下表：<br><img src="https://i.imgur.com/2DXPY8W.png"></p>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">/*scanf函式內的變數屬於區域變數，非全域變數，</span></span><br><span class="line"><span class="comment">    變數值的改變無法離開函式，因此需用指標寫法，在變數名稱前加&amp;。</span></span><br><span class="line"><span class="comment">    但陣列名稱本身即為指標，故不須加&amp;。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/title/" data-id="clsyccqg10004uotkhj0f02j5" data-title="a001. 哈囉" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -317,6 +317,14 @@
       <ul>
         
           <li>
+            <a href="/title/">a009 解碼器</a>
+          </li>
+        
+          <li>
+            <a href="/title/">a006 一元二次方程式</a>
+          </li>
+        
+          <li>
             <a href="/title/">a005. Eva的回家作業</a>
           </li>
         
@@ -326,14 +334,6 @@
         
           <li>
             <a href="/title/">a003. 兩光法師占卜術</a>
-          </li>
-        
-          <li>
-            <a href="/title/">a002. 簡易加法</a>
-          </li>
-        
-          <li>
-            <a href="/title/">a001. 哈囉</a>
           </li>
         
       </ul>
