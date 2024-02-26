@@ -75,6 +75,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a005-Eva的回家作業" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/title/" class="article-date">
+  <time class="dt-published" datetime="2024-02-23T09:02:29.000Z" itemprop="datePublished">2024-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/title/">a005. Eva的回家作業</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a005">https://zerojudge.tw/ShowProblem?problemid=a005</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>由題目可知輸入的數列只有等差數列或等比數列兩種可能，先用選擇結構檢查輸入之數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用for迴圈判斷程式執行的條件。</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;j);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;j;i++) &#123;</span><br><span class="line">        <span class="type">int</span> a[<span class="number">4</span>];</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;a[<span class="number">0</span>], &amp;a[<span class="number">1</span>], &amp;a[<span class="number">2</span>], &amp;a[<span class="number">3</span>]);</span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">1</span>]-a[<span class="number">0</span>]==a[<span class="number">2</span>]-a[<span class="number">1</span>])</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d %d %d\n&quot;</span>, a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">3</span>]+a[<span class="number">2</span>]-a[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a[<span class="number">1</span>]/a[<span class="number">0</span>]==a[<span class="number">2</span>]/a[<span class="number">1</span>])</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d %d %d\n&quot;</span>, a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">3</span>]*a[<span class="number">2</span>]/a[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/title/" data-id="clt18ujxh0006mstk8em7c0wl" data-title="a005. Eva的回家作業" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a004-文文的求婚" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/title/" class="article-date">
@@ -239,52 +281,11 @@
 
 
   
-    <article id="post-一切的開始" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/title/" class="article-date">
-  <time class="dt-published" datetime="2023-02-15T14:04:30.428Z" itemprop="datePublished">2023-02-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/title/">一切的開始</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在高三的時候，因緣際會參與了「進階程式設計」這門課程。因為在自學程式的過程中發現網路上的程式學習資源難易不均，而有了撰寫程式解題報告的想法。之後在經過一次次活動與課程的淬鍊，對網站的內容有了更多想法，也陸續嘗試了HackMD、Medium等眾多管道。</p>
-<p>兩年後的今天，noah_studying誕生了。這是一個以提供升學經驗與學習知識為定位的小站，主要著重在升大學的備考與申請經驗、各項活動的申請資訊，以及以程式為主的知識彙整。希望能幫助持續在學習路上奮鬥的人們!</p>
-<p>而故事本身，還在繼續…</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/title/" data-id="clt18ujxj0009mstk2iqqa62n" data-title="一切的開始" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一頁</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一頁</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一頁 &raquo;</a>
   </nav>
 
 </section>
@@ -316,6 +317,10 @@
       <ul>
         
           <li>
+            <a href="/title/">Noah的小記1 關於創立這個網站的一些事</a>
+          </li>
+        
+          <li>
             <a href="/title/">a013. 羅馬數字</a>
           </li>
         
@@ -329,10 +334,6 @@
         
           <li>
             <a href="/title/">a006 一元二次方程式</a>
-          </li>
-        
-          <li>
-            <a href="/title/">a005. Eva的回家作業</a>
           </li>
         
       </ul>
