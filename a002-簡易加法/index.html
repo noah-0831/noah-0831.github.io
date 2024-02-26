@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>tags | noah_studying</title>
+  <title>a002. 簡易加法 | noah_studying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://noah-0831.github.io/tags/">
+  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a002 解題思路先偵測輸入的數字，將他們相加後再輸出。 注意事項注意寫在scanf()函數裡的變數名稱前面要加上取址符號&amp;，表示指定儲存空間給輸入的內容，而陣列名稱本身就是指標，故不用在前面加上取址符號&amp;。e.g. a001 程式碼1234567#include &lt;stdio.h&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="a002. 簡易加法">
+<meta property="og:url" content="https://noah-0831.github.io/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/">
 <meta property="og:site_name" content="noah_studying">
+<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a002 解題思路先偵測輸入的數字，將他們相加後再輸出。 注意事項注意寫在scanf()函數裡的變數名稱前面要加上取址符號&amp;，表示指定儲存空間給輸入的內容，而陣列名稱本身就是指標，故不用在前面加上取址符號&amp;。e.g. a001 程式碼1234567#include &lt;stdio.h&amp;">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-02-16T01:55:47.000Z">
-<meta property="article:modified_time" content="2023-02-16T01:55:47.108Z">
+<meta property="article:published_time" content="2024-02-22T17:53:32.000Z">
+<meta property="article:modified_time" content="2024-02-22T19:18:54.561Z">
 <meta property="article:author" content="Noah">
 <meta name="twitter:card" content="summary">
   
@@ -75,10 +77,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-a002-簡易加法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/tags/" class="article-date">
-  <time class="dt-published" datetime="2023-02-16T01:55:47.000Z" itemprop="datePublished">2023-02-16</time>
+    <a href="/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2024-02-22T17:53:32.000Z" itemprop="datePublished">2024-02-23</time>
 </a>
     
   </div>
@@ -89,7 +91,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      tags
+      a002. 簡易加法
     </h1>
   
 
@@ -97,11 +99,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a002">https://zerojudge.tw/ShowProblem?problemid=a002</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先偵測輸入的數字，將他們相加後再輸出。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>注意寫在scanf()函數裡的變數名稱前面要加上取址符號&amp;，表示指定儲存空間給輸入的內容，而陣列名稱本身就是指標，故不用在前面加上取址符號&amp;。<br>e.g. <a target="_blank" rel="noopener" href="https://hackmd.io/DwmkclCaTUOO48NYFW8AHw?view#a001%E5%93%88%E5%9B%89">a001</a></p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/tags/" data-id="clt18ujx00000mstkd8qnfrzj" data-title="tags" class="article-share-link">Share</a>
+      <a data-url="https://noah-0831.github.io/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/" data-id="clt18ujxf0004mstk35wj0f9i" data-title="a002. 簡易加法" class="article-share-link">Share</a>
       
       
       
@@ -109,6 +114,25 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          a003. 兩光法師占卜術
+        
+      </div>
+    </a>
+  
+  
+    <a href="/a001-%E5%93%88%E5%9B%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">a001. 哈囉</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
