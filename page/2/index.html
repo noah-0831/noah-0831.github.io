@@ -75,6 +75,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a006-一元二次方程式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2024-02-24T04:54:10.000Z" itemprop="datePublished">2024-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/">a006 一元二次方程式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式b^2^-4ac&gt;0，代表此方程式有兩相異實根(-b±√b^2^-4ac)&#x2F;2a；若判別式b^2^-4ac&#x3D;0，代表此方程式有兩相同實根(重根)；若判別式b^2^-4ac&lt;0，代表此方程式沒有實根。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了sqrt()函數表示根式寫法。由於sqrt()函數並非標準函式庫裡的函數，使用前須先引用&lt;math.h&gt;函式庫。</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b, c, d, x1, x2;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">    <span class="keyword">if</span>(b*b<span class="number">-4</span>*a*c&lt;<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;No real root\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        d=<span class="built_in">sqrt</span>(b*b<span class="number">-4</span>*a*c);</span><br><span class="line">        x1=(-b+d)/(<span class="number">2</span>*a); <span class="comment">/*!注意運算順序(善用())*/</span></span><br><span class="line">        x2=(-b-d)/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="keyword">if</span>(b*b<span class="number">-4</span>*a*c&gt;<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two different roots x1=%d , x2=%d&quot;</span>, x1, x2);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(b*b<span class="number">-4</span>*a*c==<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two same roots x=%d&quot;</span>, x1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/" data-id="clt18ujxl000amstkfgt49gef" data-title="a006 一元二次方程式" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a005-Eva的回家作業" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/a005-Eva%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD/" class="article-date">
@@ -240,47 +281,6 @@
 
 
   
-    <article id="post-a001-哈囉" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/a001-%E5%93%88%E5%9B%89/" class="article-date">
-  <time class="dt-published" datetime="2024-02-21T14:51:05.000Z" itemprop="datePublished">2024-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/a001-%E5%93%88%E5%9B%89/">a001. 哈囉</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a001">https://zerojudge.tw/ShowProblem?problemid=a001</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先讀取輸入的字串，再輸出相對應的字串。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在C語言裡，字串就是以空字元\0結尾的字元陣列，符號為%s。至於其他的資料型態符號可以參考下表：<br><img src="https://i.imgur.com/2DXPY8W.png"></p>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">/*scanf函式內的變數屬於區域變數，非全域變數，</span></span><br><span class="line"><span class="comment">    變數值的改變無法離開函式，因此需用指標寫法，在變數名稱前加&amp;。</span></span><br><span class="line"><span class="comment">    但陣列名稱本身即為指標，故不須加&amp;。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/a001-%E5%93%88%E5%9B%89/" data-id="clt18ujxc0003mstk7nfy03bh" data-title="a001. 哈囉" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -317,6 +317,10 @@
       <ul>
         
           <li>
+            <a href="/a015-%E7%9F%A9%E9%99%A3%E7%9A%84%E7%BF%BB%E8%BD%89/">a015 矩陣的翻轉</a>
+          </li>
+        
+          <li>
             <a href="/Noah%E7%9A%84%E5%B0%8F%E8%A8%981-%E9%97%9C%E6%96%BC%E9%80%99%E5%80%8B%E7%B6%B2%E7%AB%99%E7%9A%84%E5%AE%9A%E4%BD%8D%E8%88%87%E6%96%B9%E5%90%91/">Noah的小記1 關於創立這個網站的一些事</a>
           </li>
         
@@ -330,10 +334,6 @@
         
           <li>
             <a href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/">a009 解碼器</a>
-          </li>
-        
-          <li>
-            <a href="/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/">a006 一元二次方程式</a>
           </li>
         
       </ul>
