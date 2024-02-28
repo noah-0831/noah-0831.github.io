@@ -75,6 +75,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a002-簡易加法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2024-02-22T17:53:32.000Z" itemprop="datePublished">2024-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/">a002. 簡易加法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a002">https://zerojudge.tw/ShowProblem?problemid=a002</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先偵測輸入的數字，將他們相加後再輸出。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>注意寫在scanf()函數裡的變數名稱前面要加上取址符號&amp;，表示指定儲存空間給輸入的內容，而陣列名稱本身就是指標，故不用在前面加上取址符號&amp;。<br>e.g. <a target="_blank" rel="noopener" href="https://hackmd.io/DwmkclCaTUOO48NYFW8AHw?view#a001%E5%93%88%E5%9B%89">a001</a></p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/" data-id="clt18ujxf0004mstk35wj0f9i" data-title="a002. 簡易加法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a001-哈囉" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/a001-%E5%93%88%E5%9B%89/" class="article-date">
@@ -193,6 +234,10 @@
       <ul>
         
           <li>
+            <a href="/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">a020 身分證檢驗</a>
+          </li>
+        
+          <li>
             <a href="/a015-%E7%9F%A9%E9%99%A3%E7%9A%84%E7%BF%BB%E8%BD%89/">a015 矩陣的翻轉</a>
           </li>
         
@@ -206,10 +251,6 @@
         
           <li>
             <a href="/a010-%E5%9B%A0%E6%95%B8%E5%88%86%E8%A7%A3/">a010. 因數分解</a>
-          </li>
-        
-          <li>
-            <a href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/">a009 解碼器</a>
           </li>
         
       </ul>
