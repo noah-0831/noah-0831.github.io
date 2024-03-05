@@ -14,7 +14,7 @@
 <meta property="og:description" content="在架設網站的時候，儘管事先在網路閱讀了許多教學，按部就班地完成了設定的步驟，但每個人的帳戶、電腦情況和軟體的版本有所不同，難免會出現一些預料之外的情況。因此，我決定用一篇文章，說明我在架設網站時所遇到的種種問題，以及排除的方法。 首先，是使用hexo指令時的報錯。 既然這個網站是用hexo架設的，當然是使用hexo指令來創建、編修、發布文件。但有次使用hexo的指令後，Git Bash跳出了以下報">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-03-01T16:03:09.000Z">
-<meta property="article:modified_time" content="2024-03-02T06:44:53.580Z">
+<meta property="article:modified_time" content="2024-03-05T01:53:12.478Z">
 <meta property="article:author" content="Noah">
 <meta name="twitter:card" content="summary">
   
@@ -83,6 +83,10 @@
   <time class="dt-published" datetime="2024-03-01T16:03:09.000Z" itemprop="datePublished">2024-03-02</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Noah%E7%9A%84%E5%B0%8F%E8%A8%98/">Noah的小記</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -107,7 +111,7 @@
 <p>cd ~&#x2F;Documents&#x2F;中間的檔案路徑&#x2F;“github page”</p>
 <p>當然，也可以從檔案總管直接找到github page，點進資料夾後在空白處按右鍵，選擇「顯示其他選項－Git Bash Here」，直接在檔案位置開啟Git Bash，檔案路徑就會直接預設到github page了。</p>
 <p>再來，是<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26540999/article/details/53445589">郵箱與名字的遺失</a>。</p>
-<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#x79;&#x6f;&#117;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x6f;&#117;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
+<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#x79;&#x6f;&#117;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;">&#x79;&#x6f;&#117;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
 <p>這次的錯誤訊息就很明顯了，要我們重新設定身分。簡單來說，在使用github page發佈文章時，系統會先創建一個git資料夾，把檔案放入資料夾後再發佈。而電腦在創建git資料夾的過程中發現我們提供的身分訊息並不完整，此時只要手動在Git Bash中補充其所需訊息即可，寫法如下：</p>
 <p>git config –global user.email “你的郵箱”<br>git config–global user.name “你的名字”</p>
 <p>注意”你的郵箱”和”你的名字”的部分，不是真的把上面的文字複製貼上，要填入自己在創建帳號時所使用的信箱和名字，輸入後再次送出指令就會恢復正常了。</p>
@@ -156,7 +160,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分類</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98/">調酒日記</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Noah%E7%9A%84%E5%B0%8F%E8%A8%98/">Noah的小記</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98/">調酒日記</a></li></ul>
     </div>
   </div>
 

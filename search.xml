@@ -132,6 +132,9 @@
 <p>因此，我把目光轉向實作導向的解題報告。解題報告既沒有順序性，也沒有進度安排，讀者可以依自己的步調決定學習的節奏，直面自己的問題並加以改善。可惜的是，當時的解題報告多以語法較簡潔的python為主，較少針對C語系。因此，在程式能力漸趨成熟後，我開始著手撰寫一份以初學者角度剖析題意，釐清解題思路，並轉化為程式碼的解題報告。或許我的程式能力並不是最強的，但正因為我曾有著這樣的經歷，更能理解初學者的想法，以及容易犯錯的地方。</p>
 <p>過往我撰文時用的編輯器是HackMD，但隨著內容逐漸增加，我開始意識到系統性整理文章的的重要性，同時也希望拓展寫作的方向。因此才有了noah_studying的出現－一個以Github為平台、Node.js為環境、Hexo為框架、支援Markdown語法的靜態網站。未來noah_studying將會以提供各道題目的解題報告，以及一些活動的申請經歷與參與經驗為方向。希望藉由自己的力量，能幫助更多有相同經歷與需求的人。</p>
 ]]></content>
+      <categories>
+        <category>Noah的小記</category>
+      </categories>
   </entry>
   <entry>
     <title>a020. 身分證檢驗</title>
@@ -191,13 +194,16 @@
 <p>cd ~&#x2F;Documents&#x2F;中間的檔案路徑&#x2F;“github page”</p>
 <p>當然，也可以從檔案總管直接找到github page，點進資料夾後在空白處按右鍵，選擇「顯示其他選項－Git Bash Here」，直接在檔案位置開啟Git Bash，檔案路徑就會直接預設到github page了。</p>
 <p>再來，是<a href="https://blog.csdn.net/qq_26540999/article/details/53445589">郵箱與名字的遺失</a>。</p>
-<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#x79;&#x6f;&#117;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x6f;&#117;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
+<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#x79;&#x6f;&#117;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;">&#x79;&#x6f;&#117;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
 <p>這次的錯誤訊息就很明顯了，要我們重新設定身分。簡單來說，在使用github page發佈文章時，系統會先創建一個git資料夾，把檔案放入資料夾後再發佈。而電腦在創建git資料夾的過程中發現我們提供的身分訊息並不完整，此時只要手動在Git Bash中補充其所需訊息即可，寫法如下：</p>
 <p>git config –global user.email “你的郵箱”<br>git config–global user.name “你的名字”</p>
 <p>注意”你的郵箱”和”你的名字”的部分，不是真的把上面的文字複製貼上，要填入自己在創建帳號時所使用的信箱和名字，輸入後再次送出指令就會恢復正常了。</p>
 <p>最後，是一個困擾我很久的問題。</p>
 <p>當初在設定hexo的時候，參考了許多網路文章。其中一篇寫到若要設定網頁的圖片背景，可在github page&#x2F;source&#x2F;_data裡找到一個叫做styles.styl的檔案，在裡面打上以下內容：<br>body {<br>    background: url(圖片的檔案路徑);<br>    background-size: cover;<br>    background-repeat: no-repeat;<br>    background-attachment: fixed;<br>    background-position: top center;<br>}<br>先說結論，在styles.styl檔裡面設定網頁的圖片背景這點是對的，但打法錯了。若是照打上去，會出現ParseError，也就是格式上的錯誤。我自己試成功的設定方式如下：<br>background: 圖片的檔案路徑<br>background-size: cover<br>background-repeat: no-repeat<br>background-attachment: fixed<br>background-position: top center<br>內容大致上和教學一致，但外面不用加上body{}，圖片的檔案路徑也不用加url，句尾去掉;，最後把不必要的空白行和縮排去除即可。</p>
 ]]></content>
+      <categories>
+        <category>Noah的小記</category>
+      </categories>
   </entry>
   <entry>
     <title>調酒日記-初入吧檯</title>
