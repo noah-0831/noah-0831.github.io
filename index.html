@@ -75,12 +75,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a038-數字翻轉" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/" class="article-date">
+  <time class="dt-published" datetime="2024-03-08T15:16:48.000Z" itemprop="datePublished">2024-03-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">a038. 數字翻轉</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a038">https://zerojudge.tw/ShowProblem?problemid=a038</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先以字元陣列的形式讀取輸入的字串，由後往前輸出，注意避開前綴0。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>需注意前綴零不輸出，例如5800翻轉後為85，而不是0085。至於如何判斷該位是否為前綴零，可以用前面是否出現過非零數字來判斷。若前面沒有輸出過非0數字，則為前綴零，不輸出；若否，則為非前綴零，需輸出。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列num，代表輸入的數字</span></span><br><span class="line">    <span class="type">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num);</span><br><span class="line">    <span class="comment">//宣告變數test，並設初始值為0，記錄前面是否有輸出過非零數字</span></span><br><span class="line">    <span class="comment">//若test為0，代表之前尚未輸出過非零數字，這一位數若是0即為前綴0，不需輸出</span></span><br><span class="line">    <span class="comment">//若test為1，代表之前已經輸出過非零數字，這一位數就算是0也不是前綴0，需輸出</span></span><br><span class="line">    <span class="type">int</span> test = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(num) ; i++)</span><br><span class="line">        <span class="keyword">if</span>(num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i] != <span class="string">&#x27;0&#x27;</span> || test != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i]);</span><br><span class="line">            <span class="comment">//輸出後將test設為1，代表已經輸出過非零數字</span></span><br><span class="line">            test=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//若test仍為0，說明直到跑完指個陣列都未曾輸出過非零數字，也就是說這個數字就是0</span></span><br><span class="line">    <span class="keyword">if</span>(test == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/" data-id="cltiwphzt00008gtk00rjcdu2" data-title="a038. 數字翻轉" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a034-二進位制轉換" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/" class="article-date">
   <time class="dt-published" datetime="2024-03-06T06:17:38.000Z" itemprop="datePublished">2024-03-06</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -101,7 +150,7 @@
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>在進入本題的討論之前，我們需要先了解何謂進位制。所謂的進位制，指的是以「基數」的指數和表示數字的記數方法。以最常見的十進位制來說，基數就是10。因此，以123這個數字來說，在十進位制下即為1x10^2^+2x10^1^+3x10^0^。而所謂的二進位制，就是基數為2的進位制。除了基數不同以外，邏輯和十進位制其實相同。因此，在進行從十進位制到二進位制的轉換時，我們可以2的指數逐一降次檢查大小。</p>
 <p>因為整數型態的變數可儲存的最大值為2的31次方，所以我們先從2的31次方開始檢查，若該數比2的31次方還大，就將該位數註記為1，並將其值減去2的31次方，否則將該位數註記為0。接著降次繼續檢查，直到整個數字檢查完畢，即完成二進位制的轉換。舉例來說，十進位制的123可以被表示為1x2^6^+1x2^5^+1x2^4^+1x2^3^+0x2^2^+1x2^1^+1x2^0^，因此其在二進位制表示法即為1111011。</p>
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>雖然並不常見，但只要符合寫法，迴圈可以同時使用多個控制變數。本程式碼內中的for迴圈就用了兩個變數控制迴圈運行，其中變數n代表的是檢查的次方，i代表的是轉換為二進位後的位數。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數dec，表示十進位數字</span></span><br><span class="line">    <span class="type">int</span> dec;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;dec) != EOF) &#123;</span><br><span class="line">        <span class="type">int</span> bin[<span class="number">32</span>] = &#123;&#125;, non_zero_digit = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//從2的31次方開始檢查，次方逐次遞減</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> n = <span class="number">31</span>, i = <span class="number">0</span> ; n &gt;= <span class="number">0</span> ; n--, i++) &#123;</span><br><span class="line">            <span class="comment">//若該數大於等於2的n次方，就將該位數註記為1，並將其值減去2的n次方</span></span><br><span class="line">            <span class="keyword">if</span>(dec &gt;= <span class="built_in">pow</span>(<span class="number">2</span>, n)) &#123;</span><br><span class="line">                bin[i] = <span class="number">1</span>;</span><br><span class="line">                dec -=<span class="built_in">pow</span>(<span class="number">2</span>, n);</span><br><span class="line">                non_zero_digit++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//若該數小於2的n次方，就將該位數註記為0</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                bin[i] = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//輸出須注意該位數為0的可能有兩種</span></span><br><span class="line">            <span class="comment">//若前面沒有輸出過非0數字，則為前綴零，不輸出</span></span><br><span class="line">            <span class="comment">//否有，則為非前綴零，需輸出</span></span><br><span class="line">            <span class="keyword">if</span>(bin[i] != <span class="number">0</span> || non_zero_digit != <span class="number">0</span>)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, bin[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數dec，表示十進位數字</span></span><br><span class="line">    <span class="type">int</span> dec;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;dec) != EOF) &#123;</span><br><span class="line">        <span class="type">int</span> bin[<span class="number">32</span>] = &#123;&#125;, non_zero_digit = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//從2的31次方開始檢查，次方逐次遞減</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> n = <span class="number">31</span>, i = <span class="number">0</span> ; n &gt;= <span class="number">0</span> ; n--, i++) &#123;</span><br><span class="line">            <span class="comment">//若該數大於等於2的n次方，就將該位數註記為1，並將其值減去2的n次方</span></span><br><span class="line">            <span class="keyword">if</span>(dec &gt;= <span class="built_in">pow</span>(<span class="number">2</span>, n)) &#123;</span><br><span class="line">                bin[i] = <span class="number">1</span>;</span><br><span class="line">                dec -=<span class="built_in">pow</span>(<span class="number">2</span>, n);</span><br><span class="line">                non_zero_digit++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//若該數小於2的n次方，就將該位數註記為0</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                bin[i] = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//輸出須注意該位數為0的可能有兩種</span></span><br><span class="line">            <span class="comment">//若前面沒有輸出過非0數字，則為前綴零，不輸出</span></span><br><span class="line">            <span class="comment">//若否，則為非前綴零，需輸出</span></span><br><span class="line">            <span class="keyword">if</span>(bin[i] != <span class="number">0</span> || non_zero_digit != <span class="number">0</span>)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, bin[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -267,51 +316,6 @@
 
 
   
-    <article id="post-a022-迴文" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/a022-%E8%BF%B4%E6%96%87/" class="article-date">
-  <time class="dt-published" datetime="2024-02-29T02:05:30.000Z" itemprop="datePublished">2024-02-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a022">https://zerojudge.tw/ShowProblem?problemid=a022</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>迴文，是指字串不論是從正向讀還是反向讀均相同，也就是說迴文字串必定頭尾對稱。因此，我們可以利用for迴圈檢查。若長度為len的字串，第i項等於第len-i-1項，就將計數變數count值+1。若count值等於len&#x2F;2，就代表該字串符合迴文的條件。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>以C語言的寫法來說，陣列的最後一項會是空字元，也就是說，如果今天有一個大小為i項的陣列，那麼它可以儲存的項數是i-1項!</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">strlen</span>(arr), count = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//迴文字串必然對稱，因此只需檢查到一半即可，只要有一組頭尾不同即非迴文</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span> ; i &lt; len/<span class="number">2</span> ; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == arr[len<span class="number">-1</span>-i])</span><br><span class="line">            count++;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(count == len/<span class="number">2</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/" data-id="clt6n7i5t0000kstkg4oo5sc4" data-title="a022. 迴文" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -355,6 +359,10 @@
       <ul>
         
           <li>
+            <a href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">a038. 數字翻轉</a>
+          </li>
+        
+          <li>
             <a href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/">a034. 二進位制轉換</a>
           </li>
         
@@ -368,10 +376,6 @@
         
           <li>
             <a href="/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/">a024. 最大公因數(GCD)</a>
-          </li>
-        
-          <li>
-            <a href="/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a>
           </li>
         
       </ul>

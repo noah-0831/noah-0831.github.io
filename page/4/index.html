@@ -75,6 +75,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a003-兩光法師占卜術" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/" class="article-date">
+  <time class="dt-published" datetime="2024-02-23T07:36:45.000Z" itemprop="datePublished">2024-02-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/">a003. 兩光法師占卜術</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a003">https://zerojudge.tw/ShowProblem?problemid=a003</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數M、D，分別表示月、日</span></span><br><span class="line">    <span class="type">int</span> M, D;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;M, &amp;D);</span><br><span class="line">    <span class="comment">//宣告變數S，依據題意賦值為(M*2+D)%3</span></span><br><span class="line">    S = (M*<span class="number">2</span>+D)%<span class="number">3</span>;</span><br><span class="line">    <span class="comment">//switch()條件句：依據S值輸出相對應的字串</span></span><br><span class="line">    <span class="keyword">switch</span> S:</span><br><span class="line">        <span class="comment">//若S值為0，輸出「普通」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;普通&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為1，輸出「吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為2，輸出「大吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;大吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/" data-id="clt18ujx70001mstkdqhe50ej" data-title="a003. 兩光法師占卜術" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a002-簡易加法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/" class="article-date">
@@ -253,6 +298,10 @@
       <ul>
         
           <li>
+            <a href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">a038. 數字翻轉</a>
+          </li>
+        
+          <li>
             <a href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/">a034. 二進位制轉換</a>
           </li>
         
@@ -266,10 +315,6 @@
         
           <li>
             <a href="/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/">a024. 最大公因數(GCD)</a>
-          </li>
-        
-          <li>
-            <a href="/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a>
           </li>
         
       </ul>
