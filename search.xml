@@ -10,6 +10,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a001. 哈囉</title>
@@ -38,6 +41,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a004. 文文的求婚</title>
@@ -50,6 +56,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a005. Eva的回家作業</title>
@@ -61,6 +70,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a010. 因數分解</title>
@@ -72,6 +84,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a013. 羅馬數字</title>
@@ -83,6 +98,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>一切的開始</title>
@@ -103,6 +121,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a009. 解碼器</title>
@@ -115,6 +136,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a015. 矩陣的翻轉</title>
@@ -126,6 +150,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>Noah的小記1 關於創立這個網站的初衷</title>
@@ -161,6 +188,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a022. 迴文</title>
@@ -172,6 +202,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a024. 最大公因數(GCD)</title>
@@ -184,6 +217,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>Noah的小記2 那些創立網站時遇到的問題與解方</title>
@@ -232,6 +268,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a038. 數字翻轉</title>
@@ -243,6 +282,9 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
   <entry>
     <title>a040. 阿姆斯壯數</title>
@@ -254,5 +296,8 @@
       <categories>
         <category>程式教學</category>
       </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
   </entry>
 </search>
