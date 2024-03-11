@@ -300,4 +300,19 @@
         <tag>C語言</tag>
       </tags>
   </entry>
+  <entry>
+    <title>a042. 平面圓形切割</title>
+    <url>/a042-%E5%B9%B3%E9%9D%A2%E5%9C%93%E5%BD%A2%E5%88%87%E5%89%B2/</url>
+    <content><![CDATA[<h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a042">https://zerojudge.tw/ShowProblem?problemid=a042</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>已知n個圓最多可以把平面分割成n^2^-n+2個部份，因此先讀取輸入的n值，再輸出n^2^-n+2的值。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a href="https://www.796t.com/content/1544817994.html">EOF寫法</a>判斷程式執行的條件。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數n，代表題目給定的正整數</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//用while迴圈搭配EOF寫法讀取每筆n值，並輸出對應的n^2^-n+2值</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n*n-n+<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>程式教學</category>
+      </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
+  </entry>
 </search>
