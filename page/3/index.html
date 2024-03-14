@@ -75,6 +75,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a020-身分證檢驗" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/" class="article-date">
+  <time class="dt-published" datetime="2024-02-28T04:26:10.000Z" itemprop="datePublished">2024-02-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">a020. 身分證檢驗</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a020">https://zerojudge.tw/ShowProblem?problemid=a020</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題的題意相當複雜，大致上的意思是:</p>
+<ol>
+<li>讀取輸入的身分證字號。</li>
+<li>將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。</li>
+<li>將2.的數字的個位數字乘以9倍並加上十位數字。</li>
+<li>將身分證字號的數字部分由左到右分別乘上8、7、6、5、4、3、2、1、1。</li>
+<li>以3.與4.的和做為判斷標準。若能被10整除則輸出”real”，否則輸出”fake”。</li>
+</ol>
+<p>1.的部分需注意身份證字號的各數字之間沒有空格，若用整數型態的變數儲存會被讀取成一個整數。因此，這裡使用字元陣列讀取並儲存輸入的身分證字號。</p>
+<p>2.就是單純的條件判斷，乍看之下需寫出26個英文字母各自的條件語句，但仔細觀察會發現有些英文字母的轉換是有規律的。我們可以善用這個規律化簡程式碼，將剛剛以字元型態讀取的英文代號先轉為<a target="_blank" rel="noopener" href="https://web.fg.tp.edu.tw/~anny/ASCII_table.htm">ASCII碼</a>，再經由加減運算得到如附圖中的數字。</p>
+<p>3.的關鍵在於分別取得數字的個位數和十位數。個位數可以用除10後取餘數的方式獲得，而十位數則因為在整數型態的運算中，若運算結果為小數，會自動無條件捨去至整數位，剛好等於除10後的商。</p>
+<p>4.的部分，可以看到前8位數字的倍數呈規律遞減，因此可善用for迴圈得出，第9位再單獨加上去就好了。</p>
+<p>5.就是單純的條件判斷並輸出相對應的輸出！</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在進行資料型態的轉換時，會以「確保轉換過程中不會有資料遺失」為原則，因此若轉換後的資料型態所占的記憶體空間大於等於原資料型態，就可以直接轉換。以本題的程式碼來說，因為整數型態變數所佔的記憶體空間為4位元組，比字元型態變數所佔的1位元組還大，因此字元型態的變數在遇到需要用整數型態判別或運算的時候，會自動轉為整數，也就是其ASCII碼。嚴謹的寫法是 : (轉換後的的資料型態)變數名稱。 e.g. (int)city</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元型態變數city，代表身份證字號第一碼</span></span><br><span class="line">    <span class="comment">//宣告字元陣列num，代表身分證字號後9碼</span></span><br><span class="line">    <span class="type">char</span> city, num[<span class="number">10</span>]; </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%c %s&quot;</span>, &amp;city, num);</span><br><span class="line">    <span class="comment">//根據身份證字號第一碼所對應的出生城市，將其轉為數字</span></span><br><span class="line">    <span class="keyword">if</span>(city &gt;= <span class="number">65</span> &amp;&amp; city &lt;= <span class="number">72</span>) </span><br><span class="line">        city-=<span class="number">55</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(city == <span class="string">&#x27;I&#x27;</span>)</span><br><span class="line">        city -=<span class="number">39</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(city &gt;= <span class="number">74</span> &amp;&amp; city &lt;= <span class="number">78</span>)</span><br><span class="line">        city -=<span class="number">56</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(city == <span class="string">&#x27;O&#x27;</span>)</span><br><span class="line">        city -=<span class="number">44</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(city &gt;= <span class="number">80</span> &amp;&amp; city &lt;= <span class="number">86</span>)</span><br><span class="line">        city -=<span class="number">57</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(city == <span class="string">&#x27;W&#x27;</span>)</span><br><span class="line">        city -=<span class="number">55</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(city == <span class="string">&#x27;X&#x27;</span> || city == <span class="string">&#x27;Y&#x27;</span>)</span><br><span class="line">        city -=<span class="number">58</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(city == <span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">        city -=<span class="number">57</span>;</span><br><span class="line">    <span class="comment">//將轉換後得出的數字，個位數字乘以9倍並加上十位數字</span></span><br><span class="line">    <span class="type">int</span> sum = city/<span class="number">10</span>+(city%<span class="number">10</span>)*<span class="number">9</span>;</span><br><span class="line">    <span class="comment">//將身分證字號的數字部分由左到右分別乘上8、7、6、5、4、3、2、1，最後再加上末碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">8</span> ; i++)</span><br><span class="line">        sum += (num[i]<span class="number">-48</span>)*(<span class="number">8</span>-i);</span><br><span class="line">    sum += num[<span class="number">8</span>]<span class="number">-48</span>;</span><br><span class="line">    <span class="comment">//若上述總和可被10整除就輸出real，否則輸出fake</span></span><br><span class="line">    <span class="keyword">if</span>(sum%<span class="number">10</span> == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;real&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;fake&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/" data-id="clt5arydm0000qktk92di31vz" data-title="a020. 身分證檢驗" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AA%9E%E8%A8%80/" rel="tag">C語言</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a015-矩陣的翻轉" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/a015-%E7%9F%A9%E9%99%A3%E7%9A%84%E7%BF%BB%E8%BD%89/" class="article-date">
@@ -262,54 +321,6 @@
 
 
   
-    <article id="post-a009-解碼器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/" class="article-date">
-  <time class="dt-published" datetime="2024-02-24T04:56:51.000Z" itemprop="datePublished">2024-02-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/">a009. 解碼器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a009">https://zerojudge.tw/ShowProblem?problemid=a009</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p><a target="_blank" rel="noopener" href="https://web.fg.tp.edu.tw/~anny/ASCII_table.htm">ASCII碼</a>全名為「American Standard Code for Information Interchange」，中文為「美國信息交換標準代碼」。之所以會有這個代碼是因為電腦採用的是二進制，八進制、十進制的其他數字，或甚至英文字母，必須經由此代碼轉換為二進制後，電腦才能順利理解、顯示、運算。<br>以C語言來說，當電腦進行字元與整數的運算時，會自動將該字元轉為ASCII碼再與整數運算，運算完成後再轉成字元。因此，所謂「把明碼的每個字元加上某一個整數K而得到密碼的字元」，指的是將明碼所對應到的ASCII碼加上某一個整數K，再轉為字串得到密碼。</p>
-<p>透過觀察範例輸入&#x2F;出可知，1經過轉換後會變成*，查表可得K值為-7。因此，我們先使用scanf()函式讀取輸入的明碼，存放到字元陣列arr，再將陣列內的元素逐一減七，就是題目所求的密碼了。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-strlen.html">strlen()函式</a>取出字串長度。由於strlen()函式並非標準函式庫裡的函式，使用前須先引用&lt;string.h&gt;函式庫。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//以字元陣列的形式，宣告並讀取輸入的明碼</span></span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">//利用for迴圈，逐項將明碼轉為密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(arr) ; i++)</span><br><span class="line">        arr[i] = arr[i]<span class="number">-7</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/" data-id="clt18ujxm000bmstkdc5g1chw" data-title="a009. 解碼器" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AA%9E%E8%A8%80/" rel="tag">C語言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -367,6 +378,10 @@
       <ul>
         
           <li>
+            <a href="/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/">a053. Sagit&#39;s 計分程式</a>
+          </li>
+        
+          <li>
             <a href="/a044-%E7%A9%BA%E9%96%93%E5%88%87%E5%89%B2/">a044. 空間切割</a>
           </li>
         
@@ -380,10 +395,6 @@
         
           <li>
             <a href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">a038. 數字翻轉</a>
-          </li>
-        
-          <li>
-            <a href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/">a034. 二進位制轉換</a>
           </li>
         
       </ul>

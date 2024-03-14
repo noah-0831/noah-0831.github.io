@@ -75,6 +75,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-a053-Sagit-s-計分程式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2024-03-14T14:51:08.000Z" itemprop="datePublished">2024-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/">a053. Sagit&#39;s 計分程式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://noah-0831.github.io/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/" data-id="cltrcyvlo0000kktkfh9998o8" data-title="a053. Sagit&#39;s 計分程式" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-a044-空間切割" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/a044-%E7%A9%BA%E9%96%93%E5%88%87%E5%89%B2/" class="article-date">
@@ -265,54 +303,6 @@
 
 
   
-    <article id="post-a034-二進位制轉換" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/" class="article-date">
-  <time class="dt-published" datetime="2024-03-06T06:17:38.000Z" itemprop="datePublished">2024-03-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/">程式教學</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/">a034. 二進位制轉換</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a034">https://zerojudge.tw/ShowProblem?problemid=a034</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>在進入本題的討論之前，我們需要先了解何謂進位制。所謂的進位制，指的是以「基數」的指數和表示數字的記數方法。以最常見的十進位制來說，基數就是10。因此，以123這個數字來說，在十進位制下即為1x10^2^+2x10^1^+3x10^0^。而所謂的二進位制，就是基數為2的進位制。除了基數不同以外，邏輯和十進位制其實相同。因此，在進行從十進位制到二進位制的轉換時，我們可以2的指數逐一降次檢查大小。</p>
-<p>因為整數型態的變數可儲存的最大值為2的31次方，所以我們先從2的31次方開始檢查，若該數比2的31次方還大，就將該位數註記為1，並將其值減去2的31次方，否則將該位數註記為0。接著降次繼續檢查，直到整個數字檢查完畢，即完成二進位制的轉換。舉例來說，十進位制的123可以被表示為1x2^6^+1x2^5^+1x2^4^+1x2^3^+0x2^2^+1x2^1^+1x2^0^，因此其在二進位制表示法即為1111011。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>雖然並不常見，但只要符合寫法，迴圈可以同時使用多個控制變數。本程式碼內中的for迴圈就用了兩個變數控制迴圈運行，其中變數n代表的是檢查的次方，i代表的是轉換為二進位後的位數。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數dec，表示十進位數字</span></span><br><span class="line">    <span class="type">int</span> dec;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;dec) != EOF) &#123;</span><br><span class="line">        <span class="type">int</span> bin[<span class="number">32</span>] = &#123;&#125;, non_zero_digit = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//從2的31次方開始檢查，次方逐次遞減</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> n = <span class="number">31</span>, i = <span class="number">0</span> ; n &gt;= <span class="number">0</span> ; n--, i++) &#123;</span><br><span class="line">            <span class="comment">//若該數大於等於2的n次方，就將該位數註記為1，並將其值減去2的n次方</span></span><br><span class="line">            <span class="keyword">if</span>(dec &gt;= <span class="built_in">pow</span>(<span class="number">2</span>, n)) &#123;</span><br><span class="line">                bin[i] = <span class="number">1</span>;</span><br><span class="line">                dec -=<span class="built_in">pow</span>(<span class="number">2</span>, n);</span><br><span class="line">                non_zero_digit++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//若該數小於2的n次方，就將該位數註記為0</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                bin[i] = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//輸出須注意該位數為0的可能有兩種</span></span><br><span class="line">            <span class="comment">//若前面沒有輸出過非0數字，則為前綴零，不輸出</span></span><br><span class="line">            <span class="comment">//若否，則為非前綴零，需輸出</span></span><br><span class="line">            <span class="keyword">if</span>(bin[i] != <span class="number">0</span> || non_zero_digit != <span class="number">0</span>)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, bin[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://noah-0831.github.io/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/" data-id="cltffkyph000084tk47hxffbv" data-title="a034. 二進位制轉換" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AA%9E%E8%A8%80/" rel="tag">C語言</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -370,6 +360,10 @@
       <ul>
         
           <li>
+            <a href="/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/">a053. Sagit&#39;s 計分程式</a>
+          </li>
+        
+          <li>
             <a href="/a044-%E7%A9%BA%E9%96%93%E5%88%87%E5%89%B2/">a044. 空間切割</a>
           </li>
         
@@ -383,10 +377,6 @@
         
           <li>
             <a href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">a038. 數字翻轉</a>
-          </li>
-        
-          <li>
-            <a href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/">a034. 二進位制轉換</a>
           </li>
         
       </ul>
