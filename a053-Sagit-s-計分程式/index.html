@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -28,7 +29,7 @@
 <meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a053 解題思路以if_else條件句判斷答對題數的情形，並輸出相對應的輸出。 注意事項在C語言裡，一個條件句只能有一個關係運算子，因此平時書寫的寫法10 &lt; N &lt;20，需改寫成10 &lt; N &amp;&amp; N &lt; 20。 程式碼：C語言12345678910111213">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-03-15T14:51:08.000Z">
-<meta property="article:modified_time" content="2024-03-15T12:11:15.596Z">
+<meta property="article:modified_time" content="2024-03-18T06:17:07.184Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
@@ -213,10 +214,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2024-03-15 22:51:08 / 修改時間：20:11:15" itemprop="dateCreated datePublished" datetime="2024-03-15T22:51:08+08:00">2024-03-15</time>
+              <time title="創建時間：2024-03-15 22:51:08" itemprop="dateCreated datePublished" datetime="2024-03-15T22:51:08+08:00">2024-03-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-18 14:17:07" itemprop="dateModified" datetime="2024-03-18T14:17:07+08:00">2024-03-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,7 +255,7 @@
         <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a053">https://zerojudge.tw/ShowProblem?problemid=a053</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>以if_else條件句判斷答對題數的情形，並輸出相對應的輸出。</p>
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在C語言裡，一個條件句只能有一個關係運算子，因此平時書寫的寫法10 &lt; N &lt;20，需改寫成10 &lt; N &amp;&amp; N &lt; 20。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> N;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">    <span class="keyword">if</span>(N &lt;= <span class="number">10</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">6</span>*N);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">10</span> &lt; N &amp;&amp; N &lt;= <span class="number">20</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">60</span>+<span class="number">2</span>*(N<span class="number">-10</span>));</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">20</span> &lt; N &amp;&amp; N &lt;= <span class="number">40</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">80</span>+<span class="number">1</span>*(N<span class="number">-20</span>));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;100&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數N，代表答對題數</span></span><br><span class="line">    <span class="type">int</span> N;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">    <span class="comment">//答對題數在 0~10 者，每題給6分</span></span><br><span class="line">    <span class="keyword">if</span>(N &lt;= <span class="number">10</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">6</span>*N);</span><br><span class="line">    <span class="comment">//題數在 11~20 者，從第11題開始，每題給2分</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">10</span> &lt; N &amp;&amp; N &lt;= <span class="number">20</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">60</span>+<span class="number">2</span>*(N<span class="number">-10</span>));</span><br><span class="line">    <span class="comment">//題數在 21~40 者，從第21題開始，每題給1分</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">20</span> &lt; N &amp;&amp; N &lt;= <span class="number">40</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">80</span>+<span class="number">1</span>*(N<span class="number">-20</span>));</span><br><span class="line">    <span class="comment">//題數在 40 以上者，一律100分</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;100&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -269,7 +276,10 @@
     <a href="/a044-%E7%A9%BA%E9%96%93%E5%88%87%E5%89%B2/" rel="prev" title="a044. 空間切割">
       <i class="fa fa-chevron-left"></i> a044. 空間切割
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/" rel="next" title="a054. 電話客服中心">
+      a054. 電話客服中心 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -342,7 +352,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -363,9 +373,6 @@
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/noah-0831" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;noah-0831" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/dreamer.aeu65@gmail.com" title="E-Mail → dreamer.aeu65@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
