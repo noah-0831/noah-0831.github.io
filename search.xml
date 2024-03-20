@@ -367,4 +367,18 @@
         <category>調酒日記</category>
       </categories>
   </entry>
+  <entry>
+    <title>a058. MOD3</title>
+    <url>/a058-MOD3/</url>
+    <content><![CDATA[<h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a058">https://zerojudge.tw/ShowProblem?problemid=a058</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>以除以3之後的餘數判斷該數字是三的倍數、三的倍數+1還是三的倍數+2，並運用for迴圈控制判斷的次數，最後再分別輸出n個數字中，三的倍數、三的倍數+1、三的倍數+2的數量。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n，代表接下來有幾個數字要判斷</span></span><br><span class="line">    <span class="comment">//宣告變數a、b、c，分別代表3k、3k+1、3k+2的數量</span></span><br><span class="line">    <span class="type">int</span> n, a = <span class="number">0</span>, b = <span class="number">0</span>, c = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="comment">//用for迴圈針對n個輸入的數字作相對應的判斷</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取變數num，代表輸入的數字</span></span><br><span class="line">        <span class="type">int</span> num;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">        <span class="comment">//依據num除3後的餘數，判斷其為3k、3k+1還是3k+2</span></span><br><span class="line">        <span class="keyword">switch</span>(num%<span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                a++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                b++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                c++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//輸出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d&quot;</span>, a, b, c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式教學</category>
+      </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
+  </entry>
 </search>

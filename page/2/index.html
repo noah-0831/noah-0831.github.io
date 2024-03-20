@@ -186,6 +186,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a040-%E9%98%BF%E5%A7%86%E6%96%AF%E5%A3%AF%E6%95%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a040-%E9%98%BF%E5%A7%86%E6%96%AF%E5%A3%AF%E6%95%B8/" class="post-title-link" itemprop="url">a040. 阿姆斯壯數</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-03-09 19:27:41" itemprop="dateCreated datePublished" datetime="2024-03-09T19:27:41+08:00">2024-03-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-10 00:15:33" itemprop="dateModified" datetime="2024-03-10T00:15:33+08:00">2024-03-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a040">https://zerojudge.tw/ShowProblem?problemid=a040</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>由題目可知阿姆斯壯數的判斷方法為將待判斷的數字依照位數分拆成各個數字後，依照待判斷數字的位數n次方後，再判斷各位數的次方和是否等於待判斷的數字。故本題的兩個關鍵分別是判斷輸入數字的位數，以及取各個位數的n次方。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-pow.html">pow()函式</a>表示指數寫法，其中第一個參數代表指數的底數，第二個參數代表次方。由於pow()函式並非標準函式庫裡的函式，使用前必須先引用&lt;math.h&gt;函式庫。另外需注意pow函式的回傳值為double型態，因此需使用(int)寫法轉為int型態。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n、m，代表判斷範圍的上下限</span></span><br><span class="line">    <span class="type">int</span> n, m, test = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="comment">//利用for迴圈跑從n到m的所有數字</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> num = n ; num &lt;= m ; num++) &#123;</span><br><span class="line">        <span class="comment">//宣告變數num，代表檢查到的數；宣告變數len，代表此數的位數</span></span><br><span class="line">        <span class="type">int</span> i = num, len = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//若此數大於等於10，就將其除以10，並將len加一</span></span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            i /= <span class="number">10</span>;</span><br><span class="line">            len++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//宣告變數sum，代表各個位數的總和</span></span><br><span class="line">        <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//從最高位開始，將此數的各個位數len次方後相加</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = len ; i &gt; <span class="number">0</span> ; i--)</span><br><span class="line">            <span class="comment">//num為目前判斷的數字，共len位數，i代表目前檢查到的位數</span></span><br><span class="line">            <span class="comment">//將num%pow(10, i)即可得num在i位以後（含）的數字，/pow(10, i-1)可得num在i-1位以前的數字，即為第i位數字</span></span><br><span class="line">            sum += <span class="built_in">pow</span>((num%(<span class="type">int</span>)<span class="built_in">pow</span>(<span class="number">10</span>, i)/(<span class="type">int</span>)<span class="built_in">pow</span>(<span class="number">10</span>, i<span class="number">-1</span>)), len);</span><br><span class="line">        <span class="comment">//若此len位數的數字，各個位數的len次方和等於自己，即為阿姆斯壯數，需輸出</span></span><br><span class="line">        <span class="keyword">if</span>(sum == num) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, num);</span><br><span class="line">            test++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//若範圍內的數字皆無阿姆斯壯數，輸出None</span></span><br><span class="line">    <span class="keyword">if</span>(test == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;none&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -529,90 +612,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="noah_studying">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/" class="post-title-link" itemprop="url">a024. 最大公因數(GCD)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-02-29 16:31:53" itemprop="dateCreated datePublished" datetime="2024-02-29T16:31:53+08:00">2024-02-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:15:04" itemprop="dateModified" datetime="2024-03-10T00:15:04+08:00">2024-03-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a024">https://zerojudge.tw/ShowProblem?problemid=a024</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求兩數最大公因數的辦法有很多種，可以將兩數個別的因數都先求出來，再取它們的交集得到最大公因數；也可以直接求兩數公因數的最大值。但本題測資的值較大，上述方法在ZeroJudge上執行時很可能會超時(TLE)。因此，建議使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">輾轉相除法</a>，快速計算最大公因數。</p>
-<p>輾轉相除法的概念是，兩數的最大公因數等於其中較小的數和兩數相除後的餘數的最大公因數。具體的做法是先將兩數中較大的數字除以較小的數字，基於除法運算後餘比商小的特性，可知剩下的餘一定會比原先較小的數字還小。這時原先較小的數字就成了新的運算中較大的數字，而餘則成了新的運算中較小的數字。重複運算至其中一數變成零為止，剩下的另一個數就是兩數的最大公因數。如果在看完上述文字解說後仍然無法立刻理解，可以參考<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">維基百科上的動畫</a>，或是<a target="_blank" rel="noopener" href="http://www.mathland.idv.tw/fun/euclidean.htm">昌爸工作坊提供的運算欄位列出的算式</a>，搭配實際運算或程式演示幫助理解。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本程式碼第7、8行使用了「<a target="_blank" rel="noopener" href="https://shengyu7697.github.io/cpp-ternary-operator/">條件運算子</a>」，寫法是「(條件) ？ (敘述1) ： (敘述2)」。條件運算子在程式執行時，會依據條件決定接下來的動作。如果符合條件就回傳敘述1的值，否則回傳敘述2的值。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數a、b，代表輸入的兩個整數</span></span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="comment">//宣告變數big、small，分別代表兩數中較大和較小的數字</span></span><br><span class="line">    <span class="type">int</span> big = (a &gt; b) ? a : b;</span><br><span class="line">    <span class="type">int</span> small = (a &gt; b) ? b : a;</span><br><span class="line">    <span class="comment">//輾轉相除法：將兩數中較大的數字除以較小的數字，</span></span><br><span class="line">    <span class="comment">//原來較小的數字作為新的運算中教大的數字，餘作為新的運算中較小的數字</span></span><br><span class="line">    <span class="comment">//直到其一為0時運算結束，剩下的數字就是兩數的最大公因數</span></span><br><span class="line">    <span class="keyword">while</span>(small != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">int</span> temp = big;</span><br><span class="line">        big = small;</span><br><span class="line">        small = temp%small;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, big);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -682,7 +681,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -839,7 +838,6 @@
   </div>
 
   
-  <script size="300" alpha="1" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
