@@ -186,6 +186,172 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/" class="post-title-link" itemprop="url">a006. 一元二次方程式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-24 12:54:10" itemprop="dateCreated datePublished" datetime="2024-02-24T12:54:10+08:00">2024-02-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-10 00:15:18" itemprop="dateModified" datetime="2024-03-10T00:15:18+08:00">2024-03-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式b^2^-4ac&gt;0，代表此方程式有兩相異實根(-b±√b^2^-4ac)&#x2F;2a；若判別式b^2^-4ac&#x3D;0，代表此方程式有兩相同實根(重根)(-b+√b^2^-4ac)&#x2F;2a&#x3D;(-b-√b^2^-4ac)&#x2F;2a；若判別式b^2^-4ac&lt;0，代表此方程式沒有實根。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>表示根式寫法。由於sqrt()函式並非標準函式庫裡的函式，使用前須先引用&lt;math.h&gt;函式庫。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數a、b、c，代表一元二次方程式的三個係數</span></span><br><span class="line">    <span class="type">int</span> a, b, c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">    <span class="comment">//宣告變數D，代表一元二次方程式的判別式</span></span><br><span class="line">    <span class="type">int</span> D = b*b<span class="number">-4</span>*a*c;</span><br><span class="line">    <span class="comment">//若判別式小於零，代表無實根存在</span></span><br><span class="line">    <span class="keyword">if</span>(D &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;No real root\n&quot;</span>);</span><br><span class="line">    <span class="comment">//若判別式大於等於零，代表有實根存在</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> x1 = (-b+<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="type">int</span> x2 = (-b-<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="comment">//若判別式大於零，代表有兩相異實根</span></span><br><span class="line">        <span class="keyword">if</span>(D &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two different roots x1=%d , x2=%d&quot;</span>, x1, x2);</span><br><span class="line">        <span class="comment">//若判別式等於零，代表有相同實根</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(D == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two same roots x=%d&quot;</span>, x1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a005-Eva%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a005-Eva%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD/" class="post-title-link" itemprop="url">a005. Eva的回家作業</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-23 17:02:29" itemprop="dateCreated datePublished" datetime="2024-02-23T17:02:29+08:00">2024-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-10 00:15:22" itemprop="dateModified" datetime="2024-03-10T00:15:22+08:00">2024-03-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a005">https://zerojudge.tw/ShowProblem?problemid=a005</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>由題意可知輸入的數列只有等差數列或等比數列兩種可能。先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此可使用<a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CGossip/forStatement.html">for迴圈</a>判斷程式執行的條件。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 宣告並讀取變數t，代表數列的數目</span></span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;t);</span><br><span class="line">    <span class="comment">// 使用for迴圈分別討論每一個數列的情況</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; t ; i++) &#123;</span><br><span class="line">        <span class="comment">// 宣告並讀取陣列a[4]，代表輸入數列的前四項</span></span><br><span class="line">        <span class="type">int</span> a[<span class="number">4</span>];</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>, &amp;a[<span class="number">0</span>], &amp;a[<span class="number">1</span>], &amp;a[<span class="number">2</span>], &amp;a[<span class="number">3</span>]);</span><br><span class="line">        <span class="comment">// 若數列任兩項間的差相同，即為等差數列</span></span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">1</span>]-a[<span class="number">0</span>] == a[<span class="number">2</span>]-a[<span class="number">1</span>])</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d %d %d\n&quot;</span>, a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">3</span>]+(a[<span class="number">1</span>]-a[<span class="number">0</span>]));</span><br><span class="line">        <span class="comment">// 若否，即為等比數列</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d %d %d\n&quot;</span>, a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">3</span>]*(a[<span class="number">1</span>]/a[<span class="number">0</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -433,170 +599,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a001-%E5%93%88%E5%9B%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="noah_studying">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a001-%E5%93%88%E5%9B%89/" class="post-title-link" itemprop="url">a001. 哈囉</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-02-21 22:51:05" itemprop="dateCreated datePublished" datetime="2024-02-21T22:51:05+08:00">2024-02-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:11:33" itemprop="dateModified" datetime="2024-03-10T00:11:33+08:00">2024-03-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a001">https://zerojudge.tw/ShowProblem?problemid=a001</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先使用scanf()函式讀取輸入的字串，再使用printf()函式輸出相對應的字串。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>大家或許已經注意到了，有時scanf()函式的變數名稱後面會加上&amp;，有時卻不會，這其實與變數的型態有關。變數依據宣告的位置，可分為全域變數與區域變數。全域變數是宣告在主程式，或甚至主程式之外的變數，可以在所有地方存取或修改值；區域變數是在特定程式區塊，如迴圈或函式等內部宣告的變數，只能在其宣告的程式區塊以內使用。若是其他程式區塊也需使用此變數，必須在變數名稱前加&amp;，表示取得這個變數的位址，進而使用此變數。</p>
-<p>以scanf()函式來說，因為其所使用的變數並未在在函式內宣告，屬於區域變數，因此使用時通常須在變數名稱前加&amp;，也就是指定變數的位址作為儲存空間來存放輸入。但在所有資料型態中，字串是特例，因為字串在C語言裡就是以空字元\0結尾的字元陣列，符號為%s，而陣列本身即為「指標」，有興趣的人可以自行上網搜尋相關內容。至於其他資料型態的符號可以參考下表：</p>
-<p><img src="https://i.imgur.com/2DXPY8W.png"></p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/%E4%B8%80%E5%88%87%E7%9A%84%E9%96%8B%E5%A7%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="noah_studying">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E4%B8%80%E5%88%87%E7%9A%84%E9%96%8B%E5%A7%8B/" class="post-title-link" itemprop="url">一切的開始</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2023-02-15 22:04:30" itemprop="dateCreated datePublished" datetime="2023-02-15T22:04:30+08:00">2023-02-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-02-29 16:27:45" itemprop="dateModified" datetime="2024-02-29T16:27:45+08:00">2024-02-29</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在高三的時候，因緣際會參與了「進階程式設計」這門課程。因為在自學程式的過程中發現網路上的程式學習資源難易不均，而有了撰寫程式解題報告的想法。之後在經過一次次活動與課程的淬鍊，對網站的內容有了更多想法，也陸續嘗試了HackMD、Medium等眾多管道。</p>
-<p>兩年後的今天，noah_studying誕生了。這是一個以提供升學經驗與學習知識為定位的小站，主要著重在升大學的備考與申請經驗、各項活動的申請資訊，以及以程式為主的知識彙整。希望能幫助持續在學習路上奮鬥的人們!</p>
-<p>而故事本身，還在繼續…</p>
-<p><strong>感謝區</strong><br>感謝 方珮雯 老師，幫助我建立程式概念，完成人生第一份程式解題報告。<br>感謝 M_SQRT 大，協助我程式解報告的改進，給了我繼續努力的動力。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -662,7 +668,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
