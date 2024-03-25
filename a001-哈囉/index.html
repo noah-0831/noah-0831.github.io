@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/2DXPY8W.png">
 <meta property="article:published_time" content="2024-02-21T14:51:05.000Z">
-<meta property="article:modified_time" content="2024-03-09T16:11:33.180Z">
+<meta property="article:modified_time" content="2024-03-25T14:26:34.147Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:11:33" itemprop="dateModified" datetime="2024-03-10T00:11:33+08:00">2024-03-10</time>
+                <time title="修改時間：2024-03-25 22:26:34" itemprop="dateModified" datetime="2024-03-25T22:26:34+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +264,7 @@
         <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a001">https://zerojudge.tw/ShowProblem?problemid=a001</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先使用scanf()函式讀取輸入的字串，再使用printf()函式輸出相對應的字串。</p>
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>大家或許已經注意到了，有時scanf()函式的變數名稱後面會加上&amp;，有時卻不會，這其實與變數的型態有關。變數依據宣告的位置，可分為全域變數與區域變數。全域變數是宣告在主程式，或甚至主程式之外的變數，可以在所有地方存取或修改值；區域變數是在特定程式區塊，如迴圈或函式等內部宣告的變數，只能在其宣告的程式區塊以內使用。若是其他程式區塊也需使用此變數，必須在變數名稱前加&amp;，表示取得這個變數的位址，進而使用此變數。</p>
-<p>以scanf()函式來說，因為其所使用的變數並未在在函式內宣告，屬於區域變數，因此使用時通常須在變數名稱前加&amp;，也就是指定變數的位址作為儲存空間來存放輸入。但在所有資料型態中，字串是特例，因為字串在C語言裡就是以空字元\0結尾的字元陣列，符號為%s，而陣列本身即為「指標」，有興趣的人可以自行上網搜尋相關內容。至於其他資料型態的符號可以參考下表：</p>
+<p>以scanf()函式來說，因為其所使用的變數並未在在函式內宣告，屬於區域變數，因此使用時通常須在變數名稱前加&amp;，也就是指定變數的位址作為儲存空間來存放輸入。但在所有資料型態中，字串是特例，因為字串在C語言裡就是以空字元\0結尾的字元陣列，而陣列名稱具有<a target="_blank" rel="noopener" href="https://mycollegenotebook.medium.com/c%E8%AA%9E%E8%A8%80%E7%AD%86%E8%A8%98-%E6%8C%87%E6%A8%99-pointers-d28edcdd6283">「指標」</a>性質，也就世說其名稱會指向存放變數的記憶體位置，因此前面不需要加&amp;。當然有關指標的部分算是進階內容了，有興趣的人可以自行上網搜尋相關內容，初學者只需要記得讀取字串時不須加上&amp;，當作一種固定的寫法即可。至於其他資料型態的符號可以參考下表：</p>
 <p><img src="https://i.imgur.com/2DXPY8W.png"></p>
 <h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
@@ -363,7 +363,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

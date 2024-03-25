@@ -186,6 +186,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/" class="post-title-link" itemprop="url">a009. 解碼器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-24 12:56:51" itemprop="dateCreated datePublished" datetime="2024-02-24T12:56:51+08:00">2024-02-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-25 23:22:34" itemprop="dateModified" datetime="2024-03-25T23:22:34+08:00">2024-03-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a009">https://zerojudge.tw/ShowProblem?problemid=a009</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p><a target="_blank" rel="noopener" href="https://web.fg.tp.edu.tw/~anny/ASCII_table.htm">ASCII碼</a>全名為「American Standard Code for Information Interchange」，中文為「美國信息交換標準代碼」。之所以會有這個代碼是因為電腦採用的是二進制，八進制、十進制的其他數字，或甚至英文字母，必須經由此代碼轉換為二進制後，電腦才能順利理解、顯示、運算。<br>以C語言來說，當電腦進行字元與整數的運算時，會自動將該字元轉為ASCII碼再與整數運算，運算完成後再轉成字元。因此，所謂「把明碼的每個字元加上某一個整數K而得到密碼的字元」，指的是將明碼所對應到的ASCII碼加上某一個整數K，再轉為字串得到密碼。</p>
+<p>透過觀察範例輸入&#x2F;出可知，1經過轉換後會變成*，查表可得K值為-7。因此，我們先使用scanf()函式讀取輸入的明碼，存放到字元陣列arr，再將陣列內的元素逐一減七，就是題目所求的密碼了。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-strlen.html">strlen()函式</a>取出字串長度。由於strlen()函式並非標準函式庫裡的函式，使用前須先引用 &lt;string.h&gt; 函式庫。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//以字元陣列的形式宣告，並以字串的形式讀取輸入的明碼</span></span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">//利用for迴圈，逐項將明碼轉為密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(arr) ; i++)</span><br><span class="line">        arr[i] = arr[i]<span class="number">-7</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,7 +301,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-24 15:10:27" itemprop="dateModified" datetime="2024-03-24T15:10:27+08:00">2024-03-24</time>
+                <time title="修改時間：2024-03-25 23:28:27" itemprop="dateModified" datetime="2024-03-25T23:28:27+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,8 +332,8 @@
 
       
           <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式b^2-4ac&gt;0，代表此方程式有兩相異實根(-b±√b^2-4ac)&#x2F;2a；若判別式b^2-4ac&#x3D;0，代表此方程式有兩相同實根(-b+√(b^2-4ac))&#x2F;2a&#x3D;(-b-√(b^2-4ac))&#x2F;2a；若判別式b^2-4ac&lt;0，代表此方程式沒有實根。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>表示根式寫法。由於sqrt()函式並非標準函式庫裡的函式，使用前須先引用&lt;math.h&gt;函式庫。</p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式 b^2-4ac &gt; 0 ，代表此方程式有兩相異實根 (-b±√b^2-4ac)&#x2F;2a ；若判別式 b^2-4ac &#x3D; 0 ，代表此方程式有兩相同實根 (-b+√(b^2-4ac))&#x2F;2a &#x3D; (-b-√(b^2-4ac))&#x2F;2a ；若判別式 b^2-4ac &lt; 0 ，代表此方程式沒有實根。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>表示根式寫法。由於sqrt()函式並非標準函式庫裡的函式，使用前須先引用 &lt;math.h&gt; 函式庫。</p>
 <h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數a、b、c，代表一元二次方程式的三個係數</span></span><br><span class="line">    <span class="type">int</span> a, b, c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">    <span class="comment">//宣告變數D，代表一元二次方程式的判別式</span></span><br><span class="line">    <span class="type">int</span> D = b*b<span class="number">-4</span>*a*c;</span><br><span class="line">    <span class="comment">//若判別式小於零，代表無實根存在</span></span><br><span class="line">    <span class="keyword">if</span>(D &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;No real root\n&quot;</span>);</span><br><span class="line">    <span class="comment">//若判別式大於等於零，代表有實根存在</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> x1 = (-b+<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="type">int</span> x2 = (-b-<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="comment">//若判別式大於零，代表有兩相異實根</span></span><br><span class="line">        <span class="keyword">if</span>(D &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two different roots x1=%d , x2=%d&quot;</span>, x1, x2);</span><br><span class="line">        <span class="comment">//若判別式等於零，代表有相同實根</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(D == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two same roots x=%d&quot;</span>, x1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -467,7 +551,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:15:29" itemprop="dateModified" datetime="2024-03-10T00:15:29+08:00">2024-03-10</time>
+                <time title="修改時間：2024-03-25 23:25:10" itemprop="dateModified" datetime="2024-03-25T23:25:10+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -500,91 +584,7 @@
           <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a003">https://zerojudge.tw/ShowProblem?problemid=a003</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。</p>
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數M、D，分別表示月、日</span></span><br><span class="line">    <span class="type">int</span> M, D;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;M, &amp;D);</span><br><span class="line">    <span class="comment">//宣告變數S，依據題意賦值為(M*2+D)%3</span></span><br><span class="line">    S = (M*<span class="number">2</span>+D)%<span class="number">3</span>;</span><br><span class="line">    <span class="comment">//switch()條件句：依據S值輸出相對應的字串</span></span><br><span class="line">    <span class="keyword">switch</span> S:</span><br><span class="line">        <span class="comment">//若S值為0，輸出「普通」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;普通&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為1，輸出「吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為2，輸出「大吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;大吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="noah_studying">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/" class="post-title-link" itemprop="url">a002. 簡易加法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-02-23 01:53:32" itemprop="dateCreated datePublished" datetime="2024-02-23T01:53:32+08:00">2024-02-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:15:27" itemprop="dateModified" datetime="2024-03-10T00:15:27+08:00">2024-03-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a002">https://zerojudge.tw/ShowProblem?problemid=a002</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先使用scanf()函式讀取輸入的兩個數字，再使用printf()函式輸出兩數和。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>大家或許已經注意到了，有時scanf()函式的變數名稱後面會加上&amp;，有時卻不會，這其實與變數的型態有關。變數依據宣告的位置，可分為全域變數與區域變數。全域變數是宣告在主程式，或甚至主程式之外的變數，可以在所有地方存取或修改值；區域變數是在特定程式區塊，如迴圈或函式等內部宣告的變數，只能在其宣告的程式區塊以內使用。若是其他程式區塊也需使用此變數，必須在變數名稱前加&amp;，表示取得這個變數的位址，進而使用此變數。</p>
-<p>以scanf()函式來說，因為其所使用的變數並未在在函式內宣告，屬於區域變數，因此使用時通常須在變數名稱前加&amp;，也就是指定變數的位址作為儲存空間來存放輸入。但在所有資料型態中，字串是特例，因為字串在C語言裡就是以空字元\0結尾的字元陣列，符號為%s，而陣列本身即為「指標」，有興趣的人可以自行上網搜尋相關內容。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數M、D，分別表示月、日</span></span><br><span class="line">    <span class="type">int</span> M, D;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;M, &amp;D);</span><br><span class="line">    <span class="comment">//宣告變數S，依據題意賦值為(M*2+D)%3</span></span><br><span class="line">    <span class="type">int</span> S = (M*<span class="number">2</span>+D)%<span class="number">3</span>;</span><br><span class="line">    <span class="comment">//switch()條件句：依據S值輸出相對應的字串</span></span><br><span class="line">    <span class="keyword">switch</span> S:</span><br><span class="line">        <span class="comment">//若S值為0，輸出「普通」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;普通&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為1，輸出「吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為2，輸出「大吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;大吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -668,7 +668,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

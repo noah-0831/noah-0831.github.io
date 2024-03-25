@@ -29,7 +29,7 @@
 <meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a009 解題思路ASCII碼全名為「American Standard Code for Information Interchange」，中文為「美國信息交換標準代碼」。之所以會有這個代碼是因為電腦採用的是二進制，八進制、十進制的其他數字，或甚至英文字母，必須經由此代碼轉換為二進制後，電腦才能順利理解">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-02-24T04:56:51.000Z">
-<meta property="article:modified_time" content="2024-03-09T16:15:20.230Z">
+<meta property="article:modified_time" content="2024-03-25T15:22:34.251Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:15:20" itemprop="dateModified" datetime="2024-03-10T00:15:20+08:00">2024-03-10</time>
+                <time title="修改時間：2024-03-25 23:22:34" itemprop="dateModified" datetime="2024-03-25T23:22:34+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,8 +262,8 @@
         <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a009">https://zerojudge.tw/ShowProblem?problemid=a009</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p><a target="_blank" rel="noopener" href="https://web.fg.tp.edu.tw/~anny/ASCII_table.htm">ASCII碼</a>全名為「American Standard Code for Information Interchange」，中文為「美國信息交換標準代碼」。之所以會有這個代碼是因為電腦採用的是二進制，八進制、十進制的其他數字，或甚至英文字母，必須經由此代碼轉換為二進制後，電腦才能順利理解、顯示、運算。<br>以C語言來說，當電腦進行字元與整數的運算時，會自動將該字元轉為ASCII碼再與整數運算，運算完成後再轉成字元。因此，所謂「把明碼的每個字元加上某一個整數K而得到密碼的字元」，指的是將明碼所對應到的ASCII碼加上某一個整數K，再轉為字串得到密碼。</p>
 <p>透過觀察範例輸入&#x2F;出可知，1經過轉換後會變成*，查表可得K值為-7。因此，我們先使用scanf()函式讀取輸入的明碼，存放到字元陣列arr，再將陣列內的元素逐一減七，就是題目所求的密碼了。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-strlen.html">strlen()函式</a>取出字串長度。由於strlen()函式並非標準函式庫裡的函式，使用前須先引用&lt;string.h&gt;函式庫。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//以字元陣列的形式，宣告並讀取輸入的明碼</span></span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">//利用for迴圈，逐項將明碼轉為密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(arr) ; i++)</span><br><span class="line">        arr[i] = arr[i]<span class="number">-7</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-strlen.html">strlen()函式</a>取出字串長度。由於strlen()函式並非標準函式庫裡的函式，使用前須先引用 &lt;string.h&gt; 函式庫。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//以字元陣列的形式宣告，並以字串的形式讀取輸入的明碼</span></span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">//利用for迴圈，逐項將明碼轉為密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(arr) ; i++)</span><br><span class="line">        arr[i] = arr[i]<span class="number">-7</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -360,7 +360,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

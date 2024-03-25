@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a065 解題思路根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用ASCII碼將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。 注意事項本程式碼使用了abs()函式對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用&lt;math.h&gt;">
+  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a065 解題思路根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用ASCII碼將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。 注意事項本程式碼使用了abs()函式對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用 &lt;math.h&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="a065. 提款卡密碼">
 <meta property="og:url" content="https://noah-0831.github.io/a065-%E6%8F%90%E6%AC%BE%E5%8D%A1%E5%AF%86%E7%A2%BC/">
 <meta property="og:site_name" content="noah_studying">
-<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a065 解題思路根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用ASCII碼將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。 注意事項本程式碼使用了abs()函式對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用&lt;math.h&gt;">
+<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a065 解題思路根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用ASCII碼將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。 注意事項本程式碼使用了abs()函式對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用 &lt;math.h&amp;gt">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-03-21T07:53:26.000Z">
-<meta property="article:modified_time" content="2024-03-22T05:58:21.870Z">
+<meta property="article:modified_time" content="2024-03-25T15:45:42.494Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-22 13:58:21" itemprop="dateModified" datetime="2024-03-22T13:58:21+08:00">2024-03-22</time>
+                <time title="修改時間：2024-03-25 23:45:42" itemprop="dateModified" datetime="2024-03-25T23:45:42+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,8 +260,8 @@
 
       
         <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a065">https://zerojudge.tw/ShowProblem?problemid=a065</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用<a target="_blank" rel="noopener" href="https://web.fg.tp.edu.tw/~anny/ASCII_table.htm">ASCII碼</a>將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本程式碼使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-abs.html">abs()函式</a>對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用&lt;math.h&gt;函式庫。</p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用<a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">ASCII碼</a>將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本程式碼使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-abs.html">abs()函式</a>對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用 &lt;math.h&gt; 函式庫。</p>
 <h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列password，代表輸入的7個相連的大寫英文字母</span></span><br><span class="line">    <span class="comment">//注意以字串形式讀取輸入，再存進字元陣列的話，最後一碼會是空字元。因此若要存的字串有7單位長，宣告的字元陣列長度必須在8單位以上</span></span><br><span class="line">    <span class="type">char</span> password[<span class="number">8</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, password);</span><br><span class="line">    <span class="comment">//用for迴圈跑前6個英文字母，輸出他們和下一個英文字母的「距離」，即為提款卡密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">6</span> ; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">abs</span>(password[i]-password[i+<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
@@ -283,7 +283,10 @@
     <a href="/a059-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E5%92%8C/" rel="prev" title="a059. 完全平方和">
       <i class="fa fa-chevron-left"></i> a059. 完全平方和
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/a104-%E6%8E%92%E5%BA%8F/" rel="next" title="a104. 排序">
+      a104. 排序 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -356,7 +359,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
