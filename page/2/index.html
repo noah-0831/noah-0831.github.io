@@ -187,7 +187,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a104-%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +201,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/" class="post-title-link" itemprop="url">a053. Sagit's 計分程式</a>
+            <a href="/a104-%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">a104. 排序</a>
         </h2>
 
         <div class="post-meta">
@@ -211,14 +211,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-15 22:51:08" itemprop="dateCreated datePublished" datetime="2024-03-15T22:51:08+08:00">2024-03-15</time>
+              <time title="創建時間：2024-03-25 18:45:05" itemprop="dateCreated datePublished" datetime="2024-03-25T18:45:05+08:00">2024-03-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-18 14:17:07" itemprop="dateModified" datetime="2024-03-18T14:17:07+08:00">2024-03-18</time>
+                <time title="修改時間：2024-03-27 01:45:17" itemprop="dateModified" datetime="2024-03-27T01:45:17+08:00">2024-03-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,94 +248,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a053">https://zerojudge.tw/ShowProblem?problemid=a053</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>以if_else條件句判斷答對題數的情形，並輸出相對應的輸出。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在C語言裡，一個條件句只能有一個關係運算子，因此平時書寫的寫法10 &lt; N &lt;20，需改寫成10 &lt; N &amp;&amp; N &lt; 20。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數N，代表答對題數</span></span><br><span class="line">    <span class="type">int</span> N;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;N);</span><br><span class="line">    <span class="comment">//答對題數在 0~10 者，每題給6分</span></span><br><span class="line">    <span class="keyword">if</span>(N &lt;= <span class="number">10</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">6</span>*N);</span><br><span class="line">    <span class="comment">//題數在 11~20 者，從第11題開始，每題給2分</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">10</span> &lt; N &amp;&amp; N &lt;= <span class="number">20</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">60</span>+<span class="number">2</span>*(N<span class="number">-10</span>));</span><br><span class="line">    <span class="comment">//題數在 21~40 者，從第21題開始，每題給1分</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="number">20</span> &lt; N &amp;&amp; N &lt;= <span class="number">40</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="number">80</span>+<span class="number">1</span>*(N<span class="number">-20</span>));</span><br><span class="line">    <span class="comment">//題數在 40 以上者，一律100分</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;100&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a044-%E7%A9%BA%E9%96%93%E5%88%87%E5%89%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="noah_studying">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a044-%E7%A9%BA%E9%96%93%E5%88%87%E5%89%B2/" class="post-title-link" itemprop="url">a044. 空間切割</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-03-13 22:07:46" itemprop="dateCreated datePublished" datetime="2024-03-13T22:07:46+08:00">2024-03-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-24 15:13:25" itemprop="dateModified" datetime="2024-03-24T15:13:25+08:00">2024-03-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a044">https://zerojudge.tw/ShowProblem?problemid=a044</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>這題的程式寫法並不難，關鍵在於空間中的n個平面最多可將空間切成幾個區域。已知n個平面最多可以將空間分割成(n^3+5n+6)&#x2F;6個區域，因此先讀取輸入的n值，再輸出(n^3+5n+6)&#x2F;6的值。</p>
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a104">https://zerojudge.tw/ShowProblem?problemid=a104</a></p>
+<h2 id="連結題目"><a href="#連結題目" class="headerlink" title="連結題目"></a>連結題目</h2><p><a target="_blank" rel="noopener" href="https://hackmd.io/DwmkclCaTUOO48NYFW8AHw?view#a225-%E6%98%8E%E6%98%8E%E6%84%9B%E6%8E%92%E5%88%97">a225. 明明愛排列</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p><a target="_blank" rel="noopener" href="https://totoroliu.medium.com/%E6%8E%92%E5%BA%8F%E6%BC%94%E7%AE%97%E6%B3%95-sorting-algorithm-dfd8af673f3a">為數字排序的方法</a>有很多種，而本題採用<a target="_blank" rel="noopener" href="https://medium.com/@oturngo/study-note-01-%E6%B0%A3%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%B3%95-bubble-sort-ee534b6f91eb">氣泡排序法</a>，具體的作法是從第一個元素開始往下檢查，如果兩者的相對順序錯誤，就將兩者的位置對調，接著重新檢查，直到最後一個元素的位置也被確認正確無誤為止。</p>
+<p>以本題來說，是要將正整數列由小到大排序，因此我們會從第二個數字開始檢查。如果它比前一個數字，也就是第一個數字還大的話，代表檢查到目前為止，它在數列中的位置是正確的，我們就不會移動他的位置，繼續檢查下去 ; 反之，如果它比前一個數字還小，代表它在數列中的位置不符合題目希望由小到大排序的要求，因此我們會將它與前一個數字的位置對調，然後重新檢查。</p>
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a target="_blank" rel="noopener" href="https://www.796t.com/content/1544817994.html">EOF寫法</a>判斷程式執行的條件。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數n，代表題目給定的正整數</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//用while迴圈搭配EOF寫法讀取每筆n值，並輸出對應的(n^3+5n+6)/6值</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (n*n*n+<span class="number">5</span>*n+<span class="number">6</span>)/<span class="number">6</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n，代表要排序的數字數量</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//使用EOF寫法判斷程式執行的條件</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取陣列arr，代表要排序的數字</span></span><br><span class="line">        <span class="type">int</span> arr[n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;arr[i]);</span><br><span class="line">        <span class="comment">//氣泡排序法：檢查相鄰兩項之間的關係</span></span><br><span class="line">        <span class="comment">//有由小到大排序來說，若後項比前項還小，就將兩者交換</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span> ; i &lt; n ; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span> ; j &lt; i ; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j] &gt; arr[i]) &#123;</span><br><span class="line">                    <span class="type">int</span> temp = arr[i];</span><br><span class="line">                    arr[i] = arr[j];</span><br><span class="line">                    arr[j] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//輸出排序後的數字</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -354,7 +272,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a042-%E5%B9%B3%E9%9D%A2%E5%9C%93%E5%BD%A2%E5%88%87%E5%89%B2/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a065-%E6%8F%90%E6%AC%BE%E5%8D%A1%E5%AF%86%E7%A2%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -368,7 +286,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a042-%E5%B9%B3%E9%9D%A2%E5%9C%93%E5%BD%A2%E5%88%87%E5%89%B2/" class="post-title-link" itemprop="url">a042. 平面圓形切割</a>
+            <a href="/a065-%E6%8F%90%E6%AC%BE%E5%8D%A1%E5%AF%86%E7%A2%BC/" class="post-title-link" itemprop="url">a065. 提款卡密碼</a>
         </h2>
 
         <div class="post-meta">
@@ -378,14 +296,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-11 13:08:01" itemprop="dateCreated datePublished" datetime="2024-03-11T13:08:01+08:00">2024-03-11</time>
+              <time title="創建時間：2024-03-21 15:53:26" itemprop="dateCreated datePublished" datetime="2024-03-21T15:53:26+08:00">2024-03-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-24 15:13:47" itemprop="dateModified" datetime="2024-03-24T15:13:47+08:00">2024-03-24</time>
+                <time title="修改時間：2024-03-26 00:12:57" itemprop="dateModified" datetime="2024-03-26T00:12:57+08:00">2024-03-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -415,11 +333,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a042">https://zerojudge.tw/ShowProblem?problemid=a042</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>這題的程式寫法並不難，關鍵在於找到平面上的n個圓最多可以把平面分割成幾區域。已知n個圓最多可以把平面分割成n^2-n+2個區域，因此先讀取輸入的n值，再輸出n^2-n+2的值。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a target="_blank" rel="noopener" href="https://www.796t.com/content/1544817994.html">EOF寫法</a>判斷程式執行的條件。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數n，代表題目給定的正整數</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//用while迴圈搭配EOF寫法讀取每筆n值，並輸出對應的n^2-n+2值</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n*n-n+<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a065">https://zerojudge.tw/ShowProblem?problemid=a065</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用<a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">ASCII碼</a>將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本程式碼使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-abs.html">abs()函式</a>對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用 &lt;math.h&gt; 函式庫。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列password，代表輸入的7個相連的大寫英文字母</span></span><br><span class="line">    <span class="comment">/*注意以字串形式讀取輸入，再存進字元陣列的話，最後一碼會是空字元。</span></span><br><span class="line"><span class="comment">      因此若要存的字串有7單位長，宣告的字元陣列長度必須在8單位以上*/</span></span><br><span class="line">    <span class="type">char</span> password[<span class="number">8</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, password);</span><br><span class="line">    <span class="comment">//用for迴圈跑前6個英文字母，輸出他們和下一個英文字母的「距離」，即為提款卡密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">6</span> ; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">abs</span>(password[i]-password[i+<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -438,7 +355,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a040-%E9%98%BF%E5%A7%86%E6%96%AF%E5%A3%AF%E6%95%B8/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a059-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -452,7 +369,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a040-%E9%98%BF%E5%A7%86%E6%96%AF%E5%A3%AF%E6%95%B8/" class="post-title-link" itemprop="url">a040. 阿姆斯壯數</a>
+            <a href="/a059-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E5%92%8C/" class="post-title-link" itemprop="url">a059. 完全平方和</a>
         </h2>
 
         <div class="post-meta">
@@ -462,14 +379,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-09 19:27:41" itemprop="dateCreated datePublished" datetime="2024-03-09T19:27:41+08:00">2024-03-09</time>
+              <time title="創建時間：2024-03-20 15:55:36" itemprop="dateCreated datePublished" datetime="2024-03-20T15:55:36+08:00">2024-03-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-25 23:38:37" itemprop="dateModified" datetime="2024-03-25T23:38:37+08:00">2024-03-25</time>
+                <time title="修改時間：2024-03-25 23:42:30" itemprop="dateModified" datetime="2024-03-25T23:42:30+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -499,10 +416,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a040">https://zerojudge.tw/ShowProblem?problemid=a040</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>由題目可知阿姆斯壯數的判斷方法為將待判斷的數字依照位數分拆成各個數字後，依照待判斷數字的位數n次方後，再判斷各位數的次方和是否等於待判斷的數字。故本題的兩個關鍵分別是判斷輸入數字的位數，以及取各個位數的n次方。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-pow.html">pow()函式</a>表示指數寫法，其中第一個參數代表指數的底數，第二個參數代表次方。由於pow()函式並非標準函式庫裡的函式，使用前必須先引用 &lt;math.h&gt; 函式庫。另外需注意pow函式的回傳值為double型態，因此需使用(int)寫法轉為int型態。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n、m，代表判斷範圍的上下限</span></span><br><span class="line">    <span class="type">int</span> n, m, test = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="comment">//利用for迴圈跑從n到m的所有數字</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> num = n ; num &lt;= m ; num++) &#123;</span><br><span class="line">        <span class="comment">//宣告變數num，代表檢查到的數；宣告變數len，代表此數的位數</span></span><br><span class="line">        <span class="type">int</span> i = num, len = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//若此數大於等於10，就將其除以10，並將len加一</span></span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            i /= <span class="number">10</span>;</span><br><span class="line">            len++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//宣告變數sum，代表各個位數的總和</span></span><br><span class="line">        <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//從最高位開始，將此數的各個位數len次方後相加</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = len ; i &gt; <span class="number">0</span> ; i--)</span><br><span class="line">            <span class="comment">//num為目前判斷的數字，共len位數，i代表目前檢查到的位數</span></span><br><span class="line">            <span class="comment">//將num%pow(10, i)即可得num在i位以後（含）的數字，/pow(10, i-1)可得num在i-1位以前的數字，即為第i位數字</span></span><br><span class="line">            sum += <span class="built_in">pow</span>((num%(<span class="type">int</span>)<span class="built_in">pow</span>(<span class="number">10</span>, i)/(<span class="type">int</span>)<span class="built_in">pow</span>(<span class="number">10</span>, i<span class="number">-1</span>)), len);</span><br><span class="line">        <span class="comment">//若此len位數的數字，各個位數的len次方和等於自己，即為阿姆斯壯數，需輸出</span></span><br><span class="line">        <span class="keyword">if</span>(sum == num) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, num);</span><br><span class="line">            test++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//若範圍內的數字皆無阿姆斯壯數，輸出None</span></span><br><span class="line">    <span class="keyword">if</span>(test == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;none&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a059">https://zerojudge.tw/ShowProblem?problemid=a059</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>題目希望我們求出在a、b之間的所有完全平方數總和，理論上要用for迴圈跑從a到b之間的所有數字，檢查他們是否為完全平方數，若是則將他們相加，最後再輸出其總和，但這麼做的話需要在for迴圈裡加上條件判斷。因此我們也可以換種方式思考，若 a ≤ x^2 ≤ b ，可知 √a ≤ x ≤ √b ，故只要找出在√a及√b之間的正整數，將他們的平方相加，即為在a、b之間所有完全平方數的和。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-ceil.html">ceil()函式</a>對參數無條件進位（向上取整），以及<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>對參數開根。由於ceil()函式和sqrt()函式皆非標準函式庫裡的函式，使用前必須引用 &lt;math.h&gt; 函式庫。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數T，代表測資筆數</span></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="comment">//用for迴圈跑T筆測資</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span> ; i &lt;= T ; i++) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取變數a、b，代表數字範圍的上下限</span></span><br><span class="line">        <span class="comment">//宣告變數sum，設初始值為0，代表a、b之間的完全平方和</span></span><br><span class="line">        <span class="type">int</span> a, b, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="comment">//用for迴圈跑從√a到√b之間的所有數，將他們的平方相加求出平方和</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num = <span class="built_in">ceil</span>(<span class="built_in">sqrt</span>(a)) ; num &lt;= <span class="built_in">sqrt</span>(b) ; num++)</span><br><span class="line">            sum += num*num;</span><br><span class="line">        <span class="comment">//輸出</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %d\n&quot;</span>, i, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -521,7 +438,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a058-MOD3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -535,7 +452,84 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/" class="post-title-link" itemprop="url">a038. 數字翻轉</a>
+            <a href="/a058-MOD3/" class="post-title-link" itemprop="url">a058. MOD3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2024-03-20 10:05:30 / 修改時間：18:56:31" itemprop="dateCreated datePublished" datetime="2024-03-20T10:05:30+08:00">2024-03-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a058">https://zerojudge.tw/ShowProblem?problemid=a058</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>利用除以3之後的餘數判斷該數字是3k、3k+1還是3k+2，使用for迴圈讀取n個數字後，輸出其中3k、3k+1、3k+2的數量。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n，代表接下來有幾個數字要判斷</span></span><br><span class="line">    <span class="comment">//宣告變數a、b、c，分別代表3k、3k+1、3k+2的數量</span></span><br><span class="line">    <span class="type">int</span> n, a = <span class="number">0</span>, b = <span class="number">0</span>, c = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="comment">//用for迴圈針對n個輸入的數字作相對應的判斷</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取變數num，代表輸入的數字</span></span><br><span class="line">        <span class="type">int</span> num;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">        <span class="comment">//依據num除3後的餘數，判斷其為3k、3k+1還是3k+2</span></span><br><span class="line">        <span class="keyword">switch</span>(num%<span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                a++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                b++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                c++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//輸出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d&quot;</span>, a, b, c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/" class="post-title-link" itemprop="url">a054. 電話客服中心</a>
         </h2>
 
         <div class="post-meta">
@@ -545,14 +539,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-08 23:16:48" itemprop="dateCreated datePublished" datetime="2024-03-08T23:16:48+08:00">2024-03-08</time>
+              <time title="創建時間：2024-03-18 14:16:55" itemprop="dateCreated datePublished" datetime="2024-03-18T14:16:55+08:00">2024-03-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:14:55" itemprop="dateModified" datetime="2024-03-10T00:14:55+08:00">2024-03-10</time>
+                <time title="修改時間：2024-03-20 10:07:51" itemprop="dateModified" datetime="2024-03-20T10:07:51+08:00">2024-03-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -582,10 +576,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a038">https://zerojudge.tw/ShowProblem?problemid=a038</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先以字元陣列的形式讀取輸入的字串，由後往前輸出，注意避開前綴0。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>需注意前綴零不輸出，例如5800翻轉後為85，而不是0085。至於如何判斷該位是否為前綴零，可以用前面是否出現過非零數字來判斷。若前面沒有輸出過非0數字，則為前綴零，不輸出；若否，則為非前綴零，需輸出。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列num，代表輸入的數字</span></span><br><span class="line">    <span class="type">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num);</span><br><span class="line">    <span class="comment">//宣告變數test，並設初始值為0，記錄前面是否有輸出過非零數字</span></span><br><span class="line">    <span class="comment">//若test為0，代表之前尚未輸出過非零數字，這一位數若是0即為前綴0，不需輸出</span></span><br><span class="line">    <span class="comment">//若test為1，代表之前已經輸出過非零數字，這一位數就算是0也不是前綴0，需輸出</span></span><br><span class="line">    <span class="type">int</span> test = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(num) ; i++)</span><br><span class="line">        <span class="keyword">if</span>(num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i] != <span class="string">&#x27;0&#x27;</span> || test != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i]);</span><br><span class="line">            <span class="comment">//輸出後將test設為1，代表已經輸出過非零數字</span></span><br><span class="line">            test=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//若test仍為0，說明直到跑完指個陣列都未曾輸出過非零數字，也就是說這個數字就是0</span></span><br><span class="line">    <span class="keyword">if</span>(test == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a054">https://zerojudge.tw/ShowProblem?problemid=a054</a></p>
+<h2 id="連結題目"><a href="#連結題目" class="headerlink" title="連結題目"></a>連結題目</h2><p><a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">a020. 身分證檢驗</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題的題意相當複雜，簡單來說就是要我們透過檢查碼反推可能的英文字母。<br>而檢查碼的算法如下:</p>
+<ol>
+<li>將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。</li>
+<li>將1.的數字的個位數字乘以9倍並加上十位數字。</li>
+<li>將身分證字號的數字部分，由左到右分別乘上8、7、6、5、4、3、2、1、1。</li>
+<li>令s為2.加上3.的和，m為s的個位數，檢查碼c即為10-m。</li>
+</ol>
+<p>因此，我們可以將身份證號碼的後9碼用字元陣列儲存，經由運算得到各位相對數字乘積的總和s後，推得檢查碼c，進而依據c值輸出對應的出生縣市。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列num，代表身份證號碼的後9碼</span></span><br><span class="line">    <span class="type">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num);</span><br><span class="line">    <span class="comment">//宣告變數s，代表身分證字號各位相對數字乘積的總和</span></span><br><span class="line">    <span class="type">int</span> s = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//將身分證字號的數字部分由左到右分別乘上8、7、6、5、4、3、2、1，最後再加上末碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">8</span> ; i++)</span><br><span class="line">        s += (num[i]<span class="number">-48</span>)*(<span class="number">8</span>-i);</span><br><span class="line">    s += num[<span class="number">8</span>]<span class="number">-48</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//宣告變數c，代表檢查碼</span></span><br><span class="line">    <span class="comment">//將10減去s的個位數後，即可得c</span></span><br><span class="line">    <span class="type">int</span> c = <span class="number">10</span>-s%<span class="number">10</span>;</span><br><span class="line">    <span class="comment">//檢查碼只有一位數，因此若c=10時，則檢查碼為0</span></span><br><span class="line">    <span class="keyword">if</span>(c == <span class="number">10</span>)</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//依據c值反推可能的出生縣市</span></span><br><span class="line">    <span class="keyword">switch</span>(c) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;BNZ&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;AMW&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;KLY&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;JVX&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;HU&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;GT&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;FS&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;ER&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;DOQ&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;CIP&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -603,7 +605,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -669,7 +671,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

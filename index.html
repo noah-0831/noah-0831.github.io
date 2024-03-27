@@ -187,7 +187,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a104-%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/source/lib/bookmark/README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +201,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a104-%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">a104. 排序</a>
+            <a href="/source/lib/bookmark/README/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -211,23 +211,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-25 18:45:05" itemprop="dateCreated datePublished" datetime="2024-03-25T18:45:05+08:00">2024-03-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-26 16:59:39" itemprop="dateModified" datetime="2024-03-26T16:59:39+08:00">2024-03-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
+              <time title="創建時間：2024-03-27 13:13:15" itemprop="dateCreated datePublished" datetime="2024-03-27T13:13:15+08:00">2024-03-27</time>
             </span>
 
           
@@ -248,12 +232,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a104">https://zerojudge.tw/ShowProblem?problemid=a104</a></p>
-<h2 id="連結題目"><a href="#連結題目" class="headerlink" title="連結題目"></a>連結題目</h2><p><a target="_blank" rel="noopener" href="https://hackmd.io/DwmkclCaTUOO48NYFW8AHw?view#a225-%E6%98%8E%E6%98%8E%E6%84%9B%E6%8E%92%E5%88%97">a225. 明明愛排列</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p><a target="_blank" rel="noopener" href="https://totoroliu.medium.com/%E6%8E%92%E5%BA%8F%E6%BC%94%E7%AE%97%E6%B3%95-sorting-algorithm-dfd8af673f3a">為數字排序的方法</a>有很多種，而本題採用<a target="_blank" rel="noopener" href="https://medium.com/@oturngo/study-note-01-%E6%B0%A3%E6%B3%A1%E6%8E%92%E5%BA%8F%E6%B3%95-bubble-sort-ee534b6f91eb">氣泡排序法</a>，具體的作法是從第一個元素開始往下檢查，如果兩者的相對順序錯誤，就將兩者的位置對調，接著重新檢查，直到最後一個元素的位置也被確認正確無誤為止。</p>
-<p>以本題來說，是要將正整數列由小到大排序，因此我們會從第二個數字開始檢查。如果它比前一個數字，也就是第一個數字還大的話，代表檢查到目前為止，它在數列中的位置是正確的，我們就不會移動他的位置，繼續檢查下去 ; 反之，如果它比前一個數字還小，代表它在數列中的位置不符合題目希望由小到大排序的要求，因此我們會將它與前一個數字的位置對調，然後重新檢查。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a target="_blank" rel="noopener" href="https://www.796t.com/content/1544817994.html">EOF寫法</a>判斷程式執行的條件。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n，代表要排序的數字數量</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//使用EOF寫法判斷程式執行的條件</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n)!=EOF) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取陣列arr，代表要排序的數字</span></span><br><span class="line">        <span class="type">int</span> arr[n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;arr[i]);</span><br><span class="line">        <span class="comment">//氣泡排序法：檢查相鄰兩項之間的關係</span></span><br><span class="line">        <span class="comment">//有由小到大排序來說，若後項比前項還小，就將兩者交換</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;i;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[j]&gt;arr[i]) &#123;</span><br><span class="line">                    <span class="type">int</span> temp=arr[i];</span><br><span class="line">                    arr[i]=arr[j];</span><br><span class="line">                    arr[j]=temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//輸出排序後的數字</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 align="center">Bookmark for <a target="_blank" rel="noopener" href="https://github.com/theme-next">NexT</a></h1>
+
+<h2 align="center">Introduce</h2>
+
+<p>Bookmark is a plugin that allow the users save their reading position.</p>
+<p>The users could just click the bookmark icon (like 🔖) in left-top of the page to save the position.</p>
+<p>And when they visit your blog in the next time, they can continue the last reading position by clicking the bookmark icon from the home page.</p>
+<h1 align="center">Installation</h1>
+
+<h2>If you want to use the CDN instead of clone this repo, please jump to the Step 3.</h2>
+
+<h2 align="center">Step 1 &rarr; Go to NexT dir</h2>
+
+<p>Change dir to <strong>NexT</strong> directory. There must be <code>layout</code>, <code>source</code>, <code>languages</code> and other directories:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">bower.json  _config.yml  docs  gulpfile.coffee  languages  layout  LICENSE.md  package.json  README.md  scripts  <span class="built_in">source</span>  <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h2 align="center">Step 2 &rarr; Get module</h2>
+
+<p>Install module to <code>source/lib</code> directory:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-bookmark.git <span class="built_in">source</span>/lib/bookmark</span><br></pre></td></tr></table></figure>
+
+<h2 align="center">Step 3 &rarr; Set it up</h2>
+
+<p>Enable module in <strong>NexT</strong> <code>_config.yml</code> file:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bookmark:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>And, if you wants to use the CDN, then need to set:</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">bookmark:</span> <span class="string">https://cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@latest/bookmark.min.js</span></span><br></pre></td></tr></table></figure>
+
+<h1 align="center">Update</h1>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next/source/lib/bookmark</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -272,7 +283,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a065-%E6%8F%90%E6%AC%BE%E5%8D%A1%E5%AF%86%E7%A2%BC/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/source/lib/bookmark/bookmark.min/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -286,7 +297,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a065-%E6%8F%90%E6%AC%BE%E5%8D%A1%E5%AF%86%E7%A2%BC/" class="post-title-link" itemprop="url">a065. 提款卡密碼</a>
+            <a href="/source/lib/bookmark/bookmark.min/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -296,23 +307,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-21 15:53:26" itemprop="dateCreated datePublished" datetime="2024-03-21T15:53:26+08:00">2024-03-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-26 00:12:57" itemprop="dateModified" datetime="2024-03-26T00:12:57+08:00">2024-03-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
+              <time title="創建時間：2024-03-27 13:13:15" itemprop="dateCreated datePublished" datetime="2024-03-27T13:13:15+08:00">2024-03-27</time>
             </span>
 
           
@@ -333,10 +328,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a065">https://zerojudge.tw/ShowProblem?problemid=a065</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據題意，7個大寫字母之間的「距離」共6個，即為提款卡密碼。我們可以利用<a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">ASCII碼</a>將字母轉為對應的數值，進而求出兩字母間的差值，其絕對值即為「距離」。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本程式碼使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-abs.html">abs()函式</a>對參數求絕對值。由於abs()函式並非標準函式庫裡的函式，使用前須引用 &lt;math.h&gt; 函式庫。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列password，代表輸入的7個相連的大寫英文字母</span></span><br><span class="line">    <span class="comment">/*注意以字串形式讀取輸入，再存進字元陣列的話，最後一碼會是空字元。</span></span><br><span class="line"><span class="comment">      因此若要存的字串有7單位長，宣告的字元陣列長度必須在8單位以上*/</span></span><br><span class="line">    <span class="type">char</span> password[<span class="number">8</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, password);</span><br><span class="line">    <span class="comment">//用for迴圈跑前6個英文字母，輸出他們和下一個英文字母的「距離」，即為提款卡密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">6</span> ; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">abs</span>(password[i]-password[i+<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          !function(o){"use strict";var n=o.localStorage;null==n&&(n={getItem:function(){return null},setItem:function(){},removeItem:function(){},clear:function(){}});var t,e=function(){var o=n.getItem("bookmark");if(null==o)return null;try{return JSON.parse(o)}catch(o){return null}},a=function(){var n=o.document.createElement("style");n.type="text/css";var e=".book-mark-link{border-bottom:none;display:block;position:fixed;color:#222;font-size:26px !important;top:-10px;left:20px;transition:.3s;}.book-mark-link:hover,.book-mark-link-fixed{top:-2px}@media(max-width:1090px){.book-mark-link{display:none}}";e=o.document.createTextNode(e),n.appendChild(e),o.document.head.appendChild(n),t=$('<a class="book-mark-link book-mark-link-fixed fa fa-bookmark" href="#"></a>'),$(o.document.body).append(t);var a=0;$(o).on("scroll.bookmark",function(){var n=o.document.documentElement.scrollTop;n>0?0===a&&(t.removeClass("book-mark-link-fixed"),a=n):a>0&&(!t.hasClass("book-mark-link-fixed")&&t.addClass("book-mark-link-fixed"),a=0)})},r=function(e,a){null==a&&(a={});var r=o.document.documentElement.scrollTop;return a.lastUri=e,a[e]=r,n.setItem("bookmark",JSON.stringify(a)),t.animate({top:-26},"fast",function(){setTimeout(function(){t.css("top","")},400)}),a};o.bookmark={loadBookmark:function(){var o=e();null!=o&&$(function(){a(),t.attr("href",o.lastUri+"#book:mark")})},scrollToMark:function(n,l){var i=o.location.pathname,c=e();$(function(){var e;a(),t.click(function(){return c=r(i,c),!1}),"auto"===n&&o.addEventListener("beforeunload",function(){r(i,c)}),null!=c&&([l,"#comments"].filter(function(n){return n===o.location.hash}).length>0||(e=c[i],isNaN(e)||$(function(){$(o.document.documentElement).animate({scrollTop:e},"fast")})))})}}}(window);
       
     </div>
 
@@ -355,7 +347,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a059-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E5%92%8C/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/source/lib/bookmark/package/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -369,7 +361,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a059-%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E5%92%8C/" class="post-title-link" itemprop="url">a059. 完全平方和</a>
+            <a href="/source/lib/bookmark/package/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -379,23 +371,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-20 15:55:36" itemprop="dateCreated datePublished" datetime="2024-03-20T15:55:36+08:00">2024-03-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-25 23:42:30" itemprop="dateModified" datetime="2024-03-25T23:42:30+08:00">2024-03-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
+              <time title="創建時間：2024-03-27 13:13:15" itemprop="dateCreated datePublished" datetime="2024-03-27T13:13:15+08:00">2024-03-27</time>
             </span>
 
           
@@ -416,10 +392,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a059">https://zerojudge.tw/ShowProblem?problemid=a059</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>題目希望我們求出在a、b之間的所有完全平方數總和，理論上要用for迴圈跑從a到b之間的所有數字，檢查他們是否為完全平方數，若是則將他們相加，最後再輸出其總和，但這麼做的話需要在for迴圈裡加上條件判斷。因此我們也可以換種方式思考，若 a ≤ x^2 ≤ b ，可知 √a ≤ x ≤ √b ，故只要找出在√a及√b之間的正整數，將他們的平方相加，即為在a、b之間所有完全平方數的和。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-ceil.html">ceil()函式</a>對參數無條件進位（向上取整），以及<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>對參數開根。由於ceil()函式和sqrt()函式皆非標準函式庫裡的函式，使用前必須引用 &lt;math.h&gt; 函式庫。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數T，代表測資筆數</span></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="comment">//用for迴圈跑T筆測資</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span> ; i &lt;= T ; i++) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取變數a、b，代表數字範圍的上下限</span></span><br><span class="line">        <span class="comment">//宣告變數sum，設初始值為0，代表a、b之間的完全平方和</span></span><br><span class="line">        <span class="type">int</span> a, b, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="comment">//用for迴圈跑從√a到√b之間的所有數，將他們的平方相加求出平方和</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num = <span class="built_in">ceil</span>(<span class="built_in">sqrt</span>(a)) ; num &lt;= <span class="built_in">sqrt</span>(b) ; num++)</span><br><span class="line">            sum += num*num;</span><br><span class="line">        <span class="comment">//輸出</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %d\n&quot;</span>, i, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          {"name":"theme-next-bookmark","version":"1.0.2","description":"A plugin of local-bookmarks for NexT theme.","main":"index.js","scripts":{"test":"eslint index.js","dist":"eslint index.js && uglifyjs --compress --mangle -o bookmark.min.js -- index.js"},"repository":{"type":"git","url":"git+https://github.com/theme-next/theme-next-bookmark.git"},"keywords":["hexo","theme-next","plugin","bookmark"],"author":"Tsanie Lily","license":"MIT","bugs":{"url":"https://github.com/theme-next/theme-next-bookmark/issues"},"homepage":"https://github.com/theme-next/theme-next-bookmark#readme","devDependencies":{"eslint":"^4.17.0","eslint-config-google":"^0.9.1","uglify-js":"^3.3.10"}}
       
     </div>
 
@@ -438,7 +411,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a058-MOD3/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/source/lib/bookmark/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -452,7 +425,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a058-MOD3/" class="post-title-link" itemprop="url">a058. MOD3</a>
+            <a href="/source/lib/bookmark/index/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -461,18 +434,8 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2024-03-20 10:05:30 / 修改時間：18:56:31" itemprop="dateCreated datePublished" datetime="2024-03-20T10:05:30+08:00">2024-03-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
+              <time title="創建時間：2024-03-27 13:13:15" itemprop="dateCreated datePublished" datetime="2024-03-27T13:13:15+08:00">2024-03-27</time>
             </span>
 
           
@@ -493,10 +456,157 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a058">https://zerojudge.tw/ShowProblem?problemid=a058</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>利用除以3之後的餘數判斷該數字是3k、3k+1還是3k+2，使用for迴圈讀取n個數字後，輸出其中3k、3k+1、3k+2的數量。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n，代表接下來有幾個數字要判斷</span></span><br><span class="line">    <span class="comment">//宣告變數a、b、c，分別代表3k、3k+1、3k+2的數量</span></span><br><span class="line">    <span class="type">int</span> n, a = <span class="number">0</span>, b = <span class="number">0</span>, c = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="comment">//用for迴圈針對n個輸入的數字作相對應的判斷</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取變數num，代表輸入的數字</span></span><br><span class="line">        <span class="type">int</span> num;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">        <span class="comment">//依據num除3後的餘數，判斷其為3k、3k+1還是3k+2</span></span><br><span class="line">        <span class="keyword">switch</span>(num%<span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                a++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                b++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                c++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//輸出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d&quot;</span>, a, b, c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          (function (global) {
+  'use strict';
+
+  var storage = global.localStorage;
+  if (storage == null) {
+    // if the localStorage is not exists
+    storage = {
+      // eslint-disable-next-line
+      getItem: function () { return null },
+      setItem: function () { },
+      removeItem: function () { },
+      clear: function () { },
+    };
+  }
+
+  // get the saved bookmark object
+  var getBookmark = function () {
+    var mark = storage.getItem('bookmark');
+    if (mark == null) {
+      return null;
+    }
+    try {
+      return JSON.parse(mark);
+    } catch (e) {
+      // invalid object saved in the storage
+      // console.warn('Invalid bookmark object.');
+      return null;
+    }
+  };
+
+  var link;
+  // register everything
+  var init = function () {
+    // bookmark-link style
+    var style = global.document.createElement('style');
+    style.type = 'text/css';
+    var text = '.book-mark-link{'
+      + 'border-bottom:none;'
+      + 'display:block;'
+      + 'position:fixed;'
+      + 'color:#222;'
+      + 'font-size:26px !important;'
+      + 'top:-10px;left:20px;'
+      + 'transition:.3s;'
+      + '}'
+      + '.book-mark-link:hover,.book-mark-link-fixed{top:-2px}'
+      // do not show when the width is not enough
+      + '@media(max-width:1090px){.book-mark-link{display:none}}';
+    text = global.document.createTextNode(text);
+    style.appendChild(text);
+    global.document.head.appendChild(style);
+
+    // create a link element
+    // eslint-disable-next-line max-len
+    link = $('<a class="book-mark-link book-mark-link-fixed fa fa-bookmark" href="#"></a>');
+    $(global.document.body).append(link);
+
+    var currentTop = 0;
+    // scroll event
+    $(global).on('scroll.bookmark', function () {
+      var top = global.document.documentElement.scrollTop;
+      if (top > 0) {
+        if (currentTop === 0) {
+          link.removeClass('book-mark-link-fixed');
+          currentTop = top;
+        }
+      } else {
+        if (currentTop > 0) {
+          !link.hasClass('book-mark-link-fixed') &&
+            link.addClass('book-mark-link-fixed');
+          currentTop = 0;
+        }
+      }
+    });
+  };
+
+  var loadBookmark = function () {
+    var mark = getBookmark();
+    if (mark == null) {
+      return;
+    }
+    // found the bookmark
+    $(function () {
+      init();
+      link.attr('href', mark.lastUri + '#book:mark');
+    });
+  };
+
+  var doScroll = function (top) {
+    if (!isNaN(top)) {
+      $(function () {
+        // eslint-disable-next-line max-len
+        $(global.document.documentElement).animate({ 'scrollTop': top }, 'fast');
+      });
+    }
+  };
+
+  var doSaveScroll = function (path, mark) {
+    if (mark == null) {
+      mark = {};
+    }
+    var top = global.document.documentElement.scrollTop;
+    mark.lastUri = path;
+    mark[path] = top;
+    storage.setItem('bookmark', JSON.stringify(mark));
+    link.animate({ top: -26 }, 'fast', function () {
+      setTimeout(function () {
+        link.css('top', '');
+      }, 400);
+    });
+    return mark;
+  };
+
+  var scrollToMark = function (trigger, hash) {
+    var path = global.location.pathname;
+    var mark = getBookmark();
+    $(function () {
+      init();
+      // save the position by clicking the icon
+      link.click(function () {
+        mark = doSaveScroll(path, mark);
+        return false;
+      });
+
+      // register beforeunload event when the trigger is auto
+      if (trigger === 'auto') {
+        // register beforeunload event
+        global.addEventListener('beforeunload', function () {
+          doSaveScroll(path, mark);
+        });
+      }
+      // auto scroll to the position
+      if (mark == null) {
+        return;
+      }
+      // and if the page opens with a specific hash, just jump out
+      var skips = [hash, '#comments'];
+      // eslint-disable-next-line
+      if (skips.filter(function (h) { return h === global.location.hash }).length > 0) {
+        return;
+      }
+      doScroll(mark[path]);
+    });
+  };
+
+  global.bookmark = {
+    loadBookmark: loadBookmark,
+    scrollToMark: scrollToMark,
+  };
+})(window);
+
       
     </div>
 
@@ -515,7 +625,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/source/lib/bookmark/renovate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -529,7 +639,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/" class="post-title-link" itemprop="url">a054. 電話客服中心</a>
+            <a href="/source/lib/bookmark/renovate/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -539,23 +649,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-18 14:16:55" itemprop="dateCreated datePublished" datetime="2024-03-18T14:16:55+08:00">2024-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-20 10:07:51" itemprop="dateModified" datetime="2024-03-20T10:07:51+08:00">2024-03-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
+              <time title="創建時間：2024-03-27 13:13:15" itemprop="dateCreated datePublished" datetime="2024-03-27T13:13:15+08:00">2024-03-27</time>
             </span>
 
           
@@ -576,18 +670,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a054">https://zerojudge.tw/ShowProblem?problemid=a054</a></p>
-<h2 id="連結題目"><a href="#連結題目" class="headerlink" title="連結題目"></a>連結題目</h2><p><a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">a020. 身分證檢驗</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題的題意相當複雜，簡單來說就是要我們透過檢查碼反推可能的英文字母。<br>而檢查碼的算法如下:</p>
-<ol>
-<li>將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。</li>
-<li>將1.的數字的個位數字乘以9倍並加上十位數字。</li>
-<li>將身分證字號的數字部分，由左到右分別乘上8、7、6、5、4、3、2、1、1。</li>
-<li>令s為2.加上3.的和，m為s的個位數，檢查碼c即為10-m。</li>
-</ol>
-<p>因此，我們可以將身份證號碼的後9碼用字元陣列儲存，經由運算得到各位相對數字乘積的總和s後，推得檢查碼c，進而依據c值輸出對應的出生縣市。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列num，代表身份證號碼的後9碼</span></span><br><span class="line">    <span class="type">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num);</span><br><span class="line">    <span class="comment">//宣告變數s，代表身分證字號各位相對數字乘積的總和</span></span><br><span class="line">    <span class="type">int</span> s = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//將身分證字號的數字部分由左到右分別乘上8、7、6、5、4、3、2、1，最後再加上末碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">8</span> ; i++)</span><br><span class="line">        s += (num[i]<span class="number">-48</span>)*(<span class="number">8</span>-i);</span><br><span class="line">    s += num[<span class="number">8</span>]<span class="number">-48</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//宣告變數c，代表檢查碼</span></span><br><span class="line">    <span class="comment">//將10減去s的個位數後，即可得c</span></span><br><span class="line">    <span class="type">int</span> c = <span class="number">10</span>-s%<span class="number">10</span>;</span><br><span class="line">    <span class="comment">//檢查碼只有一位數，因此若c=10時，則檢查碼為0</span></span><br><span class="line">    <span class="keyword">if</span>(c == <span class="number">10</span>)</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//依據c值反推可能的出生縣市</span></span><br><span class="line">    <span class="keyword">switch</span>(c) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;BNZ&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;AMW&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;KLY&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;JVX&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;HU&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;GT&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;FS&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;ER&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;DOQ&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;CIP&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          {"extends":["config:base"]}
       
     </div>
 
@@ -605,7 +688,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -671,7 +754,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

@@ -187,7 +187,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +201,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/" class="post-title-link" itemprop="url">a002. 簡易加法</a>
+            <a href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/" class="post-title-link" itemprop="url">a009. 解碼器</a>
         </h2>
 
         <div class="post-meta">
@@ -211,14 +211,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-02-23 01:53:32" itemprop="dateCreated datePublished" datetime="2024-02-23T01:53:32+08:00">2024-02-23</time>
+              <time title="創建時間：2024-02-24 12:56:51" itemprop="dateCreated datePublished" datetime="2024-02-24T12:56:51+08:00">2024-02-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-25 23:22:00" itemprop="dateModified" datetime="2024-03-25T23:22:00+08:00">2024-03-25</time>
+                <time title="修改時間：2024-03-25 23:22:34" itemprop="dateModified" datetime="2024-03-25T23:22:34+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,13 +248,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a002">https://zerojudge.tw/ShowProblem?problemid=a002</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先使用scanf()函式讀取輸入的兩個數字，再使用printf()函式輸出兩數和。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在<a href="https://noah-0831.github.io/a001-%E5%93%88%E5%9B%89/">a001. 哈囉</a>的文章中，我們曾討論過讀取輸入時應注意的事項。在這裡我們想分享給大家另一個初學者可能不太清楚的東西，也就是回傳值和return 0。</p>
-<p>在進入正題之前，我們必須先知道什麼是「函式」。函式又稱為函數，之所以會有這兩種說法，就是因為在程式上的函式，和數學上的函數是很接近的概念。在數學上，函數是一種對應關係，可以將給定的x轉為相對應的y；在程式上，函式是一段能執行特定功能的程式碼區塊，可以在讀取所需的參數後，回傳程式執行後的結果。而這個回傳的寫法，在C語言裡就寫作”return”，其回傳的結果叫做「回傳值」，其資料型態可以透過函式前面得知。</p>
-<p>或許你會覺得身為初學者，函式是比較進階的概念，但事實是我們已經在不知不覺中使用它了。在寫一段C語言的程式時，我們通常會在前面先寫上int main() {}，再將程式碼寫在大括弧之內。這個main()其實就是一種函式，中文名稱叫做「主函式」，代表這個程式檔主要的程式區塊。也因此，通常大部分的程式都會寫在main()函式裡面。而既然main()是函式的一種，當然也有回傳值。不過作為最特殊的函式之一，main()函式的回傳值有固定的寫法。若回傳值為0，代表這段程式順利結束；若回傳值為1，代表程式在執行的過程出了差錯，未能順利結束。這也是為什麼我們都會在程式後面加上return 0。</p>
-<p>值得注意的是，因為return 0是固定的寫法，所以現在許多較新的編譯器，無論是否讀取到return 0，都會默認main()函式回傳值0，換句話說就是不用在手動打上return 0了。不過畢竟不能保證所有編譯器都支援這種人性化的功能，建議各位還是要養成打上return 0的好習慣。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a+b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a009">https://zerojudge.tw/ShowProblem?problemid=a009</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p><a target="_blank" rel="noopener" href="https://web.fg.tp.edu.tw/~anny/ASCII_table.htm">ASCII碼</a>全名為「American Standard Code for Information Interchange」，中文為「美國信息交換標準代碼」。之所以會有這個代碼是因為電腦採用的是二進制，八進制、十進制的其他數字，或甚至英文字母，必須經由此代碼轉換為二進制後，電腦才能順利理解、顯示、運算。<br>以C語言來說，當電腦進行字元與整數的運算時，會自動將該字元轉為ASCII碼再與整數運算，運算完成後再轉成字元。因此，所謂「把明碼的每個字元加上某一個整數K而得到密碼的字元」，指的是將明碼所對應到的ASCII碼加上某一個整數K，再轉為字串得到密碼。</p>
+<p>透過觀察範例輸入&#x2F;出可知，1經過轉換後會變成*，查表可得K值為-7。因此，我們先使用scanf()函式讀取輸入的明碼，存放到字元陣列arr，再將陣列內的元素逐一減七，就是題目所求的密碼了。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-strlen.html">strlen()函式</a>取出字串長度。由於strlen()函式並非標準函式庫裡的函式，使用前須先引用 &lt;string.h&gt; 函式庫。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//以字元陣列的形式宣告，並以字串的形式讀取輸入的明碼</span></span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">//利用for迴圈，逐項將明碼轉為密碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(arr) ; i++)</span><br><span class="line">        arr[i] = arr[i]<span class="number">-7</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -273,7 +271,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a001-%E5%93%88%E5%9B%89/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -287,7 +285,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/a001-%E5%93%88%E5%9B%89/" class="post-title-link" itemprop="url">a001. 哈囉</a>
+            <a href="/a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F/" class="post-title-link" itemprop="url">a006. 一元二次方程式</a>
         </h2>
 
         <div class="post-meta">
@@ -297,14 +295,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-02-21 22:51:05" itemprop="dateCreated datePublished" datetime="2024-02-21T22:51:05+08:00">2024-02-21</time>
+              <time title="創建時間：2024-02-24 12:54:10" itemprop="dateCreated datePublished" datetime="2024-02-24T12:54:10+08:00">2024-02-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-25 22:26:34" itemprop="dateModified" datetime="2024-03-25T22:26:34+08:00">2024-03-25</time>
+                <time title="修改時間：2024-03-25 23:28:27" itemprop="dateModified" datetime="2024-03-25T23:28:27+08:00">2024-03-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,12 +332,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a001">https://zerojudge.tw/ShowProblem?problemid=a001</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先使用scanf()函式讀取輸入的字串，再使用printf()函式輸出相對應的字串。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>大家或許已經注意到了，有時scanf()函式的變數名稱後面會加上&amp;，有時卻不會，這其實與變數的型態有關。變數依據宣告的位置，可分為全域變數與區域變數。全域變數是宣告在主程式，或甚至主程式之外的變數，可以在所有地方存取或修改值；區域變數是在特定程式區塊，如迴圈或函式等內部宣告的變數，只能在其宣告的程式區塊以內使用。若是其他程式區塊也需使用此變數，必須在變數名稱前加&amp;，表示取得這個變數的位址，進而使用此變數。</p>
-<p>以scanf()函式來說，因為其所使用的變數並未在在函式內宣告，屬於區域變數，因此使用時通常須在變數名稱前加&amp;，也就是指定變數的位址作為儲存空間來存放輸入。但在所有資料型態中，字串是特例，因為字串在C語言裡就是以空字元\0結尾的字元陣列，而陣列名稱具有<a target="_blank" rel="noopener" href="https://mycollegenotebook.medium.com/c%E8%AA%9E%E8%A8%80%E7%AD%86%E8%A8%98-%E6%8C%87%E6%A8%99-pointers-d28edcdd6283">「指標」</a>性質，也就世說其名稱會指向存放變數的記憶體位置，因此前面不需要加&amp;。當然有關指標的部分算是進階內容了，有興趣的人可以自行上網搜尋相關內容，初學者只需要記得讀取字串時不須加上&amp;，當作一種固定的寫法即可。至於其他資料型態的符號可以參考下表：</p>
-<p><img src="https://i.imgur.com/2DXPY8W.png"></p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> arr[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式 b^2-4ac &gt; 0 ，代表此方程式有兩相異實根 (-b±√b^2-4ac)&#x2F;2a ；若判別式 b^2-4ac &#x3D; 0 ，代表此方程式有兩相同實根 (-b+√(b^2-4ac))&#x2F;2a &#x3D; (-b-√(b^2-4ac))&#x2F;2a ；若判別式 b^2-4ac &lt; 0 ，代表此方程式沒有實根。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>表示根式寫法。由於sqrt()函式並非標準函式庫裡的函式，使用前須先引用 &lt;math.h&gt; 函式庫。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數a、b、c，代表一元二次方程式的三個係數</span></span><br><span class="line">    <span class="type">int</span> a, b, c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">    <span class="comment">//宣告變數D，代表一元二次方程式的判別式</span></span><br><span class="line">    <span class="type">int</span> D = b*b<span class="number">-4</span>*a*c;</span><br><span class="line">    <span class="comment">//若判別式小於零，代表無實根存在</span></span><br><span class="line">    <span class="keyword">if</span>(D &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;No real root\n&quot;</span>);</span><br><span class="line">    <span class="comment">//若判別式大於等於零，代表有實根存在</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> x1 = (-b+<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="type">int</span> x2 = (-b-<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="comment">//若判別式大於零，代表有兩相異實根</span></span><br><span class="line">        <span class="keyword">if</span>(D &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two different roots x1=%d , x2=%d&quot;</span>, x1, x2);</span><br><span class="line">        <span class="comment">//若判別式等於零，代表有相同實根</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(D == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two same roots x=%d&quot;</span>, x1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -358,7 +354,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/%E4%B8%80%E5%88%87%E7%9A%84%E9%96%8B%E5%A7%8B/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a005-Eva%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -372,7 +368,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E4%B8%80%E5%88%87%E7%9A%84%E9%96%8B%E5%A7%8B/" class="post-title-link" itemprop="url">一切的開始</a>
+            <a href="/a005-Eva%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD/" class="post-title-link" itemprop="url">a005. Eva的回家作業</a>
         </h2>
 
         <div class="post-meta">
@@ -382,15 +378,24 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2023-02-15 22:04:30" itemprop="dateCreated datePublished" datetime="2023-02-15T22:04:30+08:00">2023-02-15</time>
+              <time title="創建時間：2024-02-23 17:02:29" itemprop="dateCreated datePublished" datetime="2024-02-23T17:02:29+08:00">2024-02-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-02-29 16:27:45" itemprop="dateModified" datetime="2024-02-29T16:27:45+08:00">2024-02-29</time>
+                <time title="修改時間：2024-03-10 00:15:22" itemprop="dateModified" datetime="2024-03-10T00:15:22+08:00">2024-03-10</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="閱讀次數">
@@ -410,11 +415,177 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在高三的時候，因緣際會參與了「進階程式設計」這門課程。因為在自學程式的過程中發現網路上的程式學習資源難易不均，而有了撰寫程式解題報告的想法。之後在經過一次次活動與課程的淬鍊，對網站的內容有了更多想法，也陸續嘗試了HackMD、Medium等眾多管道。</p>
-<p>兩年後的今天，noah_studying誕生了。這是一個以提供升學經驗與學習知識為定位的小站，主要著重在升大學的備考與申請經驗、各項活動的申請資訊，以及以程式為主的知識彙整。希望能幫助持續在學習路上奮鬥的人們!</p>
-<p>而故事本身，還在繼續…</p>
-<p><strong>感謝區</strong><br>感謝 方珮雯 老師，幫助我建立程式概念，完成人生第一份程式解題報告。<br>感謝 M_SQRT 大，協助我程式解報告的改進，給了我繼續努力的動力。</p>
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a005">https://zerojudge.tw/ShowProblem?problemid=a005</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>由題意可知輸入的數列只有等差數列或等比數列兩種可能。先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此可使用<a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CGossip/forStatement.html">for迴圈</a>判斷程式執行的條件。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 宣告並讀取變數t，代表數列的數目</span></span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;t);</span><br><span class="line">    <span class="comment">// 使用for迴圈分別討論每一個數列的情況</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; t ; i++) &#123;</span><br><span class="line">        <span class="comment">// 宣告並讀取陣列a[4]，代表輸入數列的前四項</span></span><br><span class="line">        <span class="type">int</span> a[<span class="number">4</span>];</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>, &amp;a[<span class="number">0</span>], &amp;a[<span class="number">1</span>], &amp;a[<span class="number">2</span>], &amp;a[<span class="number">3</span>]);</span><br><span class="line">        <span class="comment">// 若數列任兩項間的差相同，即為等差數列</span></span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">1</span>]-a[<span class="number">0</span>] == a[<span class="number">2</span>]-a[<span class="number">1</span>])</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d %d %d\n&quot;</span>, a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">3</span>]+(a[<span class="number">1</span>]-a[<span class="number">0</span>]));</span><br><span class="line">        <span class="comment">// 若否，即為等比數列</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d %d %d\n&quot;</span>, a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>], a[<span class="number">3</span>]*(a[<span class="number">1</span>]/a[<span class="number">0</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/" class="post-title-link" itemprop="url">a004. 文文的求婚</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-23 17:01:55" itemprop="dateCreated datePublished" datetime="2024-02-23T17:01:55+08:00">2024-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-25 23:26:27" itemprop="dateModified" datetime="2024-03-25T23:26:27+08:00">2024-03-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a004">https://zerojudge.tw/ShowProblem?problemid=a004</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據題意，西元年被4整除且不被100整除，或被400整除者即為閏年。因此，我們可以利用取餘數的方式判斷輸入的年份是否能被4、100和400整除，進而判斷其是否為閏年。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a target="_blank" rel="noopener" href="https://www.796t.com/content/1544817994.html">EOF寫法</a>判斷程式執行的條件。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數year，代表西元年</span></span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">    <span class="comment">//使用EOF寫法判斷程式執行的條件</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;year) != EOF) &#123;</span><br><span class="line">        <span class="comment">//根據題意，西元年被4整除且不被100整除，或被400整除者即為閏年</span></span><br><span class="line">        <span class="keyword">if</span>(year%<span class="number">4</span> == <span class="number">0</span> &amp;&amp; year%<span class="number">100</span> != <span class="number">0</span> || year%<span class="number">400</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;閏年\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;平年\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/" class="post-title-link" itemprop="url">a003. 兩光法師占卜術</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-23 15:36:45" itemprop="dateCreated datePublished" datetime="2024-02-23T15:36:45+08:00">2024-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-25 23:25:10" itemprop="dateModified" datetime="2024-03-25T23:25:10+08:00">2024-03-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a003">https://zerojudge.tw/ShowProblem?problemid=a003</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數M、D，分別表示月、日</span></span><br><span class="line">    <span class="type">int</span> M, D;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;M, &amp;D);</span><br><span class="line">    <span class="comment">//宣告變數S，依據題意賦值為(M*2+D)%3</span></span><br><span class="line">    <span class="type">int</span> S = (M*<span class="number">2</span>+D)%<span class="number">3</span>;</span><br><span class="line">    <span class="comment">//switch()條件句：依據S值輸出相對應的字串</span></span><br><span class="line">    <span class="keyword">switch</span> S:</span><br><span class="line">        <span class="comment">//若S值為0，輸出「普通」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;普通&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為1，輸出「吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為2，輸出「大吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;大吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -432,7 +603,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -498,7 +669,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
