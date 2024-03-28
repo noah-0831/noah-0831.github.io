@@ -187,89 +187,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="noah_studying">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/" class="post-title-link" itemprop="url">a038. 數字翻轉</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-03-08 23:16:48" itemprop="dateCreated datePublished" datetime="2024-03-08T23:16:48+08:00">2024-03-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:14:55" itemprop="dateModified" datetime="2024-03-10T00:14:55+08:00">2024-03-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a038">https://zerojudge.tw/ShowProblem?problemid=a038</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先以字元陣列的形式讀取輸入的字串，由後往前輸出，注意避開前綴0。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>需注意前綴零不輸出，例如5800翻轉後為85，而不是0085。至於如何判斷該位是否為前綴零，可以用前面是否出現過非零數字來判斷。若前面沒有輸出過非0數字，則為前綴零，不輸出；若否，則為非前綴零，需輸出。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列num，代表輸入的數字</span></span><br><span class="line">    <span class="type">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num);</span><br><span class="line">    <span class="comment">//宣告變數test，並設初始值為0，記錄前面是否有輸出過非零數字</span></span><br><span class="line">    <span class="comment">//若test為0，代表之前尚未輸出過非零數字，這一位數若是0即為前綴0，不需輸出</span></span><br><span class="line">    <span class="comment">//若test為1，代表之前已經輸出過非零數字，這一位數就算是0也不是前綴0，需輸出</span></span><br><span class="line">    <span class="type">int</span> test = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(num) ; i++)</span><br><span class="line">        <span class="keyword">if</span>(num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i] != <span class="string">&#x27;0&#x27;</span> || test != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i]);</span><br><span class="line">            <span class="comment">//輸出後將test設為1，代表已經輸出過非零數字</span></span><br><span class="line">            test=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//若test仍為0，說明直到跑完指個陣列都未曾輸出過非零數字，也就是說這個數字就是0</span></span><br><span class="line">    <span class="keyword">if</span>(test == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -614,6 +531,89 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="noah_studying">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a022-%E8%BF%B4%E6%96%87/" class="post-title-link" itemprop="url">a022. 迴文</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-29 10:05:30" itemprop="dateCreated datePublished" datetime="2024-02-29T10:05:30+08:00">2024-02-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-10 00:15:08" itemprop="dateModified" datetime="2024-03-10T00:15:08+08:00">2024-03-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a022">https://zerojudge.tw/ShowProblem?problemid=a022</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>迴文，是指字串不論是從正向讀還是反向讀均相同，也就是說迴文字串必定頭尾對稱。因此，我們可以利用for迴圈檢查。若長度為len的字串，第i項等於第len-i-1項，就將計數變數count值+1。若count值等於len&#x2F;2，就代表該字串符合迴文的條件。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在C語言的語法裡，陣列的最後一項是空字元，也就是說若今天有一個大小為i項的陣列，那麼它可以儲存的項數是i-1項！</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取陣列arr，代表輸入的字串</span></span><br><span class="line">    <span class="type">char</span> arr[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, arr);</span><br><span class="line">    <span class="comment">//宣告變數count，代表前後對稱的組數</span></span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//迴文字串必然對稱，因此我們可以檢查該字串前後對應到的項是否相同</span></span><br><span class="line">    <span class="comment">//若發現字串的任一組頭尾不同，即非迴文，輸出no後跳出迴圈</span></span><br><span class="line">    <span class="keyword">for</span>(count = <span class="number">0</span> ; count &lt; <span class="built_in">strlen</span>(arr)/<span class="number">2</span> ; count++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[count] != arr[(<span class="built_in">strlen</span>(arr)<span class="number">-1</span>)-count]) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//即非迴文到字串的一半都未發現不同的組，則為迴文，輸出yes</span></span><br><span class="line">    <span class="keyword">if</span>(count == <span class="built_in">strlen</span>(arr)/<span class="number">2</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -683,7 +683,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
