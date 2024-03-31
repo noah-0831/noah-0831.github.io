@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"FFFFFF","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -96,7 +96,7 @@
       <h1 class="site-title">Codebar 程式酒吧</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">不在乎終點模樣 才能開始得漂亮</p>
+      <p class="site-subtitle" itemprop="description">一座輕鬆學習程式的酒吧</p>
   </div>
 
   <div class="site-nav-right">
@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:14:55" itemprop="dateModified" datetime="2024-03-10T00:14:55+08:00">2024-03-10</time>
+                <time title="修改時間：2024-03-31 10:30:27" itemprop="dateModified" datetime="2024-03-31T10:30:27+08:00">2024-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,8 +250,14 @@
       
           <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a038">https://zerojudge.tw/ShowProblem?problemid=a038</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先以字元陣列的形式讀取輸入的字串，由後往前輸出，注意避開前綴0。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>需注意前綴零不輸出，例如5800翻轉後為85，而不是0085。至於如何判斷該位是否為前綴零，可以用前面是否出現過非零數字來判斷。若前面沒有輸出過非0數字，則為前綴零，不輸出；若否，則為非前綴零，需輸出。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列num，代表輸入的數字</span></span><br><span class="line">    <span class="type">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num);</span><br><span class="line">    <span class="comment">//宣告變數test，並設初始值為0，記錄前面是否有輸出過非零數字</span></span><br><span class="line">    <span class="comment">//若test為0，代表之前尚未輸出過非零數字，這一位數若是0即為前綴0，不需輸出</span></span><br><span class="line">    <span class="comment">//若test為1，代表之前已經輸出過非零數字，這一位數就算是0也不是前綴0，需輸出</span></span><br><span class="line">    <span class="type">int</span> test = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">strlen</span>(num) ; i++)</span><br><span class="line">        <span class="keyword">if</span>(num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i] != <span class="string">&#x27;0&#x27;</span> || test != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, num[(<span class="built_in">strlen</span>(num)<span class="number">-1</span>)-i]);</span><br><span class="line">            <span class="comment">//輸出後將test設為1，代表已經輸出過非零數字</span></span><br><span class="line">            test=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//若test仍為0，說明直到跑完指個陣列都未曾輸出過非零數字，也就是說這個數字就是0</span></span><br><span class="line">    <span class="keyword">if</span>(test == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/a038-%E6%95%B8%E5%AD%97%E7%BF%BB%E8%BD%89/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -301,7 +307,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-24 15:06:13" itemprop="dateModified" datetime="2024-03-24T15:06:13+08:00">2024-03-24</time>
+                <time title="修改時間：2024-03-31 10:30:22" itemprop="dateModified" datetime="2024-03-31T10:30:22+08:00">2024-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,8 +340,14 @@
           <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a034">https://zerojudge.tw/ShowProblem?problemid=a034</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>在進入本題的討論之前，我們需要先了解何謂進位制。所謂的進位制，指的是以「基數」的指數和表示數字的記數方法。以最常見的十進位制來說，基數就是10。因此，以123這個數字來說，在十進位制下即為 1x10^2 + 2x10^1 + 3x10^0 。而所謂的二進位制，就是基數為2的進位制。除了基數不同以外，邏輯和十進位制其實相同。因此，在進行從十進位制到二進位制的轉換時，我們可以2的指數逐一降次檢查大小。</p>
 <p>因為整數型態的變數可儲存的最大值為2的31次方，所以我們先從2的31次方開始檢查，若該數比2的31次方還大，就將該位數註記為1，並將其值減去2的31次方，否則將該位數註記為0。接著降次繼續檢查，直到整個數字檢查完畢，即完成二進位制的轉換。舉例來說，十進位制的123可以被表示為 1x2^6 + 1x2^5 + 1x2^4 + 1x2^3 + 0x2^2 + 1x2^1 + 1x2^0 ，因此其在二進位制表示法即為1111011。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>雖然並不常見，但只要符合寫法，迴圈可以同時使用多個控制變數。本程式碼內中的for迴圈就用了兩個變數控制迴圈運行，其中變數n代表的是檢查的次方，i代表的是轉換為二進位後的位數。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數dec，表示十進位數字</span></span><br><span class="line">    <span class="type">int</span> dec;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;dec) != EOF) &#123;</span><br><span class="line">        <span class="type">int</span> bin[<span class="number">32</span>] = &#123;&#125;, non_zero_digit = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//從2的31次方開始檢查，次方逐次遞減</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> n = <span class="number">31</span>, i = <span class="number">0</span> ; n &gt;= <span class="number">0</span> ; n--, i++) &#123;</span><br><span class="line">            <span class="comment">//若該數大於等於2的n次方，就將該位數註記為1，並將其值減去2的n次方</span></span><br><span class="line">            <span class="keyword">if</span>(dec &gt;= <span class="built_in">pow</span>(<span class="number">2</span>, n)) &#123;</span><br><span class="line">                bin[i] = <span class="number">1</span>;</span><br><span class="line">                dec -=<span class="built_in">pow</span>(<span class="number">2</span>, n);</span><br><span class="line">                non_zero_digit++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//若該數小於2的n次方，就將該位數註記為0</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                bin[i] = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//輸出須注意該位數為0的可能有兩種</span></span><br><span class="line">            <span class="comment">//若前面沒有輸出過非0數字，則為前綴零，不輸出</span></span><br><span class="line">            <span class="comment">//若否，則為非前綴零，需輸出</span></span><br><span class="line">            <span class="keyword">if</span>(bin[i] != <span class="number">0</span> || non_zero_digit != <span class="number">0</span>)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, bin[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -385,7 +397,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-05 09:49:42" itemprop="dateModified" datetime="2024-03-05T09:49:42+08:00">2024-03-05</time>
+                <time title="修改時間：2024-03-31 10:46:17" itemprop="dateModified" datetime="2024-03-31T10:46:17+08:00">2024-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -419,10 +431,14 @@
 <p>本周因為是第一堂課，學長姐詳細地介紹了調酒的的幾個基本環節。包括：</p>
 <p><strong>倒酒</strong>：轉開瓶蓋後，一手將瓶蓋拾起，置於拇指與食指之間，另一手托著酒瓶底部倒酒。這邊比較需要注意的是出於衛生，瓶蓋不會直接放在吧檯上，因此調酒時要養成隨手拾起瓶蓋的習慣；至於倒酒方式更多的是視覺效果，不希望客人看到酒的話，握酒瓶時可以用手擋住酒瓶標籤旁邊露出的透明瓶身。</p>
 <p><strong>冰杯</strong>：在開始調酒之前的冰杯，會依據調酒種類盛裝適量冰塊，將杯子置於吧檯上，一手固定酒杯，一手持攪拌棒沿杯緣輕拌冰塊，直到杯口起霧為止。冰杯的目的在於調整酒杯溫度在適當範圍，以最好地發揮出酒品的特性，因此攪拌時節奏不必太快，確定杯口都凝霧再停止。</p>
-<p><strong>攪拌</strong>：常稱為stir。調酒用的攪拌匙外觀很像長柄茶匙，一端較小一端較大，可依照情況選擇合適的一端。攪拌時，拇指和食指扣住攪拌匙上端，中指和無名指夾住下端，沿杯緣輕輕繞圈。注意繞圈時使用的都是手指的力，以順時鐘方向來說，前半圈靠的是中指內推，後半圈是無名指外托。</p>
-<p><strong>搖盪</strong>：常稱為shake，音譯為雪克。雪克杯不只用於調酒上，對一般人來說或許更常見於手搖杯飲料店，通常為三節式結構，由下端的瓶身、上端的上蓋與頂端的頂端構成，上下收窄而中間略出。搖盪時，慣用手拇指按住頂蓋，食指、中指按住上蓋與瓶身，無名指和小指反向頂住瓶身，確認單手可以握緊後，另一隻手作為輔助，姿勢相對隨意地扶住杯子。手指固定後放鬆手腕，盡可能保持手臂和手肘不動，藉由手腕前後搖晃帶動杯子搖盪。這裡比較重要的是上蓋與頂蓋之間存在進氣孔，是調酒的關鍵之一，因此搖晃時不要只是線性的上下衝，要以手腕力量為主，帶出略呈弧形的軌跡。</p>
-<p>在經過這次社課後，我大致了解到本社社課的模式，晚上7:00到10:00共三小時的時間，包含半小時的酒類知識介紹、一小時半的調酒教學與實際操作，剩下則是自由練習時間。整體來說氣氛相當開放隨興，不少與人交流的機會，但即使不放心思在人際互動上也不會感到壓力。課程也提供了動手調酒的機會，每位社員都可以依自己的喜好，嘗試調出剛學到的兩杯調酒，而不是單純的理論講解。只能說，很慶幸自己願意踏出第一步，才有機會接觸到外面的世界。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98-%E5%88%9D%E5%85%A5%E5%90%A7%E6%AA%AF/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -472,7 +488,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-30 20:56:39" itemprop="dateModified" datetime="2024-03-30T20:56:39+08:00">2024-03-30</time>
+                <time title="修改時間：2024-03-31 10:44:17" itemprop="dateModified" datetime="2024-03-31T10:44:17+08:00">2024-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -506,16 +522,14 @@
 <p>首先，是使用hexo指令時的報錯。</p>
 <p>既然這個網站是用hexo架設的，當然是使用hexo指令來創建、編修、發布文件。但有次使用hexo的指令後，Git Bash跳出了以下報錯：<br><strong>Commands:help Get help on a command.init Create a new Hexo folder.version Display version information…</strong><br>從錯誤訊息看不太出問題出在哪裡，只知道此刻hexo的所有指令皆未能順利執行。</p>
 <p>事實上，這是因為檔案路徑已經被移動過了。</p>
-<p>在創建網站時，電腦端會同步產生一個叫做「github page」的資料夾，將所有相關資料存放在裡面。因此，當我們使用hexo指令時，指向的位置當然要是github page，也就是離檔案位置最近的地方。如果不慎更動到檔案路徑，無論你重複再多次指令，github page都無法收到。我們可以在Git Bash使用cd指令，重新指派檔案路徑，寫法如下：</p>
-<p>cd ~&#x2F;Documents&#x2F;中間的檔案路徑&#x2F;“github page”</p>
-<p>當然，也可以從檔案總管直接找到github page，點進資料夾後在空白處按右鍵，選擇「顯示其他選項－Git Bash Here」，直接在檔案位置開啟Git Bash，檔案路徑就會直接預設到github page了。</p>
-<p>再來，是<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26540999/article/details/53445589">郵箱與名字的遺失</a>。</p>
-<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#x79;&#111;&#117;&#64;&#101;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#111;&#117;&#64;&#101;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
-<p>這次的錯誤訊息就很明顯了，要我們重新設定身分。簡單來說，在使用github page發佈文章時，系統會先創建一個git資料夾，把檔案放入資料夾後再發佈。而電腦在創建git資料夾的過程中發現我們提供的身分訊息並不完整，此時只要手動在Git Bash中補充其所需訊息即可，寫法如下：</p>
-<p>git config –global user.email “你的郵箱”<br>git config–global user.name “你的名字”</p>
-<p>注意”你的郵箱”和”你的名字”的部分，要填入自己在創建帳號時所使用的信箱和名字，輸入後再次送出指令就會恢復正常了。</p>
-<p>最後是一個困擾我很久的問題。當初在設定hexo的時候，參考了許多網路文章。其中一篇寫到若要設定網頁的圖片背景，可在github page&#x2F;source&#x2F;_data裡找到一個叫做styles.styl的檔案，在裡面打上以下內容：<br>body {<br>    background: url(圖片的檔案路徑);<br>    background-size: cover;<br>    background-repeat: no-repeat;<br>    background-attachment: fixed;<br>    background-position: top center;<br>}<br>先說結論，在styles.styl檔裡面設定網頁的圖片背景這點是對的，但打法錯了。若是照打上去，會出現ParseError，也就是格式上的錯誤。我自己試成功的設定方式如下：<br>background: 圖片的檔案路徑<br>background-size: cover<br>background-repeat: no-repeat<br>background-attachment: fixed<br>background-position: top center<br>內容大致上和教學一致，但外面不用加上body{}，圖片的檔案路徑也不用加url，句尾去掉;，最後把不必要的空白行和縮排去除即可。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Noah%E7%9A%84%E5%B0%8F%E8%A8%982-%E9%82%A3%E4%BA%9B%E5%89%B5%E7%AB%8B%E7%B6%B2%E7%AB%99%E6%99%82%E9%81%87%E5%88%B0%E7%9A%84%E5%95%8F%E9%A1%8C%E8%88%87%E8%A7%A3%E6%96%B9/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -565,7 +579,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-10 00:15:04" itemprop="dateModified" datetime="2024-03-10T00:15:04+08:00">2024-03-10</time>
+                <time title="修改時間：2024-03-31 10:30:44" itemprop="dateModified" datetime="2024-03-31T10:30:44+08:00">2024-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -598,8 +612,14 @@
           <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a024">https://zerojudge.tw/ShowProblem?problemid=a024</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求兩數最大公因數的辦法有很多種，可以將兩數個別的因數都先求出來，再取它們的交集得到最大公因數；也可以直接求兩數公因數的最大值。但本題測資的值較大，上述方法在ZeroJudge上執行時很可能會超時(TLE)。因此，建議使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">輾轉相除法</a>，快速計算最大公因數。</p>
 <p>輾轉相除法的概念是，兩數的最大公因數等於其中較小的數和兩數相除後的餘數的最大公因數。具體的做法是先將兩數中較大的數字除以較小的數字，基於除法運算後餘比商小的特性，可知剩下的餘一定會比原先較小的數字還小。這時原先較小的數字就成了新的運算中較大的數字，而餘則成了新的運算中較小的數字。重複運算至其中一數變成零為止，剩下的另一個數就是兩數的最大公因數。如果在看完上述文字解說後仍然無法立刻理解，可以參考<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">維基百科上的動畫</a>，或是<a target="_blank" rel="noopener" href="http://www.mathland.idv.tw/fun/euclidean.htm">昌爸工作坊提供的運算欄位列出的算式</a>，搭配實際運算或程式演示幫助理解。</p>
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本程式碼第7、8行使用了「<a target="_blank" rel="noopener" href="https://shengyu7697.github.io/cpp-ternary-operator/">條件運算子</a>」，寫法是「(條件) ？ (敘述1) ： (敘述2)」。條件運算子在程式執行時，會依據條件決定接下來的動作。如果符合條件就回傳敘述1的值，否則回傳敘述2的值。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數a、b，代表輸入的兩個整數</span></span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="comment">//宣告變數big、small，分別代表兩數中較大和較小的數字</span></span><br><span class="line">    <span class="type">int</span> big = (a &gt; b) ? a : b;</span><br><span class="line">    <span class="type">int</span> small = (a &gt; b) ? b : a;</span><br><span class="line">    <span class="comment">//輾轉相除法：將兩數中較大的數字除以較小的數字，</span></span><br><span class="line">    <span class="comment">//原來較小的數字作為新的運算中教大的數字，餘作為新的運算中較小的數字</span></span><br><span class="line">    <span class="comment">//直到其一為0時運算結束，剩下的數字就是兩數的最大公因數</span></span><br><span class="line">    <span class="keyword">while</span>(small != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">int</span> temp = big;</span><br><span class="line">        big = small;</span><br><span class="line">        small = temp%small;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, big);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

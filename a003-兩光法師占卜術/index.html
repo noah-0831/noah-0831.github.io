@@ -18,18 +18,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"FFFFFF","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a003 解題思路先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。 注意事項switch()條件句是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。 程式碼：C">
+  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a003 解題思路先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="a003. 兩光法師占卜術">
 <meta property="og:url" content="https://noah-0831.github.io/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
-<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a003 解題思路先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。 注意事項switch()條件句是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。 程式碼：C">
+<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a003 解題思路先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-02-23T07:36:45.000Z">
-<meta property="article:modified_time" content="2024-03-25T15:25:10.701Z">
+<meta property="article:modified_time" content="2024-03-31T02:32:14.963Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
@@ -101,7 +101,7 @@
       <h1 class="site-title">Codebar 程式酒吧</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">不在乎終點模樣 才能開始得漂亮</p>
+      <p class="site-subtitle" itemprop="description">一座輕鬆學習程式的酒吧</p>
   </div>
 
   <div class="site-nav-right">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-25 23:25:10" itemprop="dateModified" datetime="2024-03-25T23:25:10+08:00">2024-03-25</time>
+                <time title="修改時間：2024-03-31 10:32:14" itemprop="dateModified" datetime="2024-03-31T10:32:14+08:00">2024-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,6 +262,8 @@
       
         <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a003">https://zerojudge.tw/ShowProblem?problemid=a003</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>先讀取出生月日，依據題意得到S值後，再依照S值輸出相對應的字串。</p>
+<span id="more"></span>
+
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
 <h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數M、D，分別表示月、日</span></span><br><span class="line">    <span class="type">int</span> M, D;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;M, &amp;D);</span><br><span class="line">    <span class="comment">//宣告變數S，依據題意賦值為(M*2+D)%3</span></span><br><span class="line">    <span class="type">int</span> S = (M*<span class="number">2</span>+D)%<span class="number">3</span>;</span><br><span class="line">    <span class="comment">//switch()條件句：依據S值輸出相對應的字串</span></span><br><span class="line">    <span class="keyword">switch</span> S:</span><br><span class="line">        <span class="comment">//若S值為0，輸出「普通」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;普通&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為1，輸出「吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//若S值為2，輸出「大吉」</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;大吉&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
@@ -269,6 +271,26 @@
     
     
     
+      
+  <div class="popular-posts-header">相關文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a001-哈囉\" rel="bookmark">a001. 哈囉</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a004-文文的求婚\" rel="bookmark">a004. 文文的求婚</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a002-簡易加法\" rel="bookmark">a002. 簡易加法</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a009-解碼器\" rel="bookmark">a009. 解碼器</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a006-一元二次方程式\" rel="bookmark">a006. 一元二次方程式</a></div>
+    </li>
+  </ul>
+
 
       <footer class="post-footer">
           <div class="post-tags">
