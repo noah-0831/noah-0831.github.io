@@ -21,20 +21,19 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"FFFFFF","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a024 解題思路求兩數最大公因數的辦法有很多種，可以將兩數個別的因數都先求出來，再取它們的交集得到最大公因數；也可以直接求兩數公因數的最大值。但本題測資的值較大，上述方法在ZeroJudge上執行時很可能會超時(TLE)。因此，建議使用輾轉相除法，快速計算最大公因數。 輾轉相除法的概念是，兩數的最大公因">
+  <meta name="description" content="在上一篇調酒日記中，我們簡單的介紹了幾個調酒常見的步驟，以及需要注意的事情。那麼今天，我們就來向大家介紹幾種常見的酒類吧！ 釀造酒與蒸餾酒相信螢幕前的各位如果和我一樣是酒精愛好者，有稍微研究過酒類的話，應該對「釀造酒」和「蒸餾酒」這兩個名詞不會陌生。儘管世上的酒種千千萬萬，款式各異，但大致上都可以依照製造程序分為這兩種。釀造酒，又名發酵酒，顧名思義，就是用各式穀物、果類或其他含糖物質，經酵母菌、乳">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a024. 最大公因數(GCD)">
-<meta property="og:url" content="https://noah-0831.github.io/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/">
+<meta property="og:title" content="調酒日記-認識六大基酒">
+<meta property="og:url" content="https://noah-0831.github.io/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98-%E8%AA%8D%E8%AD%98%E5%85%AD%E5%A4%A7%E5%9F%BA%E9%85%92/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
-<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a024 解題思路求兩數最大公因數的辦法有很多種，可以將兩數個別的因數都先求出來，再取它們的交集得到最大公因數；也可以直接求兩數公因數的最大值。但本題測資的值較大，上述方法在ZeroJudge上執行時很可能會超時(TLE)。因此，建議使用輾轉相除法，快速計算最大公因數。 輾轉相除法的概念是，兩數的最大公因">
+<meta property="og:description" content="在上一篇調酒日記中，我們簡單的介紹了幾個調酒常見的步驟，以及需要注意的事情。那麼今天，我們就來向大家介紹幾種常見的酒類吧！ 釀造酒與蒸餾酒相信螢幕前的各位如果和我一樣是酒精愛好者，有稍微研究過酒類的話，應該對「釀造酒」和「蒸餾酒」這兩個名詞不會陌生。儘管世上的酒種千千萬萬，款式各異，但大致上都可以依照製造程序分為這兩種。釀造酒，又名發酵酒，顧名思義，就是用各式穀物、果類或其他含糖物質，經酵母菌、乳">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-02-29T08:31:53.000Z">
-<meta property="article:modified_time" content="2024-03-31T02:30:44.663Z">
+<meta property="article:published_time" content="2024-03-28T07:15:59.000Z">
+<meta property="article:modified_time" content="2024-03-31T02:48:12.989Z">
 <meta property="article:author" content="Noah">
-<meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://noah-0831.github.io/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/">
+<link rel="canonical" href="https://noah-0831.github.io/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98-%E8%AA%8D%E8%AD%98%E5%85%AD%E5%A4%A7%E5%9F%BA%E9%85%92/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>a024. 最大公因數(GCD) | Codebar 程式酒吧</title>
+  <title>調酒日記-認識六大基酒 | Codebar 程式酒吧</title>
   
 
 
@@ -193,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98-%E8%AA%8D%E8%AD%98%E5%85%AD%E5%A4%A7%E5%9F%BA%E9%85%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,7 +205,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          a024. 最大公因數(GCD)
+          調酒日記-認識六大基酒
         </h1>
 
         <div class="post-meta">
@@ -216,14 +215,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-02-29 16:31:53" itemprop="dateCreated datePublished" datetime="2024-02-29T16:31:53+08:00">2024-02-29</time>
+              <time title="創建時間：2024-03-28 15:15:59" itemprop="dateCreated datePublished" datetime="2024-03-28T15:15:59+08:00">2024-03-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-31 10:30:44" itemprop="dateModified" datetime="2024-03-31T10:30:44+08:00">2024-03-31</time>
+                <time title="修改時間：2024-03-31 10:48:12" itemprop="dateModified" datetime="2024-03-31T10:48:12+08:00">2024-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +230,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                  <a href="/categories/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">調酒日記</span></a>
                 </span>
             </span>
 
@@ -260,43 +259,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a024">https://zerojudge.tw/ShowProblem?problemid=a024</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求兩數最大公因數的辦法有很多種，可以將兩數個別的因數都先求出來，再取它們的交集得到最大公因數；也可以直接求兩數公因數的最大值。但本題測資的值較大，上述方法在ZeroJudge上執行時很可能會超時(TLE)。因此，建議使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">輾轉相除法</a>，快速計算最大公因數。</p>
-<p>輾轉相除法的概念是，兩數的最大公因數等於其中較小的數和兩數相除後的餘數的最大公因數。具體的做法是先將兩數中較大的數字除以較小的數字，基於除法運算後餘比商小的特性，可知剩下的餘一定會比原先較小的數字還小。這時原先較小的數字就成了新的運算中較大的數字，而餘則成了新的運算中較小的數字。重複運算至其中一數變成零為止，剩下的另一個數就是兩數的最大公因數。如果在看完上述文字解說後仍然無法立刻理解，可以參考<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">維基百科上的動畫</a>，或是<a target="_blank" rel="noopener" href="http://www.mathland.idv.tw/fun/euclidean.htm">昌爸工作坊提供的運算欄位列出的算式</a>，搭配實際運算或程式演示幫助理解。</p>
+        <p>在<a href="(https://noah-0831.github.io/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98-%E5%88%9D%E5%85%A5%E5%90%A7%E6%AA%AF/)">上一篇調酒日記</a>中，我們簡單的介紹了幾個調酒常見的步驟，以及需要注意的事情。那麼今天，我們就來向大家介紹幾種常見的酒類吧！</p>
+<h2 id="釀造酒與蒸餾酒"><a href="#釀造酒與蒸餾酒" class="headerlink" title="釀造酒與蒸餾酒"></a>釀造酒與蒸餾酒</h2><p>相信螢幕前的各位如果和我一樣是酒精愛好者，有稍微研究過酒類的話，應該對「釀造酒」和「蒸餾酒」這兩個名詞不會陌生。儘管世上的酒種千千萬萬，款式各異，但大致上都可以依照製造程序分為這兩種。釀造酒，又名發酵酒，顧名思義，就是用各式穀物、果類或其他含糖物質，經酵母菌、乳酸菌或其他細菌的發酵作用，將糖分轉為酒精而成的酒，常見的種類有小米酒、葡萄酒、荔枝酒、日本清酒等；而蒸餾酒和釀造酒相比，則是多了蒸餾的程序，能將酒水中原先含有的水分分離出來，因此酒精濃較發酵酒高，香氣也較為濃郁。也因此，一般調酒在用的六大基酒，都屬於蒸餾酒。</p>
+<h2 id="六大基酒"><a href="#六大基酒" class="headerlink" title="六大基酒"></a>六大基酒</h2><p>什麼是基酒呢？所謂「基」，可以理解成基礎。也就是說，基酒其實就是指調酒時常作為基底的核心酒種，其中又以六種酒－伏特加、琴酒、蘭姆、龍舌蘭、威士忌和白蘭地最為常見，因而得名「六大基酒」。這六種酒都屬於蒸餾酒，酒精濃度較高，約在35~50%上下。儘管不同款式的調酒有著不同的酒譜，但基本上絕大多數的調酒都會用到六大基酒。也因此在進入調酒界之前，務必要熟悉這六種經典酒種！</p>
 <span id="more"></span>
 
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本程式碼第7、8行使用了「<a target="_blank" rel="noopener" href="https://shengyu7697.github.io/cpp-ternary-operator/">條件運算子</a>」，寫法是「(條件) ？ (敘述1) ： (敘述2)」。條件運算子在程式執行時，會依據條件決定接下來的動作。如果符合條件就回傳敘述1的值，否則回傳敘述2的值。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數a、b，代表輸入的兩個整數</span></span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="comment">//宣告變數big、small，分別代表兩數中較大和較小的數字</span></span><br><span class="line">    <span class="type">int</span> big = (a &gt; b) ? a : b;</span><br><span class="line">    <span class="type">int</span> small = (a &gt; b) ? b : a;</span><br><span class="line">    <span class="comment">//輾轉相除法：將兩數中較大的數字除以較小的數字，</span></span><br><span class="line">    <span class="comment">//原來較小的數字作為新的運算中教大的數字，餘作為新的運算中較小的數字</span></span><br><span class="line">    <span class="comment">//直到其一為0時運算結束，剩下的數字就是兩數的最大公因數</span></span><br><span class="line">    <span class="keyword">while</span>(small != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">int</span> temp = big;</span><br><span class="line">        big = small;</span><br><span class="line">        small = temp%small;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, big);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="伏特加-Vodca"><a href="#伏特加-Vodca" class="headerlink" title="伏特加 Vodca"></a>伏特加 Vodca</h3><p><strong>代表詞：酒精、無色無味</strong><br>首先要介紹的是伏特加。伏特加，又名「生命之水」，通常是由穀物如小麥釀造後再經蒸餾而成，以其無色、無味、無香氣和高濃度聞名。關於高濃度，伏特加不僅是六大基酒中最先登場的酒，更是最早出現的蒸餾酒，一般來說市面上的伏特加都經過了3次以上的蒸餾，濃度常在40%之上；至於無色無味，如果有人聞過他的味道，印象應該非常深刻，因為不論是香氣還是味道，都和平時常用的消毒用酒精太像了－一股純粹的酒精味！也因此，並不是每個人都能接受伏特加，沉迷於高濃度酒精的人對其愛不釋手，不喜歡的人則批評他是「沒個性的酒」。但也正是因為他沒有獨特的味道，更能包容、襯托一切與之搭配的材料，因此說他是調酒界中泛用性最高的酒也不為過！考量到性價比與實用性，調酒新手們若想入門，可以先從入手一支伏特加開始～</p>
+<h3 id="琴酒-Gin"><a href="#琴酒-Gin" class="headerlink" title="琴酒 Gin"></a>琴酒 Gin</h3><p><strong>代表詞：杜松子、藥草香</strong><br>之所以接在伏特加後面介紹琴酒，是因為琴酒和伏特加在本質上很相似，都是由穀物發酵後再經蒸餾的蒸餾酒。兩者最大的差別在於，琴酒在蒸餾前會加入一些香料如杜松子、芫荽籽、茴香籽等，其中又以杜松子最為經典，因此得名「杜松子酒」。甚至有種說法是，琴酒加的香料不一定是杜松子，但凡是有加杜松子的，都可以稱做琴酒。也因此，琴酒雖然和伏特加一樣無色，但有種淡淡的藥草香－當然這是琴酒愛好者的說法，有些人覺得他有種怪異的中藥味，就等你親自試試囉！</p>
+<h3 id="蘭姆-Rum"><a href="#蘭姆-Rum" class="headerlink" title="蘭姆 Rum"></a>蘭姆 Rum</h3><p><strong>代表詞：熱帶、花果蔗香</strong><br>接下來一定要提的酒是蘭姆，一種起源於加勒比海，用甘蔗榨出的甘蔗汁或副產物糖蜜製成的酒。蘭姆酒體有種淡淡的花果香氣，或者說是甘蔗香，和其他水果類相當適配，因此也有人形容他是一款「熱帶島嶼風格」、「海盜氣息」的酒。和同為六大基酒的威士忌一樣，蘭姆酒也會放在橡木桶裡熟成，陳年越久色澤越深。不過要注意的是，考量到有些酒商會在酒中加入香精和色素，不能完全斷定顏色越深就代表熟成的越久。至於要如何分辨蘭姆的品質和熟成程度，這裡受限篇幅就不多做介紹了，有興趣的話可以自己上網延伸閱讀，或許我們有機會的話也會再寫一篇專門講解喔～</p>
+<h3 id="龍舌蘭-Tequila"><a href="#龍舌蘭-Tequila" class="headerlink" title="龍舌蘭 Tequila"></a>龍舌蘭 Tequila</h3><p><strong>代表詞：龍舌蘭草、「龍味」</strong><br>龍舌蘭酒，是種由藍色龍舌蘭草蒸餾而得的烈酒。相對於伏特加和琴酒，龍舌蘭的色澤較為多變，從透明到琥珀色都有，主要還是取決於熟成時間。一般來說龍舌蘭的熟成會在木桶中進行，陳年越久色澤越深；味道方面，龍舌蘭的風味相當具有識別度，有種難以用言語形容的「龍味」，不過我個人不是很喜歡就是了。事實上似乎台灣、乃至於亞洲人對龍舌蘭的接受度都不是很高，至少沒有在美洲的那股風潮。因此以初學者來說，其實不是很建議以龍舌蘭作為學習調酒的第一選擇，一來以龍舌蘭作為基底的調酒其實沒那麼多，二來調完還要想辦法喝掉。不過如果你很有實驗精神的話．．．說不定你就是喜歡的那個人，誰知道呢？</p>
+<h3 id="威士忌-Whisky"><a href="#威士忌-Whisky" class="headerlink" title="威士忌 Whisky"></a>威士忌 Whisky</h3><p><strong>代表詞：橡木桶、渾厚甘甜</strong><br>威士忌可以說是六大基酒中種類最多、分類最複雜的酒，原則上是以穀物作為釀造原料，再用橡木桶陳釀，風味渾厚甘甜，帶有穀物與橡木香氣是他的最大特色。值得注意的是從市場的反應來看，威士忌可以說是最受台灣人喜愛的基酒－進口量高居全球第三！不過威士忌的價位較高，通常是以純飲為主，在調酒方面的使用相對較少。建議調酒新手們可以多認識認識這款備受歡迎的酒，至於入手倒是其次；如果真要嘗試威士忌調酒的話，可以找找看比較便宜的調和威士忌，以技術練習為主。</p>
+<h3 id="白蘭地-Brandy"><a href="#白蘭地-Brandy" class="headerlink" title="白蘭地 Brandy"></a>白蘭地 Brandy</h3><p>白蘭地是以水果為基底的蒸餾酒，其中又以葡萄最為經典，味道溫和甘醇，還有種淡淡的水果清香。因為和威士忌一樣都會陳桶，色澤較為接近，加上兩種酒的風味接近，許多新手常常會把白蘭地和威士忌搞混，但兩種酒其實在原料上就有所不同，自然也有不同的風味。個人認為白蘭地很適合作為新手踏入調酒界的第一款酒品。不過當然這裡指的是「喝」而不是「調」，畢竟考量到白蘭地的價格與使用頻率，初學者想嘗試調酒的話大可先以其他酒種如伏特加、琴酒、蘭姆為選擇，其實就很足夠了。</p>
+<h2 id="在六大基酒之外．．．"><a href="#在六大基酒之外．．．" class="headerlink" title="在六大基酒之外．．．"></a>在六大基酒之外．．．</h2><p>調酒的種類琳瑯滿目，不同的調酒多少會有一些獨特的材料。除了核心的六大基酒以外，還有許多上面沒有提到，但也很常運用在調酒中的材料，像是利口酒、橙酒、苦艾酒、氣泡酒等，都被運用在許多經典調酒上。因此，最後還是要再一次建議，新手要練習調酒的話可以優先選擇六大基酒，尤其是伏特加、琴酒和蘭姆，先把基礎的技術熟練，其他酒類則是依個人需求自行決定是否入手。那麼這篇文章就在這裡先告一個段落啦！下次，我會聊聊那些並非六大基酒，卻也常出現在調酒之中的材料，See you！</p>
+
     </div>
 
     
     
     
       
-  <div class="popular-posts-header">相關文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a002-簡易加法\" rel="bookmark">a002. 簡易加法</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a001-哈囉\" rel="bookmark">a001. 哈囉</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a004-文文的求婚\" rel="bookmark">a004. 文文的求婚</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a009-解碼器\" rel="bookmark">a009. 解碼器</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a006-一元二次方程式\" rel="bookmark">a006. 一元二次方程式</a></div>
-    </li>
-  </ul>
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/C%E8%AA%9E%E8%A8%80/" rel="tag"># C語言</a>
-          </div>
 
         
 
@@ -304,13 +288,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/a022-%E8%BF%B4%E6%96%87/" rel="prev" title="a022. 迴文">
-      <i class="fa fa-chevron-left"></i> a022. 迴文
+    <a href="/a104-%E6%8E%92%E5%BA%8F/" rel="prev" title="a104. 排序">
+      <i class="fa fa-chevron-left"></i> a104. 排序
     </a></div>
-      <div class="post-nav-item">
-    <a href="/Noah%E7%9A%84%E5%B0%8F%E8%A8%982-%E9%82%A3%E4%BA%9B%E5%89%B5%E7%AB%8B%E7%B6%B2%E7%AB%99%E6%99%82%E9%81%87%E5%88%B0%E7%9A%84%E5%95%8F%E9%A1%8C%E8%88%87%E8%A7%A3%E6%96%B9/" rel="next" title="Noah的小記2 那些創立網站時遇到的問題與解方">
-      Noah的小記2 那些創立網站時遇到的問題與解方 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -369,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%80%A3%E7%B5%90"><span class="nav-number">1.</span> <span class="nav-text">題目連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">3.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%EF%BC%9AC%E8%AA%9E%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">程式碼：C語言</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%80%E9%80%A0%E9%85%92%E8%88%87%E8%92%B8%E9%A4%BE%E9%85%92"><span class="nav-number">1.</span> <span class="nav-text">釀造酒與蒸餾酒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E5%A4%A7%E5%9F%BA%E9%85%92"><span class="nav-number">2.</span> <span class="nav-text">六大基酒</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%8F%E7%89%B9%E5%8A%A0-Vodca"><span class="nav-number">2.1.</span> <span class="nav-text">伏特加 Vodca</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%B4%E9%85%92-Gin"><span class="nav-number">2.2.</span> <span class="nav-text">琴酒 Gin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%98%AD%E5%A7%86-Rum"><span class="nav-number">2.3.</span> <span class="nav-text">蘭姆 Rum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BE%8D%E8%88%8C%E8%98%AD-Tequila"><span class="nav-number">2.4.</span> <span class="nav-text">龍舌蘭 Tequila</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A8%81%E5%A3%AB%E5%BF%8C-Whisky"><span class="nav-number">2.5.</span> <span class="nav-text">威士忌 Whisky</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BD%E8%98%AD%E5%9C%B0-Brandy"><span class="nav-number">2.6.</span> <span class="nav-text">白蘭地 Brandy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%85%AD%E5%A4%A7%E5%9F%BA%E9%85%92%E4%B9%8B%E5%A4%96%EF%BC%8E%EF%BC%8E%EF%BC%8E"><span class="nav-number">3.</span> <span class="nav-text">在六大基酒之外．．．</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
