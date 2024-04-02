@@ -308,7 +308,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-31 10:30:22" itemprop="dateModified" datetime="2024-03-31T10:30:22+08:00">2024-03-31</time>
+                <time title="修改時間：2024-04-02 13:05:23" itemprop="dateModified" datetime="2024-04-02T13:05:23+08:00">2024-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,8 +339,8 @@
 
       
           <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a034">https://zerojudge.tw/ShowProblem?problemid=a034</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>在進入本題的討論之前，我們需要先了解何謂進位制。所謂的進位制，指的是以「基數」的指數和表示數字的記數方法。以最常見的十進位制來說，基數就是10。因此，以123這個數字來說，在十進位制下即為 1x10^2 + 2x10^1 + 3x10^0 。而所謂的二進位制，就是基數為2的進位制。除了基數不同以外，邏輯和十進位制其實相同。因此，在進行從十進位制到二進位制的轉換時，我們可以2的指數逐一降次檢查大小。</p>
-<p>因為整數型態的變數可儲存的最大值為2的31次方，所以我們先從2的31次方開始檢查，若該數比2的31次方還大，就將該位數註記為1，並將其值減去2的31次方，否則將該位數註記為0。接著降次繼續檢查，直到整個數字檢查完畢，即完成二進位制的轉換。舉例來說，十進位制的123可以被表示為 1x2^6 + 1x2^5 + 1x2^4 + 1x2^3 + 0x2^2 + 1x2^1 + 1x2^0 ，因此其在二進位制表示法即為1111011。</p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>在進入本題的討論之前，我們需要先了解何謂進位制。所謂的進位制，指的是以「基數」的指數和表示數字的記數方法。以最常見的十進位制來說，基數就是10。因此，以123這個數字來說，在十進位制下即為 1 x 10<sup>2</sup> + 2 x 10<sup>1</sup> + 3 x 10<sup>0</sup> 。而所謂的二進位制，就是基數為2的進位制。除了基數不同以外，邏輯和十進位制其實相同。因此，在進行從十進位制到二進位制的轉換時，我們可以2的指數逐一降次檢查大小。</p>
+<p>因為整數型態的變數可儲存的最大值為2<sup>31</sup>，所以我們先從2<sup>31</sup>開始檢查，若該數比2<sup>31</sup>還大，就將該位數註記為1，並將其值減去2<sup>31</sup>，否則將該位數註記為0。接著降次繼續檢查，直到整個數字檢查完畢，即完成二進位制的轉換。舉例來說，十進位制的123可以被表示為 1 x 2<sup>6</sup> + 1 x 2<sup>5</sup> + 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> ，因此其在二進位制表示法即為1111011。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/#more" rel="contents">
