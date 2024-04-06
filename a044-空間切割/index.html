@@ -15,10 +15,11 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"FFFFFF","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"FFFFFF","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a044 解題思路這題的程式寫法並不難，關鍵在於空間中的n個平面最多可將空間切成幾個區域。已知n個平面最多可以將空間分割成(n3+5n+6)&#x2F;6個區域，因此先讀取輸入的n值，再輸出(n3+5n+6)&#x2F;6的值。">
@@ -29,7 +30,7 @@
 <meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a044 解題思路這題的程式寫法並不難，關鍵在於空間中的n個平面最多可將空間切成幾個區域。已知n個平面最多可以將空間分割成(n3+5n+6)&#x2F;6個區域，因此先讀取輸入的n值，再輸出(n3+5n+6)&#x2F;6的值。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-03-13T14:07:46.000Z">
-<meta property="article:modified_time" content="2024-04-02T05:04:29.543Z">
+<meta property="article:modified_time" content="2024-04-06T16:09:37.511Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
@@ -221,7 +222,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-04-02 13:04:29" itemprop="dateModified" datetime="2024-04-02T13:04:29+08:00">2024-04-02</time>
+                <time title="修改時間：2024-04-07 00:09:37" itemprop="dateModified" datetime="2024-04-07T00:09:37+08:00">2024-04-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,7 +263,7 @@
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>這題的程式寫法並不難，關鍵在於空間中的n個平面最多可將空間切成幾個區域。已知n個平面最多可以將空間分割成(n<sup>3</sup>+5n+6)&#x2F;6個區域，因此先讀取輸入的n值，再輸出(n<sup>3</sup>+5n+6)&#x2F;6的值。</p>
 <span id="more"></span>
 
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.796t.com/content/1544817994.html">EOF寫法</a>判斷程式執行的條件。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用<a href="https://noah-0831.github.io/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/">「EOF寫法」</a>。所謂 EOF 並不是一種真實存在的字元，而是「End Of File」的縮寫，意思是一份檔案的結尾，也可以說是輸入的停止。通常程式在執行時會先讀取輸入，再依據輸入進行相對的行動，但我們未必能知道輸入有幾筆、到什麼時候結束，這時候我們就可以讓電腦自動偵測。一旦它偵測到EOF條件為True，即代表輸入停止，就會結束讀取輸入，如此我們的程式就不用事先指定輸入的筆數，可以不斷讀取輸入並執行直到輸入結束。</p>
 <h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數n，代表題目給定的正整數</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//用while迴圈搭配EOF寫法讀取每筆n值，並輸出對應的(n&lt;sup&gt;3&lt;/sup&gt;+5n+6)/6值</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (n*n*n+<span class="number">5</span>*n+<span class="number">6</span>)/<span class="number">6</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -542,6 +543,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
