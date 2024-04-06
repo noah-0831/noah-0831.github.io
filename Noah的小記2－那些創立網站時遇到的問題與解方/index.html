@@ -152,9 +152,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜尋..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -198,7 +196,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -269,8 +267,8 @@
 <p>在創建網站時，電腦端會同步產生一個叫做「github page」的資料夾，將所有相關資料存放在裡面。因此，當我們使用hexo指令時，指向的位置當然要是github page，也就是離檔案位置最近的地方。如果不慎更動到檔案路徑，無論你重複再多次指令，github page都無法收到。我們可以在Git Bash使用cd指令，重新指派檔案路徑，寫法如下：</p>
 <p>cd ~&#x2F;Documents&#x2F;中間的檔案路徑&#x2F;“github page”</p>
 <p>當然，也可以從檔案總管直接找到github page，點進資料夾後在空白處按右鍵，選擇「顯示其他選項－Git Bash Here」，直接在檔案位置開啟Git Bash，檔案路徑就會直接預設到github page了。</p>
-<p>再來，是<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_26540999/article/details/53445589">郵箱與名字的遺失</a>。</p>
-<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
+<p>再來，是<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/qq_26540999/article/details/53445589">郵箱與名字的遺失</a>。</p>
+<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;" rel="external nofollow noopener noreferrer" target="_blank">&#x79;&#x6f;&#x75;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
 <p>這次的錯誤訊息就很明顯了，要我們重新設定身分。簡單來說，在使用github page發佈文章時，系統會先創建一個git資料夾，把檔案放入資料夾後再發佈。而電腦在創建git資料夾的過程中發現我們提供的身分訊息並不完整，此時只要手動在Git Bash中補充其所需訊息即可，寫法如下：</p>
 <p>git config –global user.email “你的郵箱”<br>git config–global user.name “你的名字”</p>
 <p>注意”你的郵箱”和”你的名字”的部分，要填入自己在創建帳號時所使用的信箱和名字，輸入後再次送出指令就會恢復正常了。</p>
@@ -390,10 +388,10 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/noah-0831" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;noah-0831" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/noah-0831" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;noah-0831" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+        <a href="https://www.linkedin.com/in/%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230&#x2F;" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
       </span>
   </div>
 

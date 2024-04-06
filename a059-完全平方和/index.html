@@ -152,9 +152,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜尋..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -198,7 +196,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -260,11 +258,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a059">https://zerojudge.tw/ShowProblem?problemid=a059</a></p>
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a059">https://zerojudge.tw/ShowProblem?problemid=a059</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>題目希望我們求出在a、b之間的所有完全平方數總和，理論上要用for迴圈跑從a到b之間的所有數字，檢查他們是否為完全平方數，若是則將他們相加，最後再輸出其總和，但這麼做的話需要在for迴圈裡加上條件判斷。因此我們也可以換種方式思考，若 a ≤ x<sup>2</sup> ≤ b ，可知 √a ≤ x ≤ √b ，故只要找出在√a及√b之間的正整數，將他們的平方相加，即為在a、b之間所有完全平方數的和。</p>
 <span id="more"></span>
 
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-ceil.html">ceil()函式</a>對參數無條件進位（向上取整），以及<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>對參數開根。由於ceil()函式和sqrt()函式皆非標準函式庫裡的函式，使用前必須引用 &lt;math.h&gt; 函式庫。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.runoob.com/cprogramming/c-function-ceil.html">ceil()函式</a>對參數無條件進位（向上取整），以及<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>對參數開根。由於ceil()函式和sqrt()函式皆非標準函式庫裡的函式，使用前必須引用 &lt;math.h&gt; 函式庫。</p>
 <h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數T，代表測資筆數</span></span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="comment">//用for迴圈跑T筆測資</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span> ; i &lt;= T ; i++) &#123;</span><br><span class="line">        <span class="comment">//宣告並讀取變數a、b，代表數字範圍的上下限</span></span><br><span class="line">        <span class="comment">//宣告變數sum，設初始值為0，代表a、b之間的完全平方和</span></span><br><span class="line">        <span class="type">int</span> a, b, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="comment">//用for迴圈跑從√a到√b之間的所有數，將他們的平方相加求出平方和</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num = <span class="built_in">ceil</span>(<span class="built_in">sqrt</span>(a)) ; num &lt;= <span class="built_in">sqrt</span>(b) ; num++)</span><br><span class="line">            sum += num*num;</span><br><span class="line">        <span class="comment">//輸出</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %d\n&quot;</span>, i, sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
@@ -402,10 +400,10 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/noah-0831" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;noah-0831" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/noah-0831" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;noah-0831" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+        <a href="https://www.linkedin.com/in/%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230&#x2F;" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
       </span>
   </div>
 

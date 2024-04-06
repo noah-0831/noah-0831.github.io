@@ -152,9 +152,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜尋..." spellcheck="false" type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -198,7 +196,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -260,11 +258,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式 b<sup>2</sup>-4ac &gt; 0 ，代表此方程式有兩相異實根 (-b±√b<sup>2</sup>-4ac)&#x2F;2a ；若判別式 b<sup>2</sup>-4ac &#x3D; 0 ，代表此方程式有兩相同實根 (-b+√(b<sup>2</sup>-4ac))&#x2F;2a &#x3D; (-b-√(b<sup>2</sup>-4ac))&#x2F;2a ；若判別式 b<sup>2</sup>-4ac &lt; 0 ，代表此方程式沒有實根。</p>
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求一元二次方程式的根有多種方式，舉凡配方法、十字交乘等，而這裡採用的是<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.youtube.com/watch?v=Z0omOUKCXcg&ab_channel=%E5%9D%87%E4%B8%80%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0JunyiAcademy">公式解</a>。若判別式 b<sup>2</sup>-4ac &gt; 0 ，代表此方程式有兩相異實根 (-b±√b<sup>2</sup>-4ac)&#x2F;2a ；若判別式 b<sup>2</sup>-4ac &#x3D; 0 ，代表此方程式有兩相同實根 (-b+√(b<sup>2</sup>-4ac))&#x2F;2a &#x3D; (-b-√(b<sup>2</sup>-4ac))&#x2F;2a ；若判別式 b<sup>2</sup>-4ac &lt; 0 ，代表此方程式沒有實根。</p>
 <span id="more"></span>
 
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>表示根式寫法。由於sqrt()函式並非標準函式庫裡的函式，使用前須先引用 &lt;math.h&gt; 函式庫。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題中使用了<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.runoob.com/cprogramming/c-function-sqrt.html">sqrt()函式</a>表示根式寫法。由於sqrt()函式並非標準函式庫裡的函式，使用前須先引用 &lt;math.h&gt; 函式庫。</p>
 <h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數a、b、c，代表一元二次方程式的三個係數</span></span><br><span class="line">    <span class="type">int</span> a, b, c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">    <span class="comment">//宣告變數D，代表一元二次方程式的判別式</span></span><br><span class="line">    <span class="type">int</span> D = b*b<span class="number">-4</span>*a*c;</span><br><span class="line">    <span class="comment">//若判別式小於零，代表無實根存在</span></span><br><span class="line">    <span class="keyword">if</span>(D &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;No real root\n&quot;</span>);</span><br><span class="line">    <span class="comment">//若判別式大於等於零，代表有實根存在</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> x1 = (-b+<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="type">int</span> x2 = (-b-<span class="built_in">sqrt</span>(D))/(<span class="number">2</span>*a);</span><br><span class="line">        <span class="comment">//若判別式大於零，代表有兩相異實根</span></span><br><span class="line">        <span class="keyword">if</span>(D &gt; <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two different roots x1=%d , x2=%d&quot;</span>, x1, x2);</span><br><span class="line">        <span class="comment">//若判別式等於零，代表有相同實根</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(D == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Two same roots x=%d&quot;</span>, x1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
@@ -402,10 +400,10 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/noah-0831" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;noah-0831" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/noah-0831" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;noah-0831" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+        <a href="https://www.linkedin.com/in/%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%E9%9F%8B%E9%88%9E-%E7%8E%8B-1a5072230&#x2F;" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
       </span>
   </div>
 
