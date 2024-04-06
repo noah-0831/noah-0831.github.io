@@ -8,4 +8,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 Sitemap: https://noah-0831.github.io/sitemap.xml
-Sitemap: https://hsiangfeng.github.io/baidusitemap.xml
+Sitemap: https://noah-0831.github.io/baidusitemap.xml
