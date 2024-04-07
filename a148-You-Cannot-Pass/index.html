@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#999999","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a054 建議類題a020. 身分證檢驗 解題思路本題的題意相當複雜，簡單來說就是要我們透過檢查碼反推可能的英文字母。而檢查碼的算法如下:  將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。 將1.的數字的個位數字乘以9倍並加上十位數字。 將身分證字號的數字部分，由左到右分別乘上8、7、6、">
+  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a148 解題思路題目有多筆測資，當輸入為n時，代表題目希望我們對接下來輸入的n筆成績取平均，再依照平均是否大於59判斷是否過關。我們可以用for迴圈讀取n筆成績並將他們相加，除以n即可得到平均，再依照取完平均後的結果輸出相對應的輸出。 注意事項注意平均可能為小數，如果用整數型態判斷的話可能會出現誤差。舉">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a054. 電話客服中心">
-<meta property="og:url" content="https://noah-0831.github.io/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/">
+<meta property="og:title" content="a148. You Cannot Pass?!">
+<meta property="og:url" content="https://noah-0831.github.io/a148-You-Cannot-Pass/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
-<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a054 建議類題a020. 身分證檢驗 解題思路本題的題意相當複雜，簡單來說就是要我們透過檢查碼反推可能的英文字母。而檢查碼的算法如下:  將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。 將1.的數字的個位數字乘以9倍並加上十位數字。 將身分證字號的數字部分，由左到右分別乘上8、7、6、">
+<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a148 解題思路題目有多筆測資，當輸入為n時，代表題目希望我們對接下來輸入的n筆成績取平均，再依照平均是否大於59判斷是否過關。我們可以用for迴圈讀取n筆成績並將他們相加，除以n即可得到平均，再依照取完平均後的結果輸出相對應的輸出。 注意事項注意平均可能為小數，如果用整數型態判斷的話可能會出現誤差。舉">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-03-18T06:16:55.000Z">
-<meta property="article:modified_time" content="2024-03-31T02:31:27.814Z">
+<meta property="article:published_time" content="2024-04-07T17:33:57.000Z">
+<meta property="article:modified_time" content="2024-04-07T18:03:15.536Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://noah-0831.github.io/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/">
+<link rel="canonical" href="https://noah-0831.github.io/a148-You-Cannot-Pass/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>a054. 電話客服中心 | Codebar 程式酒吧</title>
+  <title>a148. You Cannot Pass?! | Codebar 程式酒吧</title>
   
 
 
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a148-You-Cannot-Pass/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -204,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          a054. 電話客服中心
+          a148. You Cannot Pass?!
         </h1>
 
         <div class="post-meta">
@@ -215,16 +215,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2024-03-18 14:16:55" itemprop="dateCreated datePublished" datetime="2024-03-18T14:16:55+08:00">2024-03-18</time>
+              <time title="創建時間：2024-04-08 01:33:57 / 修改時間：02:03:15" itemprop="dateCreated datePublished" datetime="2024-04-08T01:33:57+08:00">2024-04-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-31 10:31:27" itemprop="dateModified" datetime="2024-03-31T10:31:27+08:00">2024-03-31</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -260,20 +254,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a054">https://zerojudge.tw/ShowProblem?problemid=a054</a></p>
-<h2 id="建議類題"><a href="#建議類題" class="headerlink" title="建議類題"></a>建議類題</h2><p><a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">a020. 身分證檢驗</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題的題意相當複雜，簡單來說就是要我們透過檢查碼反推可能的英文字母。<br>而檢查碼的算法如下:</p>
-<ol>
-<li>將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。</li>
-<li>將1.的數字的個位數字乘以9倍並加上十位數字。</li>
-<li>將身分證字號的數字部分，由左到右分別乘上8、7、6、5、4、3、2、1、1。</li>
-<li>令s為2.加上3.的和，m為s的個位數，檢查碼c即為10-m。</li>
-</ol>
-<p>因此，我們可以將身份證號碼的後9碼用字元陣列儲存，經由運算得到各位相對數字乘積的總和s後，推得檢查碼c，進而依據c值輸出對應的出生縣市。</p>
-<span id="more"></span>
-
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://openhome.cc/Gossip/CppGossip/switchStatement.html">switch()條件句</a>是條件句之一。使用時，將想要判斷的數值或字元放在switch後面的括弧裡，並在case列出可能的情況，程式就會自動依據case指定的數字、字元或判斷句的情形，執行相對應的程式區塊。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取字元陣列num，代表身份證號碼的後9碼</span></span><br><span class="line">    <span class="type">char</span> num[<span class="number">10</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, num);</span><br><span class="line">    <span class="comment">//宣告變數s，代表身分證字號各位相對數字乘積的總和</span></span><br><span class="line">    <span class="type">int</span> s = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//將身分證字號的數字部分由左到右分別乘上8、7、6、5、4、3、2、1，最後再加上末碼</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">8</span> ; i++)</span><br><span class="line">        s += (num[i]<span class="number">-48</span>)*(<span class="number">8</span>-i);</span><br><span class="line">    s += num[<span class="number">8</span>]<span class="number">-48</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//宣告變數c，代表檢查碼</span></span><br><span class="line">    <span class="comment">//將10減去s的個位數後，即可得c</span></span><br><span class="line">    <span class="type">int</span> c = <span class="number">10</span>-s%<span class="number">10</span>;</span><br><span class="line">    <span class="comment">//檢查碼只有一位數，因此若c=10時，則檢查碼為0</span></span><br><span class="line">    <span class="keyword">if</span>(c == <span class="number">10</span>)</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//依據c值反推可能的出生縣市</span></span><br><span class="line">    <span class="keyword">switch</span>(c) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;BNZ&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;AMW&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;KLY&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;JVX&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;HU&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;GT&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;FS&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;ER&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;DOQ&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;CIP&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a148">https://zerojudge.tw/ShowProblem?problemid=a148</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>題目有多筆測資，當輸入為n時，代表題目希望我們對接下來輸入的n筆成績取平均，再依照平均是否大於59判斷是否過關。我們可以用for迴圈讀取n筆成績並將他們相加，除以n即可得到平均，再依照取完平均後的結果輸出相對應的輸出。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>注意平均可能為小數，如果用整數型態判斷的話可能會出現誤差。舉例來說，假設今天我們計算出來的平均為59.79，顯然是大於59分的，但若是用整數型態儲存只會存到59。因此此題我們需將平均先轉成浮點數再做判斷。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數n，代表成績筆數</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//使用EOF寫法判斷程式執行的條件</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">        <span class="comment">//宣告變數score，代表輸入的成績</span></span><br><span class="line">        <span class="comment">//宣告變數sum，賦值為0，代表總成績</span></span><br><span class="line">        <span class="type">int</span> score, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//用for迴圈讀取n筆成績，並將他們相加得到總成績</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; n ; i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;score);</span><br><span class="line">            sum += score;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//若平均大於59.0分，則輸出&quot;no&quot;</span></span><br><span class="line">        <span class="keyword">if</span>((<span class="type">float</span>)sum/n &gt; <span class="number">59.0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;no\n&quot;</span>);</span><br><span class="line">        <span class="comment">//若否，則輸出&quot;yes&quot;</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;yes\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -305,13 +289,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/a053-Sagit-s-%E8%A8%88%E5%88%86%E7%A8%8B%E5%BC%8F/" rel="prev" title="a053. Sagit's 計分程式">
-      <i class="fa fa-chevron-left"></i> a053. Sagit's 計分程式
+    <a href="/a147-Print-it-all/" rel="prev" title="a147. Print it all">
+      <i class="fa fa-chevron-left"></i> a147. Print it all
     </a></div>
-      <div class="post-nav-item">
-    <a href="/a058-MOD3/" rel="next" title="a058. MOD3">
-      a058. MOD3 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -370,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%80%A3%E7%B5%90"><span class="nav-number">1.</span> <span class="nav-text">題目連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E8%AD%B0%E9%A1%9E%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">建議類題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">4.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%EF%BC%9AC%E8%AA%9E%E8%A8%80"><span class="nav-number">5.</span> <span class="nav-text">程式碼：C語言</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%80%A3%E7%B5%90"><span class="nav-number">1.</span> <span class="nav-text">題目連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">3.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%EF%BC%9AC%E8%AA%9E%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">程式碼：C語言</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
