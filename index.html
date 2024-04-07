@@ -186,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/%E9%97%9C%E6%96%BC%20Codebar/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a147-Print-it-all/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,7 +200,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E9%97%9C%E6%96%BC%20Codebar/" class="post-title-link" itemprop="url">關於 Codebar 程式酒吧</a>
+            <a href="/a147-Print-it-all/" class="post-title-link" itemprop="url">a147. Print it all</a>
         </h2>
 
         <div class="post-meta">
@@ -209,23 +209,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2023-02-15 22:04:30" itemprop="dateCreated datePublished" datetime="2023-02-15T22:04:30+08:00">2023-02-15</time>
+              <time title="創建時間：2024-04-07 11:46:43 / 修改時間：12:20:31" itemprop="dateCreated datePublished" datetime="2024-04-07T11:46:43+08:00">2024-04-07</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-04-07 00:38:44" itemprop="dateModified" datetime="2024-04-07T00:38:44+08:00">2024-04-07</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%97%9C%E6%96%BC-Codebar-%E7%A8%8B%E5%BC%8F%E9%85%92%E5%90%A7/" itemprop="url" rel="index"><span itemprop="name">關於 Codebar 程式酒吧</span></a>
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
                 </span>
             </span>
 
@@ -247,7 +241,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>2022年，因為體認到網路上針對C語系初學者的程式題目學習資源不足，我開始撰寫一份以初學者角度剖析題意，釐清解題思路，並轉化為程式碼的解題報告－<a target="_blank" rel="external nofollow noopener noreferrer" href="https://hackmd.io/@Noah0831/BJzhp16Di"><strong>初學者也適用的ZeroJudge C語言詳解</strong></a>，但我並不滿足於此。為了提供讀者更充實、更多元、更具系統性的學習網站，在經過歷時兩年的籌備後，2024年，<strong>Codebar 程式酒吧</strong>正式成立了。我們專注於分享<strong>程式</strong>、<strong>升學</strong>與<strong>活動</strong>的相關知識與經驗分享，期許能打造出一個如同酒吧一樣開放的環境，讓讀者們都可以針對自己感興趣的主題，依照自己的步調吸收與學習。我們相信，藉由文章式的分享，總有一天，學習會像是在酒吧一樣，如此的輕鬆而自由。</p>
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a147">https://zerojudge.tw/ShowProblem?problemid=a147</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>利用for迴圈檢查1到n-1的所有整數是否可被7整除，若該數除以7之後的餘數不為0，代表該數不能被7整除，就將其輸出。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，直到n等於0代表輸入結束。可能有人會想用while(scanf(“%d”, &amp;n) !&#x3D; 0)這樣的寫法判斷程式結束執行的條件，但須注意**scanf()函式沒有<a href="https://noah-0831.github.io/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/">回傳值</a>**，也就是說他僅會將讀取到的數值存入變數中，而不會回傳，因此這項判斷條件永遠不會成立。如果要使用scanf()函式讀取到的輸入作為判斷條件，必須要先將輸入用指定的變數存起來，再使用該變數的值。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數n，代表判斷範圍的上限</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//用while迴圈重複讀取變數n</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n)) &#123;</span><br><span class="line">        <span class="comment">//若n為0，代表輸入結束，直接跳出迴圈</span></span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">//檢查1到n-1之間的整數是否可被7整除</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num = <span class="number">1</span> ; num &lt; n ; num++)</span><br><span class="line">            <span class="comment">//若該數除以7之後的餘數不為，代表該數不能被7整除，需輸出</span></span><br><span class="line">            <span class="keyword">if</span>(num%<span class="number">7</span> != <span class="number">0</span>)</span><br><span class="line">               <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, num);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -622,7 +620,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -688,7 +686,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
