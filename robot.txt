@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Disallow: /vendors/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+Sitemap: https://noah-0831.github.io/sitemap.xml
+<<<<<<< HEAD
+Sitemap: https://hsiangfeng.github.io/baidusitemap.xml
+=======
+Sitemap: https://noah-0831.github.io/baidusitemap.xml
+>>>>>>> dd5a05dc55c970204ebc0e1b342b8a58759059b7
