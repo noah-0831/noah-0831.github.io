@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#999999","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a005 解題思路由題意可知輸入的數列只有等差數列或等比數列兩種可能。先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。">
+  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a005 解題思路由題意可知輸入的數列只有等差數列或等比數列兩種可能，因此我們可以先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="a005. Eva的回家作業">
 <meta property="og:url" content="https://noah-0831.github.io/a005-Eva%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
-<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a005 解題思路由題意可知輸入的數列只有等差數列或等比數列兩種可能。先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。">
+<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a005 解題思路由題意可知輸入的數列只有等差數列或等比數列兩種可能，因此我們可以先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-02-23T09:02:29.000Z">
-<meta property="article:modified_time" content="2024-03-31T02:32:12.085Z">
+<meta property="article:modified_time" content="2024-04-10T05:21:47.384Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-31 10:32:12" itemprop="dateModified" datetime="2024-03-31T10:32:12+08:00">2024-03-31</time>
+                <time title="修改時間：2024-04-10 13:21:47" itemprop="dateModified" datetime="2024-04-10T13:21:47+08:00">2024-04-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,7 +261,7 @@
 
       
         <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a005">https://zerojudge.tw/ShowProblem?problemid=a005</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>由題意可知輸入的數列只有等差數列或等比數列兩種可能。先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。</p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>由題意可知輸入的數列只有等差數列或等比數列兩種可能，因此我們可以先用if_else條件句判斷輸入數列為等差數列還是等比數列，再依據等差數列兩相鄰項差相同、等比數列兩相鄰項比相同的性質推知第五項。</p>
 <span id="more"></span>
 
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此可使用<a target="_blank" rel="external nofollow noopener noreferrer" href="https://openhome.cc/Gossip/CGossip/forStatement.html">for迴圈</a>判斷程式執行的條件。</p>
@@ -275,13 +275,13 @@
   <div class="popular-posts-header">相關文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a215-明明愛數數\" rel="bookmark">a215. 明明愛數數</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\a149-乘乘樂\" rel="bookmark">a149. 乘乘樂</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\a148-You-Cannot-Pass\" rel="bookmark">a148. You Cannot Pass?!</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a147-Print-it-all\" rel="bookmark">a147. Print it all</a></div>
     </li>
   </ul>
 
@@ -376,7 +376,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
