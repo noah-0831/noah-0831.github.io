@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#999999","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a042 解題思路這題的程式寫法並不難，關鍵在於找到平面上的n個圓最多可以把平面分割成幾區域。已知n個圓最多可以把平面分割成n2-n+2個區域，因此先讀取輸入的n值，再輸出n2-n+2的值。">
+  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a216 解題思路這題最直觀的方式是使用迴圈求出f、g值，但有鑑於本題的測資較大，為了避免出現TLE的情況，建議直接找出f(n)、g(n)的關係式以節省運算時間。如果一時之間看不出f(n)、g(n)關係式的話，可以多寫幾項觀察他們的規律。我們會發現f(n)就是連續正整數和，公式為 (n*(n+1))&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a042. 平面圓形切割">
-<meta property="og:url" content="https://noah-0831.github.io/a042-%E5%B9%B3%E9%9D%A2%E5%9C%93%E5%BD%A2%E5%88%87%E5%89%B2/">
+<meta property="og:title" content="a216. 數數愛明明">
+<meta property="og:url" content="https://noah-0831.github.io/a216-%E6%95%B8%E6%95%B8%E6%84%9B%E6%98%8E%E6%98%8E/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
-<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a042 解題思路這題的程式寫法並不難，關鍵在於找到平面上的n個圓最多可以把平面分割成幾區域。已知n個圓最多可以把平面分割成n2-n+2個區域，因此先讀取輸入的n值，再輸出n2-n+2的值。">
+<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a216 解題思路這題最直觀的方式是使用迴圈求出f、g值，但有鑑於本題的測資較大，為了避免出現TLE的情況，建議直接找出f(n)、g(n)的關係式以節省運算時間。如果一時之間看不出f(n)、g(n)關係式的話，可以多寫幾項觀察他們的規律。我們會發現f(n)就是連續正整數和，公式為 (n*(n+1))&amp;#x">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-03-11T05:08:01.000Z">
-<meta property="article:modified_time" content="2024-04-06T16:38:00.319Z">
+<meta property="article:published_time" content="2024-04-12T08:00:13.000Z">
+<meta property="article:modified_time" content="2024-04-12T09:07:16.927Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://noah-0831.github.io/a042-%E5%B9%B3%E9%9D%A2%E5%9C%93%E5%BD%A2%E5%88%87%E5%89%B2/">
+<link rel="canonical" href="https://noah-0831.github.io/a216-%E6%95%B8%E6%95%B8%E6%84%9B%E6%98%8E%E6%98%8E/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>a042. 平面圓形切割 | Codebar 程式酒吧</title>
+  <title>a216. 數數愛明明 | Codebar 程式酒吧</title>
   
 
 
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a042-%E5%B9%B3%E9%9D%A2%E5%9C%93%E5%BD%A2%E5%88%87%E5%89%B2/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a216-%E6%95%B8%E6%95%B8%E6%84%9B%E6%98%8E%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -204,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          a042. 平面圓形切割
+          a216. 數數愛明明
         </h1>
 
         <div class="post-meta">
@@ -215,16 +215,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2024-03-11 13:08:01" itemprop="dateCreated datePublished" datetime="2024-03-11T13:08:01+08:00">2024-03-11</time>
+              <time title="創建時間：2024-04-12 16:00:13 / 修改時間：17:07:16" itemprop="dateCreated datePublished" datetime="2024-04-12T16:00:13+08:00">2024-04-12</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-04-07 00:38:00" itemprop="dateModified" datetime="2024-04-07T00:38:00+08:00">2024-04-07</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -260,13 +254,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a042">https://zerojudge.tw/ShowProblem?problemid=a042</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>這題的程式寫法並不難，關鍵在於找到平面上的n個圓最多可以把平面分割成幾區域。已知n個圓最多可以把平面分割成n<sup>2</sup>-n+2個區域，因此先讀取輸入的n值，再輸出n<sup>2</sup>-n+2的值。</p>
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a216">https://zerojudge.tw/ShowProblem?problemid=a216</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>這題最直觀的方式是使用迴圈求出f、g值，但有鑑於本題的測資較大，為了避免出現TLE的情況，建議直接找出f(n)、g(n)的關係式以節省運算時間。如果一時之間看不出f(n)、g(n)關係式的話，可以多寫幾項觀察他們的規律。我們會發現f(n)就是連續正整數和，公式為 (n*(n+1))&#x2F;2；g(n)則可以用數學上的遞迴關係式求得，公式為n*(n+1)*(n+2)&#x2F;6。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>本題測資較大，部分測資的g(n)會超過int型態變數所能儲存的最大數值，因此需使用<a href="https://noah-0831.github.io/a001-%E5%93%88%E5%9B%89/">long long型態</a>變數，寫法是%lld。</p>
 <span id="more"></span>
 
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用「<a href="https://noah-0831.github.io/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/">EOF</a>寫法」。所謂 EOF 並不是一種真實存在的字元，而是「End Of File」的縮寫，意思是一份檔案的結尾，也可以說是輸入的停止。通常程式在執行時會先讀取輸入，再依據輸入進行相對的行動，但我們未必能知道輸入有幾筆、到什麼時候結束，這時候我們就可以讓電腦自動偵測。一旦它偵測到EOF條件為True，即代表輸入停止，就會結束讀取輸入，如此我們的程式就不用事先指定輸入的筆數，可以不斷讀取輸入並執行直到輸入結束。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數n，代表題目給定的正整數</span></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="comment">//用while迴圈搭配EOF寫法讀取每筆n值，並輸出對應的n&lt;sup&gt;2&lt;/sup&gt;-n+2值</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n*n-n+<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告並讀取變數n</span></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> n;</span><br><span class="line">    <span class="comment">//使用EOF寫法判斷程式執行的條件</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;n)!=EOF)</span><br><span class="line">        <span class="comment">//輸出f(n)=n*(n+1)/2，輸出g(n)=n*(n+1)*(n+2)/6</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld %lld\n&quot;</span>, n*(n+<span class="number">1</span>)/<span class="number">2</span>, n*(n+<span class="number">1</span>)*(n+<span class="number">2</span>)/<span class="number">6</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -276,13 +269,13 @@
   <div class="popular-posts-header">相關文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a216-數數愛明明\" rel="bookmark">a216. 數數愛明明</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\a215-明明愛數數\" rel="bookmark">a215. 明明愛數數</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\a149-乘乘樂\" rel="bookmark">a149. 乘乘樂</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a148-You-Cannot-Pass\" rel="bookmark">a148. You Cannot Pass?!</a></div>
     </li>
   </ul>
 
@@ -298,13 +291,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/a040-%E9%98%BF%E5%A7%86%E6%96%AF%E5%A3%AF%E6%95%B8/" rel="prev" title="a040. 阿姆斯壯數">
-      <i class="fa fa-chevron-left"></i> a040. 阿姆斯壯數
+    <a href="/a215-%E6%98%8E%E6%98%8E%E6%84%9B%E6%95%B8%E6%95%B8/" rel="prev" title="a215. 明明愛數數">
+      <i class="fa fa-chevron-left"></i> a215. 明明愛數數
     </a></div>
-      <div class="post-nav-item">
-    <a href="/a044-%E7%A9%BA%E9%96%93%E5%88%87%E5%89%B2/" rel="next" title="a044. 空間切割">
-      a044. 空間切割 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
