@@ -186,6 +186,110 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebar 程式酒吧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/" class="post-title-link" itemprop="url">a020. 身分證檢驗</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-28 12:26:10" itemprop="dateCreated datePublished" datetime="2024-02-28T12:26:10+08:00">2024-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-03-31 10:32:28" itemprop="dateModified" datetime="2024-03-31T10:32:28+08:00">2024-03-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a020">https://zerojudge.tw/ShowProblem?problemid=a020</a></p>
+<h2 id="建議類題"><a href="#建議類題" class="headerlink" title="建議類題"></a>建議類題</h2><p><a href="https://noah-0831.github.io/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/">a054. 電話客服中心</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題的題意相當複雜，大致上的意思是:</p>
+<ol>
+<li>讀取輸入的身分證字號。</li>
+<li>將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。</li>
+<li>將2.的數字的個位數字乘以9倍並加上十位數字。</li>
+<li>將身分證字號的數字部分由左到右分別乘上8、7、6、5、4、3、2、1、1。</li>
+<li>以3.與4.的和做為判斷標準。若能被10整除則輸出”real”，否則輸出”fake”。</li>
+</ol>
+<p>1.的部分需注意身份證字號的各數字之間沒有空格，若用整數型態的變數儲存會被讀取成一個整數。因此，這裡使用字元陣列讀取並儲存輸入的身分證字號。</p>
+<p>2.就是單純的條件判斷，乍看之下需寫出26個英文字母各自的條件語句，但仔細觀察會發現有些英文字母的轉換是有規律的。我們可以善用這個規律化簡程式碼，將剛剛以字元型態讀取的英文代號先轉為<a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">ASCII碼</a>，再經由加減運算得到如附圖中的數字。</p>
+<p>3.的關鍵在於分別取得數字的個位數和十位數。個位數可以用除10後取餘數的方式獲得，而十位數則因為在整數型態的運算中，若運算結果為小數，會自動無條件捨去至整數位，剛好等於除10後的商。</p>
+<p>4.的部分，可以看到前8位數字的倍數呈規律遞減，因此可善用for迴圈得出，第9位再單獨加上去就好了。</p>
+<p>5.就是單純的條件判斷並輸出相對應的輸出！</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a015-%E7%9F%A9%E9%99%A3%E7%9A%84%E7%BF%BB%E8%BD%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -542,98 +646,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Codebar 程式酒吧">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/" class="post-title-link" itemprop="url">a009. 解碼器</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-02-24 12:56:51" itemprop="dateCreated datePublished" datetime="2024-02-24T12:56:51+08:00">2024-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-04-09 12:01:59" itemprop="dateModified" datetime="2024-04-09T12:01:59+08:00">2024-04-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a009">https://zerojudge.tw/ShowProblem?problemid=a009</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://web.fg.tp.edu.tw/~anny/ASCII_table.htm">ASCII碼</a>全名為「American Standard Code for Information Interchange」，中文為「美國信息交換標準代碼」。之所以會有這個代碼是因為電腦採用的是二進制，八進制、十進制的其他數字，或甚至英文字母，必須經由此代碼轉換為二進制後，電腦才能順利理解、顯示、運算。<br>以C語言來說，當電腦進行字元與整數的運算時，會自動將該字元轉為ASCII碼再與整數運算，運算完成後再轉成字元。因此，所謂「把明碼的每個字元加上某一個整數K而得到密碼的字元」，指的是將明碼所對應到的ASCII碼加上某一個整數K，再轉為字串得到密碼。</p>
-<p>透過觀察範例輸入&#x2F;出可知，1經過轉換後會變成*，查表可得K值為-7。因此，我們先使用scanf()函式讀取輸入的明碼，存放到字元陣列arr，再將陣列內的元素逐一減七，就是題目所求的密碼了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/a009-%E8%A7%A3%E7%A2%BC%E5%99%A8/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -703,7 +715,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

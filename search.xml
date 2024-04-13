@@ -27,6 +27,155 @@
       </tags>
   </entry>
   <entry>
+    <title>a224. 明明愛明明</title>
+    <url>/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/</url>
+    <content><![CDATA[<h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a224">https://zerojudge.tw/ShowProblem?problemid=a224</a></p>
+<h2 id="連結題目"><a href="#連結題目" class="headerlink" title="連結題目"></a>連結題目</h2><p><a href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題乍看之下就是單純判斷輸入字串是否為迴文，但須注意本題對迴文的定義是「只要重新安排順序後，符合迴文條件就算迴文」，也就是說字串的在輸入時的排列順序未必與可以形成迴文的順序相同。因此我們不能用當時<a href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a>的想法，直接頭尾一組檢查字元是否相同，必須換種作法才行。</p>
+<span id="more"></span>
+
+<p>根據定義，迴文字串必定頭尾對稱，換句話說最多只能有一種字母出現奇數次。因此，我們可以藉由檢查測資中各字母出現的次數，來判斷重新排列後是否可以形成迴文字串。若有一種以上的字母出現奇數次則非迴文；而若是26個字母檢查完接皆未出現上述情況則為迴文。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在了解如何判斷迴文字串後，本題還有另兩點需要注意。<br>第一，本題的測資夾雜了非英文字母的字元，在判斷時需將這些字元忽略。<br>第二，大寫和小寫字母在本題視為相同，在判斷字母出現次數時須特別注意。</p>
+<p><strong>程式碼</strong></p>
+<p>&#96;&#96;&#96;C&#x3D;&#x3D;<br>#include &lt;stdio.h&gt;<br>int main() {<br>    &#x2F;&#x2F;宣告<br>    char input[1000];<br>    while(scanf(“%s”, input)!&#x3D;EOF) {</p>
+<pre><code>    int alphabet[27]=&#123;&#125;, temp=0, test=0;
+    for(int i=0;input[i]!=&#39;\0&#39;;i++)
+        switch((int)input[i]) &#123; /*逐一判斷輸入字元為何*/
+            case 65: /*檢查A*/
+            case 97: /*檢查a*/
+                alphabet[0]++;
+                break;
+            case 66: /*檢查B*/
+            case 98: /*檢查b*/
+                alphabet[1]++;
+                break;
+            case 67: /*檢查C*/
+            case 99: /*檢查c*/
+                alphabet[2]++;
+                break;
+            case 68: /*檢查D*/
+            case 100: /*檢查d*/
+                alphabet[3]++;
+                break;
+            case 69: /*檢查E*/
+            case 101: /*檢查e*/
+                alphabet[4]++;
+                break;
+            case 70: /*檢查F*/
+            case 102: /*檢查f*/
+                alphabet[5]++;
+                break;
+            case 71: /*檢查G*/
+            case 103: /*檢查g*/
+                alphabet[6]++;
+                break;
+            case 72: /*檢查H*/
+            case 104: /*檢查h*/
+                alphabet[7]++;
+                break;
+            case 73: /*檢查I*/
+            case 105: /*檢查i*/
+                alphabet[8]++;
+                break;
+            case 74: /*檢查J*/
+            case 106: /*檢查j*/
+                alphabet[9]++;
+                break;
+            case 75: /*檢查K*/
+            case 107: /*檢查k*/
+                alphabet[10]++;
+                break;
+            case 76: /*檢查L*/
+            case 108: /*檢查l*/
+                alphabet[11]++;
+                break;
+            case 77: /*檢查M*/
+            case 109: /*檢查m*/
+                alphabet[12]++;
+                break;
+            case 78: /*檢查N*/
+            case 110: /*檢查n*/
+                alphabet[13]++;
+                break;
+            case 79: /*檢查O*/
+            case 111: /*檢查o*/
+                alphabet[14]++;
+                break;
+            case 80: /*檢查P*/
+            case 112: /*檢查p*/
+                alphabet[15]++;
+                break;
+            case 81: /*檢查Q*/
+            case 113: /*檢查q*/
+                alphabet[16]++;
+                break;
+            case 82: /*檢查R*/
+            case 114: /*檢查r*/
+                alphabet[17]++;
+                break;
+            case 83: /*檢查S*/
+            case 115: /*檢查s*/
+                alphabet[18]++;
+                break;
+            case 84: /*檢查T*/
+            case 116: /*檢查t*/
+                alphabet[19]++;
+                break;
+            case 85: /*檢查U*/
+            case 117: /*檢查u*/
+                alphabet[20]++;
+                break;
+            case 86: /*檢查V*/
+            case 118: /*檢查v*/
+                alphabet[21]++;
+                break;
+            case 87: /*檢查W*/
+            case 119: /*檢查w*/
+                alphabet[22]++;
+                break;
+            case 88: /*檢查X*/
+            case 120: /*檢查x*/
+                alphabet[23]++;
+                break;
+            case 89: /*檢查Y*/
+            case 121: /*檢查y*/
+                alphabet[24]++;
+                break;
+            case 90: /*檢查Z*/
+            case 122: /*檢查z*/
+                alphabet[25]++;
+                break;
+        &#125;
+        
+    for(int i=0;i&lt;26;i++) &#123; /*迴文字串必須頭尾對稱，
+                               因此最多只能有一種字母出現奇數次
+                               若有一種以上的字母出現奇數次，則非迴文
+                               若26個字母檢查完接皆未出現上述情況，則為迴文*/
+        if(alphabet[i]%2==1)
+            temp++;
+        if(temp==2) &#123;
+            printf(&quot;no...\n&quot;);
+            break;
+        &#125;
+        else
+            test++;
+    &#125;
+    if(test==26)
+        printf(&quot;yes !\n&quot;);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+]]></content>
+      <categories>
+        <category>程式教學</category>
+      </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>a215. 明明愛數數</title>
     <url>/a215-%E6%98%8E%E6%98%8E%E6%84%9B%E6%95%B8%E6%95%B8/</url>
     <content><![CDATA[<h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a215">https://zerojudge.tw/ShowProblem?problemid=a215</a></p>

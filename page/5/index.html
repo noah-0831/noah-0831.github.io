@@ -186,6 +186,98 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebar 程式酒吧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/" class="post-title-link" itemprop="url">a034. 二進位制轉換</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-03-06 14:17:38" itemprop="dateCreated datePublished" datetime="2024-03-06T14:17:38+08:00">2024-03-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-04-02 13:05:23" itemprop="dateModified" datetime="2024-04-02T13:05:23+08:00">2024-04-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a034">https://zerojudge.tw/ShowProblem?problemid=a034</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>在進入本題的討論之前，我們需要先了解何謂進位制。所謂的進位制，指的是以「基數」的指數和表示數字的記數方法。以最常見的十進位制來說，基數就是10。因此，以123這個數字來說，在十進位制下即為 1 x 10<sup>2</sup> + 2 x 10<sup>1</sup> + 3 x 10<sup>0</sup> 。而所謂的二進位制，就是基數為2的進位制。除了基數不同以外，邏輯和十進位制其實相同。因此，在進行從十進位制到二進位制的轉換時，我們可以2的指數逐一降次檢查大小。</p>
+<p>因為整數型態的變數可儲存的最大值為2<sup>31</sup>，所以我們先從2<sup>31</sup>開始檢查，若該數比2<sup>31</sup>還大，就將該位數註記為1，並將其值減去2<sup>31</sup>，否則將該位數註記為0。接著降次繼續檢查，直到整個數字檢查完畢，即完成二進位制的轉換。舉例來說，十進位制的123可以被表示為 1 x 2<sup>6</sup> + 1 x 2<sup>5</sup> + 1 x 2<sup>4</sup> + 1 x 2<sup>3</sup> + 0 x 2<sup>2</sup> + 1 x 2<sup>1</sup> + 1 x 2<sup>0</sup> ，因此其在二進位制表示法即為1111011。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/a034-%E4%BA%8C%E9%80%B2%E4%BD%8D%E5%88%B6%E8%BD%89%E6%8F%9B/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98%EF%BC%8D%E5%88%9D%E5%85%A5%E5%90%A7%E6%AA%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -551,110 +643,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Codebar 程式酒吧">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/" class="post-title-link" itemprop="url">a020. 身分證檢驗</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-02-28 12:26:10" itemprop="dateCreated datePublished" datetime="2024-02-28T12:26:10+08:00">2024-02-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-31 10:32:28" itemprop="dateModified" datetime="2024-03-31T10:32:28+08:00">2024-03-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a020">https://zerojudge.tw/ShowProblem?problemid=a020</a></p>
-<h2 id="建議類題"><a href="#建議類題" class="headerlink" title="建議類題"></a>建議類題</h2><p><a href="https://noah-0831.github.io/a054-%E9%9B%BB%E8%A9%B1%E5%AE%A2%E6%9C%8D%E4%B8%AD%E5%BF%83/">a054. 電話客服中心</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題的題意相當複雜，大致上的意思是:</p>
-<ol>
-<li>讀取輸入的身分證字號。</li>
-<li>將身分證字號中代表出生縣市的英文代號依照附圖的方式轉換成數字。</li>
-<li>將2.的數字的個位數字乘以9倍並加上十位數字。</li>
-<li>將身分證字號的數字部分由左到右分別乘上8、7、6、5、4、3、2、1、1。</li>
-<li>以3.與4.的和做為判斷標準。若能被10整除則輸出”real”，否則輸出”fake”。</li>
-</ol>
-<p>1.的部分需注意身份證字號的各數字之間沒有空格，若用整數型態的變數儲存會被讀取成一個整數。因此，這裡使用字元陣列讀取並儲存輸入的身分證字號。</p>
-<p>2.就是單純的條件判斷，乍看之下需寫出26個英文字母各自的條件語句，但仔細觀察會發現有些英文字母的轉換是有規律的。我們可以善用這個規律化簡程式碼，將剛剛以字元型態讀取的英文代號先轉為<a href="https://noah-0831.github.io/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/">ASCII碼</a>，再經由加減運算得到如附圖中的數字。</p>
-<p>3.的關鍵在於分別取得數字的個位數和十位數。個位數可以用除10後取餘數的方式獲得，而十位數則因為在整數型態的運算中，若運算結果為小數，會自動無條件捨去至整數位，剛好等於除10後的商。</p>
-<p>4.的部分，可以看到前8位數字的倍數呈規律遞減，因此可善用for迴圈得出，第9位再單獨加上去就好了。</p>
-<p>5.就是單純的條件判斷並輸出相對應的輸出！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/a020-%E8%BA%AB%E5%88%86%E8%AD%89%E6%AA%A2%E9%A9%97/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -724,7 +712,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

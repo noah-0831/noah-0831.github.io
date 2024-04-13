@@ -22,16 +22,20 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#999999","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Codebar 程式酒吧">
-<meta property="og:url" content="https://noah-0831.github.io/archives/2023/02/">
+  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a224 連結題目a022. 迴文 解題思路本題乍看之下就是單純判斷輸入字串是否為迴文，但須注意本題對迴文的定義是「只要重新安排順序後，符合迴文條件就算迴文」，也就是說字串的在輸入時的排列順序未必與可以形成迴文的順序相同。因此我們不能用當時a022. 迴文的想法，直接頭尾一組檢查字元是否相同，必須換種作法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="a224. 明明愛明明">
+<meta property="og:url" content="https://noah-0831.github.io/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
+<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a224 連結題目a022. 迴文 解題思路本題乍看之下就是單純判斷輸入字串是否為迴文，但須注意本題對迴文的定義是「只要重新安排順序後，符合迴文條件就算迴文」，也就是說字串的在輸入時的排列順序未必與可以形成迴文的順序相同。因此我們不能用當時a022. 迴文的想法，直接頭尾一組檢查字元是否相同，必須換種作法">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-04-10T10:39:05.000Z">
+<meta property="article:modified_time" content="2024-04-12T16:36:38.013Z">
 <meta property="article:author" content="Noah">
-<meta property="article:tag" content="codebar">
+<meta property="article:tag" content="C語言">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://noah-0831.github.io/archives/2023/02/">
+<link rel="canonical" href="https://noah-0831.github.io/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/">
 
 
 <script id="page-configurations">
@@ -39,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>歸檔 | Codebar 程式酒吧</title>
+  <title>a224. 明明愛明明 | Codebar 程式酒吧</title>
   
 
 
@@ -180,46 +184,265 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebar 程式酒吧">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          a224. 明明愛明明
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-04-10 18:39:05" itemprop="dateCreated datePublished" datetime="2024-04-10T18:39:05+08:00">2024-04-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-04-13 00:36:38" itemprop="dateModified" datetime="2024-04-13T00:36:38+08:00">2024-04-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a224">https://zerojudge.tw/ShowProblem?problemid=a224</a></p>
+<h2 id="連結題目"><a href="#連結題目" class="headerlink" title="連結題目"></a>連結題目</h2><p><a href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題乍看之下就是單純判斷輸入字串是否為迴文，但須注意本題對迴文的定義是「只要重新安排順序後，符合迴文條件就算迴文」，也就是說字串的在輸入時的排列順序未必與可以形成迴文的順序相同。因此我們不能用當時<a href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a>的想法，直接頭尾一組檢查字元是否相同，必須換種作法才行。</p>
+<span id="more"></span>
+
+<p>根據定義，迴文字串必定頭尾對稱，換句話說最多只能有一種字母出現奇數次。因此，我們可以藉由檢查測資中各字母出現的次數，來判斷重新排列後是否可以形成迴文字串。若有一種以上的字母出現奇數次則非迴文；而若是26個字母檢查完接皆未出現上述情況則為迴文。</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在了解如何判斷迴文字串後，本題還有另兩點需要注意。<br>第一，本題的測資夾雜了非英文字母的字元，在判斷時需將這些字元忽略。<br>第二，大寫和小寫字母在本題視為相同，在判斷字母出現次數時須特別注意。</p>
+<p><strong>程式碼</strong></p>
+<p>&#96;&#96;&#96;C&#x3D;&#x3D;<br>#include &lt;stdio.h&gt;<br>int main() {<br>    &#x2F;&#x2F;宣告<br>    char input[1000];<br>    while(scanf(“%s”, input)!&#x3D;EOF) {</p>
+<pre><code>    int alphabet[27]=&#123;&#125;, temp=0, test=0;
+    for(int i=0;input[i]!=&#39;\0&#39;;i++)
+        switch((int)input[i]) &#123; /*逐一判斷輸入字元為何*/
+            case 65: /*檢查A*/
+            case 97: /*檢查a*/
+                alphabet[0]++;
+                break;
+            case 66: /*檢查B*/
+            case 98: /*檢查b*/
+                alphabet[1]++;
+                break;
+            case 67: /*檢查C*/
+            case 99: /*檢查c*/
+                alphabet[2]++;
+                break;
+            case 68: /*檢查D*/
+            case 100: /*檢查d*/
+                alphabet[3]++;
+                break;
+            case 69: /*檢查E*/
+            case 101: /*檢查e*/
+                alphabet[4]++;
+                break;
+            case 70: /*檢查F*/
+            case 102: /*檢查f*/
+                alphabet[5]++;
+                break;
+            case 71: /*檢查G*/
+            case 103: /*檢查g*/
+                alphabet[6]++;
+                break;
+            case 72: /*檢查H*/
+            case 104: /*檢查h*/
+                alphabet[7]++;
+                break;
+            case 73: /*檢查I*/
+            case 105: /*檢查i*/
+                alphabet[8]++;
+                break;
+            case 74: /*檢查J*/
+            case 106: /*檢查j*/
+                alphabet[9]++;
+                break;
+            case 75: /*檢查K*/
+            case 107: /*檢查k*/
+                alphabet[10]++;
+                break;
+            case 76: /*檢查L*/
+            case 108: /*檢查l*/
+                alphabet[11]++;
+                break;
+            case 77: /*檢查M*/
+            case 109: /*檢查m*/
+                alphabet[12]++;
+                break;
+            case 78: /*檢查N*/
+            case 110: /*檢查n*/
+                alphabet[13]++;
+                break;
+            case 79: /*檢查O*/
+            case 111: /*檢查o*/
+                alphabet[14]++;
+                break;
+            case 80: /*檢查P*/
+            case 112: /*檢查p*/
+                alphabet[15]++;
+                break;
+            case 81: /*檢查Q*/
+            case 113: /*檢查q*/
+                alphabet[16]++;
+                break;
+            case 82: /*檢查R*/
+            case 114: /*檢查r*/
+                alphabet[17]++;
+                break;
+            case 83: /*檢查S*/
+            case 115: /*檢查s*/
+                alphabet[18]++;
+                break;
+            case 84: /*檢查T*/
+            case 116: /*檢查t*/
+                alphabet[19]++;
+                break;
+            case 85: /*檢查U*/
+            case 117: /*檢查u*/
+                alphabet[20]++;
+                break;
+            case 86: /*檢查V*/
+            case 118: /*檢查v*/
+                alphabet[21]++;
+                break;
+            case 87: /*檢查W*/
+            case 119: /*檢查w*/
+                alphabet[22]++;
+                break;
+            case 88: /*檢查X*/
+            case 120: /*檢查x*/
+                alphabet[23]++;
+                break;
+            case 89: /*檢查Y*/
+            case 121: /*檢查y*/
+                alphabet[24]++;
+                break;
+            case 90: /*檢查Z*/
+            case 122: /*檢查z*/
+                alphabet[25]++;
+                break;
+        &#125;
+        
+    for(int i=0;i&lt;26;i++) &#123; /*迴文字串必須頭尾對稱，
+                               因此最多只能有一種字母出現奇數次
+                               若有一種以上的字母出現奇數次，則非迴文
+                               若26個字母檢查完接皆未出現上述情況，則為迴文*/
+        if(alphabet[i]%2==1)
+            temp++;
+        if(temp==2) &#123;
+            printf(&quot;no...\n&quot;);
+            break;
+        &#125;
+        else
+            test++;
+    &#125;
+    if(test==26)
+        printf(&quot;yes !\n&quot;);
+&#125;
+
+return 0;
+</code></pre>
+<p>}</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+  <div class="popular-posts-header">相關文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a216-數數愛明明\" rel="bookmark">a216. 數數愛明明</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a215-明明愛數數\" rel="bookmark">a215. 明明愛數數</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\a149-乘乘樂\" rel="bookmark">a149. 乘乘樂</a></div>
+    </li>
+  </ul>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated" datetime="2023-02-15T22:04:30+08:00" content="2023-02-15">
-          02-15
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/%E9%97%9C%E6%96%BC%20Codebar/" itemprop="url">
-            <span itemprop="name">關於 Codebar 程式酒吧</span>
-          </a>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C%E8%AA%9E%E8%A8%80/" rel="tag"># C語言</a>
+          </div>
 
-    </header>
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/a215-%E6%98%8E%E6%98%8E%E6%84%9B%E6%95%B8%E6%95%B8/" rel="prev" title="a215. 明明愛數數">
+      <i class="fa fa-chevron-left"></i> a215. 明明愛數數
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/a216-%E6%95%B8%E6%95%B8%E6%84%9B%E6%98%8E%E6%98%8E/" rel="next" title="a216. 數數愛明明">
+      a216. 數數愛明明 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -272,6 +495,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%80%A3%E7%B5%90"><span class="nav-number">1.</span> <span class="nav-text">題目連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%A3%E7%B5%90%E9%A1%8C%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">連結題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">4.</span> <span class="nav-text">注意事項</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
