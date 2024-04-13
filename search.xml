@@ -36,138 +36,7 @@
 
 <p>根據定義，迴文字串必定頭尾對稱，換句話說最多只能有一種字母出現奇數次。因此，我們可以藉由檢查測資中各字母出現的次數，來判斷重新排列後是否可以形成迴文字串。若有一種以上的字母出現奇數次則非迴文；而若是26個字母檢查完接皆未出現上述情況則為迴文。</p>
 <h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在了解如何判斷迴文字串後，本題還有另兩點需要注意。<br>第一，本題的測資夾雜了非英文字母的字元，在判斷時需將這些字元忽略。<br>第二，大寫和小寫字母在本題視為相同，在判斷字母出現次數時須特別注意。</p>
-<p><strong>程式碼</strong></p>
-<p>&#96;&#96;&#96;C&#x3D;&#x3D;<br>#include &lt;stdio.h&gt;<br>int main() {<br>    &#x2F;&#x2F;宣告<br>    char input[1000];<br>    while(scanf(“%s”, input)!&#x3D;EOF) {</p>
-<pre><code>    int alphabet[27]=&#123;&#125;, temp=0, test=0;
-    for(int i=0;input[i]!=&#39;\0&#39;;i++)
-        switch((int)input[i]) &#123; /*逐一判斷輸入字元為何*/
-            case 65: /*檢查A*/
-            case 97: /*檢查a*/
-                alphabet[0]++;
-                break;
-            case 66: /*檢查B*/
-            case 98: /*檢查b*/
-                alphabet[1]++;
-                break;
-            case 67: /*檢查C*/
-            case 99: /*檢查c*/
-                alphabet[2]++;
-                break;
-            case 68: /*檢查D*/
-            case 100: /*檢查d*/
-                alphabet[3]++;
-                break;
-            case 69: /*檢查E*/
-            case 101: /*檢查e*/
-                alphabet[4]++;
-                break;
-            case 70: /*檢查F*/
-            case 102: /*檢查f*/
-                alphabet[5]++;
-                break;
-            case 71: /*檢查G*/
-            case 103: /*檢查g*/
-                alphabet[6]++;
-                break;
-            case 72: /*檢查H*/
-            case 104: /*檢查h*/
-                alphabet[7]++;
-                break;
-            case 73: /*檢查I*/
-            case 105: /*檢查i*/
-                alphabet[8]++;
-                break;
-            case 74: /*檢查J*/
-            case 106: /*檢查j*/
-                alphabet[9]++;
-                break;
-            case 75: /*檢查K*/
-            case 107: /*檢查k*/
-                alphabet[10]++;
-                break;
-            case 76: /*檢查L*/
-            case 108: /*檢查l*/
-                alphabet[11]++;
-                break;
-            case 77: /*檢查M*/
-            case 109: /*檢查m*/
-                alphabet[12]++;
-                break;
-            case 78: /*檢查N*/
-            case 110: /*檢查n*/
-                alphabet[13]++;
-                break;
-            case 79: /*檢查O*/
-            case 111: /*檢查o*/
-                alphabet[14]++;
-                break;
-            case 80: /*檢查P*/
-            case 112: /*檢查p*/
-                alphabet[15]++;
-                break;
-            case 81: /*檢查Q*/
-            case 113: /*檢查q*/
-                alphabet[16]++;
-                break;
-            case 82: /*檢查R*/
-            case 114: /*檢查r*/
-                alphabet[17]++;
-                break;
-            case 83: /*檢查S*/
-            case 115: /*檢查s*/
-                alphabet[18]++;
-                break;
-            case 84: /*檢查T*/
-            case 116: /*檢查t*/
-                alphabet[19]++;
-                break;
-            case 85: /*檢查U*/
-            case 117: /*檢查u*/
-                alphabet[20]++;
-                break;
-            case 86: /*檢查V*/
-            case 118: /*檢查v*/
-                alphabet[21]++;
-                break;
-            case 87: /*檢查W*/
-            case 119: /*檢查w*/
-                alphabet[22]++;
-                break;
-            case 88: /*檢查X*/
-            case 120: /*檢查x*/
-                alphabet[23]++;
-                break;
-            case 89: /*檢查Y*/
-            case 121: /*檢查y*/
-                alphabet[24]++;
-                break;
-            case 90: /*檢查Z*/
-            case 122: /*檢查z*/
-                alphabet[25]++;
-                break;
-        &#125;
-        
-    for(int i=0;i&lt;26;i++) &#123; /*迴文字串必須頭尾對稱，
-                               因此最多只能有一種字母出現奇數次
-                               若有一種以上的字母出現奇數次，則非迴文
-                               若26個字母檢查完接皆未出現上述情況，則為迴文*/
-        if(alphabet[i]%2==1)
-            temp++;
-        if(temp==2) &#123;
-            printf(&quot;no...\n&quot;);
-            break;
-        &#125;
-        else
-            test++;
-    &#125;
-    if(test==26)
-        printf(&quot;yes !\n&quot;);
-&#125;
-
-return 0;
-</code></pre>
-<p>}</p>
-]]></content>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告字元陣列input，並以字串形式讀取，代表輸入的測資</span></span><br><span class="line">    <span class="type">char</span> input[<span class="number">1000</span>];</span><br><span class="line">    <span class="comment">//使用EOF寫法判斷程式執行的條件</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, input) != EOF) &#123;</span><br><span class="line">        <span class="comment">//宣告陣列alphabet，代表各個英文字母出現的次數（不分大小寫）</span></span><br><span class="line">        <span class="comment">//宣告變數num，代表出現次數為偶數的英文字母數量</span></span><br><span class="line">        <span class="comment">//宣告變數test，代表是否為迴文字串</span></span><br><span class="line">        <span class="type">int</span> alphabet[<span class="number">26</span>] = &#123;&#125;, num = <span class="number">0</span>, test = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//逐一判斷輸入字元為何，計算各個英文字母出現的次數</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; input[i] != <span class="string">&#x27;\0&#x27;</span> ; i ++)</span><br><span class="line">            <span class="keyword">switch</span>(input[i]) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">65</span>: <span class="comment">//檢查A</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">97</span>: <span class="comment">//檢查a</span></span><br><span class="line">                    alphabet[<span class="number">0</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">66</span>: <span class="comment">//檢查B</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">98</span>: <span class="comment">//檢查b</span></span><br><span class="line">                    alphabet[<span class="number">1</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">67</span>: <span class="comment">//檢查C</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">99</span>: <span class="comment">//檢查c</span></span><br><span class="line">                    alphabet[<span class="number">2</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">68</span>: <span class="comment">//檢查D</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">100</span>: <span class="comment">//檢查d</span></span><br><span class="line">                    alphabet[<span class="number">3</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">69</span>: <span class="comment">//檢查E</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">101</span>: <span class="comment">//檢查e</span></span><br><span class="line">                    alphabet[<span class="number">4</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">70</span>: <span class="comment">//檢查F</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">102</span>: <span class="comment">//檢查f</span></span><br><span class="line">                    alphabet[<span class="number">5</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">71</span>: <span class="comment">//檢查G</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">103</span>: <span class="comment">//檢查g</span></span><br><span class="line">                    alphabet[<span class="number">6</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">72</span>: <span class="comment">//檢查H</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">104</span>: <span class="comment">//檢查h</span></span><br><span class="line">                    alphabet[<span class="number">7</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">73</span>: <span class="comment">//檢查I</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">105</span>: <span class="comment">//檢查i</span></span><br><span class="line">                    alphabet[<span class="number">8</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">74</span>: <span class="comment">//檢查J</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">106</span>: <span class="comment">//檢查j</span></span><br><span class="line">                    alphabet[<span class="number">9</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">75</span>: <span class="comment">//檢查K</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">107</span>: <span class="comment">//檢查k</span></span><br><span class="line">                    alphabet[<span class="number">10</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">76</span>: <span class="comment">//檢查L</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">108</span>: <span class="comment">//檢查l</span></span><br><span class="line">                    alphabet[<span class="number">11</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">77</span>: <span class="comment">//檢查M</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">109</span>: <span class="comment">//檢查m</span></span><br><span class="line">                    alphabet[<span class="number">12</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">78</span>: <span class="comment">//檢查N</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">110</span>: <span class="comment">//檢查n</span></span><br><span class="line">                    alphabet[<span class="number">13</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">79</span>: <span class="comment">//檢查O</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">111</span>: <span class="comment">//檢查o</span></span><br><span class="line">                    alphabet[<span class="number">14</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">80</span>: <span class="comment">//檢查P</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">112</span>: <span class="comment">//檢查p</span></span><br><span class="line">                    alphabet[<span class="number">15</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">81</span>: <span class="comment">//檢查Q</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">113</span>: <span class="comment">//檢查q</span></span><br><span class="line">                    alphabet[<span class="number">16</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">82</span>: <span class="comment">//檢查R</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">114</span>: <span class="comment">//檢查r</span></span><br><span class="line">                    alphabet[<span class="number">17</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">83</span>: <span class="comment">//檢查S</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">115</span>: <span class="comment">//檢查s</span></span><br><span class="line">                    alphabet[<span class="number">18</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">84</span>: <span class="comment">//檢查T</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">116</span>: <span class="comment">//檢查t</span></span><br><span class="line">                    alphabet[<span class="number">19</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">85</span>: <span class="comment">//檢查U</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">117</span>: <span class="comment">//檢查u</span></span><br><span class="line">                    alphabet[<span class="number">20</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">86</span>: <span class="comment">//檢查V</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">118</span>: <span class="comment">//檢查v</span></span><br><span class="line">                    alphabet[<span class="number">21</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">87</span>: <span class="comment">//檢查W</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">119</span>: <span class="comment">//檢查w</span></span><br><span class="line">                    alphabet[<span class="number">22</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">88</span>: <span class="comment">//檢查X</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">120</span>: <span class="comment">//檢查x</span></span><br><span class="line">                    alphabet[<span class="number">23</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">89</span>: <span class="comment">//檢查Y</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">121</span>: <span class="comment">//檢查y</span></span><br><span class="line">                    alphabet[<span class="number">24</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">90</span>: <span class="comment">//檢查Z</span></span><br><span class="line">                <span class="keyword">case</span> <span class="number">122</span>: <span class="comment">//檢查z</span></span><br><span class="line">                    alphabet[<span class="number">25</span>] ++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">26</span> ; i ++) &#123;</span><br><span class="line">            <span class="comment">//若有一種以上的字母出現奇數次，則非迴文</span></span><br><span class="line">            <span class="keyword">if</span>(alphabet[i]%<span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">                num ++;</span><br><span class="line">            <span class="keyword">if</span>(num == <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;no...\n&quot;</span>);</span><br><span class="line">                test = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//若26個字母檢查完接皆未出現上述情況，則為迴文</span></span><br><span class="line">        <span class="keyword">if</span>(test == <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;yes !\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>程式教學</category>
       </categories>
@@ -564,6 +433,7 @@ return 0;
     <title>a022. 迴文</title>
     <url>/a022-%E8%BF%B4%E6%96%87/</url>
     <content><![CDATA[<h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a022">https://zerojudge.tw/ShowProblem?problemid=a022</a></p>
+<h2 id="建議類題"><a href="#建議類題" class="headerlink" title="建議類題"></a>建議類題</h2><p><a href="https://noah-0831.github.io/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/">a224. 明明愛明明</a></p>
 <h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>迴文，是指字串不論是從正向讀還是反向讀均相同，也就是說迴文字串必定頭尾對稱。因此，我們可以利用for迴圈檢查。若長度為len的字串，第i項等於第len-i-1項，就將計數變數count值+1。若count值等於len&#x2F;2，就代表該字串符合迴文的條件。</p>
 <span id="more"></span>
 
