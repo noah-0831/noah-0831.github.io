@@ -22,20 +22,18 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#999999","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="在架設網站的時候，儘管事先在網路閱讀了許多教學，按部就班地完成了設定的步驟，但每個人的帳戶、電腦情況和軟體的版本有所不同，難免會出現一些預料之外的情況。因此，我決定用一篇文章，說明我在架設網站時所遇到的種種問題，以及排除的方法。 首先，是使用hexo指令時的報錯。 既然這個網站是用hexo架設的，當然是使用hexo指令來創建、編修、發布文件。但有次使用hexo的指令後，Git Bash跳出了以下報">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Noah的小記2 那些創立網站時遇到的問題與解方">
-<meta property="og:url" content="https://noah-0831.github.io/Noah%E7%9A%84%E5%B0%8F%E8%A8%982%EF%BC%8D%E9%82%A3%E4%BA%9B%E5%89%B5%E7%AB%8B%E7%B6%B2%E7%AB%99%E6%99%82%E9%81%87%E5%88%B0%E7%9A%84%E5%95%8F%E9%A1%8C%E8%88%87%E8%A7%A3%E6%96%B9/">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="a229. 括號匹配問題">
+<meta property="og:url" content="https://noah-0831.github.io/a229-%E6%8B%AC%E8%99%9F%E5%8C%B9%E9%85%8D%E5%95%8F%E9%A1%8C/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
-<meta property="og:description" content="在架設網站的時候，儘管事先在網路閱讀了許多教學，按部就班地完成了設定的步驟，但每個人的帳戶、電腦情況和軟體的版本有所不同，難免會出現一些預料之外的情況。因此，我決定用一篇文章，說明我在架設網站時所遇到的種種問題，以及排除的方法。 首先，是使用hexo指令時的報錯。 既然這個網站是用hexo架設的，當然是使用hexo指令來創建、編修、發布文件。但有次使用hexo的指令後，Git Bash跳出了以下報">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-03-01T16:03:09.000Z">
-<meta property="article:modified_time" content="2024-03-31T02:44:17.562Z">
+<meta property="article:published_time" content="2024-04-16T00:55:52.000Z">
+<meta property="article:modified_time" content="2024-04-16T00:55:52.331Z">
 <meta property="article:author" content="Noah">
 <meta property="article:tag" content="codebar">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://noah-0831.github.io/Noah%E7%9A%84%E5%B0%8F%E8%A8%982%EF%BC%8D%E9%82%A3%E4%BA%9B%E5%89%B5%E7%AB%8B%E7%B6%B2%E7%AB%99%E6%99%82%E9%81%87%E5%88%B0%E7%9A%84%E5%95%8F%E9%A1%8C%E8%88%87%E8%A7%A3%E6%96%B9/">
+<link rel="canonical" href="https://noah-0831.github.io/a229-%E6%8B%AC%E8%99%9F%E5%8C%B9%E9%85%8D%E5%95%8F%E9%A1%8C/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>Noah的小記2 那些創立網站時遇到的問題與解方 | Codebar 程式酒吧</title>
+  <title>a229. 括號匹配問題 | Codebar 程式酒吧</title>
   
 
 
@@ -191,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/Noah%E7%9A%84%E5%B0%8F%E8%A8%982%EF%BC%8D%E9%82%A3%E4%BA%9B%E5%89%B5%E7%AB%8B%E7%B6%B2%E7%AB%99%E6%99%82%E9%81%87%E5%88%B0%E7%9A%84%E5%95%8F%E9%A1%8C%E8%88%87%E8%A7%A3%E6%96%B9/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a229-%E6%8B%AC%E8%99%9F%E5%8C%B9%E9%85%8D%E5%95%8F%E9%A1%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -204,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Noah的小記2 那些創立網站時遇到的問題與解方
+          a229. 括號匹配問題
         </h1>
 
         <div class="post-meta">
@@ -216,23 +214,7 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-03-02 00:03:09" itemprop="dateCreated datePublished" datetime="2024-03-02T00:03:09+08:00">2024-03-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-31 10:44:17" itemprop="dateModified" datetime="2024-03-31T10:44:17+08:00">2024-03-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Noah%E7%9A%84%E5%B0%8F%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">Noah的小記</span></a>
-                </span>
+              <time title="創建時間：2024-04-16 08:55:52" itemprop="dateCreated datePublished" datetime="2024-04-16T08:55:52+08:00">2024-04-16</time>
             </span>
 
           
@@ -260,22 +242,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在架設網站的時候，儘管事先在網路閱讀了許多教學，按部就班地完成了設定的步驟，但每個人的帳戶、電腦情況和軟體的版本有所不同，難免會出現一些預料之外的情況。因此，我決定用一篇文章，說明我在架設網站時所遇到的種種問題，以及排除的方法。</p>
-<p>首先，是使用hexo指令時的報錯。</p>
-<p>既然這個網站是用hexo架設的，當然是使用hexo指令來創建、編修、發布文件。但有次使用hexo的指令後，Git Bash跳出了以下報錯：<br><strong>Commands:help Get help on a command.init Create a new Hexo folder.version Display version information…</strong><br>從錯誤訊息看不太出問題出在哪裡，只知道此刻hexo的所有指令皆未能順利執行。</p>
-<p>事實上，這是因為檔案路徑已經被移動過了。</p>
-<span id="more"></span>
-
-<p>在創建網站時，電腦端會同步產生一個叫做「github page」的資料夾，將所有相關資料存放在裡面。因此，當我們使用hexo指令時，指向的位置當然要是github page，也就是離檔案位置最近的地方。如果不慎更動到檔案路徑，無論你重複再多次指令，github page都無法收到。我們可以在Git Bash使用cd指令，重新指派檔案路徑，寫法如下：</p>
-<p>cd ~&#x2F;Documents&#x2F;中間的檔案路徑&#x2F;“github page”</p>
-<p>當然，也可以從檔案總管直接找到github page，點進資料夾後在空白處按右鍵，選擇「顯示其他選項－Git Bash Here」，直接在檔案位置開啟Git Bash，檔案路徑就會直接預設到github page了。</p>
-<p>再來，是<a target="_blank" rel="external nofollow noopener noreferrer" href="https://blog.csdn.net/qq_26540999/article/details/53445589">郵箱與名字的遺失</a>。</p>
-<p>一次使用hexo指令發布文章時，Git Bash出現了以下報錯：<br><strong>git config –global user.email “<a href="mailto:&#121;&#111;&#117;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#x6f;&#x6d;" rel="external nofollow noopener noreferrer" target="_blank">&#121;&#111;&#117;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#x6f;&#x6d;</a>“</strong><br><strong>git config –global user.name “Your Name”…</strong><br><strong>to set your account’s default identity.</strong><br><strong>Omit –global to set the identity only in this repository…</strong><br><strong>fatal: unable to auto-detect email address (got ‘Administrator@MS-201610130300.(none)’)</strong></p>
-<p>這次的錯誤訊息就很明顯了，要我們重新設定身分。簡單來說，在使用github page發佈文章時，系統會先創建一個git資料夾，把檔案放入資料夾後再發佈。而電腦在創建git資料夾的過程中發現我們提供的身分訊息並不完整，此時只要手動在Git Bash中補充其所需訊息即可，寫法如下：</p>
-<p>git config –global user.email “你的郵箱”<br>git config–global user.name “你的名字”</p>
-<p>注意”你的郵箱”和”你的名字”的部分，要填入自己在創建帳號時所使用的信箱和名字，輸入後再次送出指令就會恢復正常了。</p>
-<p>最後是一個困擾我很久的問題。當初在設定hexo的時候，參考了許多網路文章。其中一篇寫到若要設定網頁的圖片背景，可在github page&#x2F;source&#x2F;_data裡找到一個叫做styles.styl的檔案，在裡面打上以下內容：<br>body {<br>    background: url(圖片的檔案路徑);<br>    background-size: cover;<br>    background-repeat: no-repeat;<br>    background-attachment: fixed;<br>    background-position: top center;<br>}<br>先說結論，在styles.styl檔裡面設定網頁的圖片背景這點是對的，但打法錯了。若是照打上去，會出現ParseError，也就是格式上的錯誤。我自己試成功的設定方式如下：<br>background: 圖片的檔案路徑<br>background-size: cover<br>background-repeat: no-repeat<br>background-attachment: fixed<br>background-position: top center<br>內容大致上和教學一致，但外面不用加上body{}，圖片的檔案路徑也不用加url，句尾去掉;，最後把不必要的空白行和縮排去除即可。</p>
-
+        
     </div>
 
     
@@ -292,12 +259,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/" rel="prev" title="a024. 最大公因數(GCD)">
-      <i class="fa fa-chevron-left"></i> a024. 最大公因數(GCD)
+    <a href="/a225-%E6%98%8E%E6%98%8E%E6%84%9B%E6%8E%92%E5%88%97/" rel="prev" title="a225. 明明愛排列">
+      <i class="fa fa-chevron-left"></i> a225. 明明愛排列
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98%EF%BC%8D%E5%88%9D%E5%85%A5%E5%90%A7%E6%AA%AF/" rel="next" title="調酒日記 初入吧檯">
-      調酒日記 初入吧檯 <i class="fa fa-chevron-right"></i>
+    <a href="/Noah%E7%9A%84%E5%B0%8F%E8%A8%983-%E9%82%A3%E4%BA%9B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/" rel="next" title="Noah的小記3 那些寫程式時的好習慣">
+      Noah的小記3 那些寫程式時的好習慣 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
