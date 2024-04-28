@@ -11,14 +11,29 @@
       </categories>
   </entry>
   <entry>
-    <title>Noah的小記3 那些寫程式時的好習慣</title>
-    <url>/Noah%E7%9A%84%E5%B0%8F%E8%A8%983-%E9%82%A3%E4%BA%9B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>a229. 括號匹配問題</title>
     <url>/a229-%E6%8B%AC%E8%99%9F%E5%8C%B9%E9%85%8D%E5%95%8F%E9%A1%8C/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="建議類題"><a href="#建議類題" class="headerlink" title="建議類題"></a>建議類題</h2><p><a href="https://hackmd.io/DwmkclCaTUOO48NYFW8AHw?view#a524-%E6%89%8B%E6%A9%9F%E4%B9%8B%E8%AC%8E">a524. 手機之謎</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據題意，我們要找出對於n個左括號和n個右括號來說，所有合法的，也就是說「任一點左括號數量皆大於等於右括號」的匹配組合。因為相信多數人和我一樣，沒辦法從題目敘述中找出規律，因此本題我們使用<a href="https://openhome.cc/Gossip/CGossip/Recursion.html">遞迴</a>排除已經輸出的情況，列舉出所有的可能性。</p>
+<p>想要了解什麼是遞迴，必須先知道有關函數的觀念。在<a href="https://noah-0831.github.io/a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95/">a002. 簡易加法</a>，我們曾經提過函式是一種可以執行特定功能的程式區塊。當我們呼叫函式時，電腦就會執行函式內的程式。那麼，如果我在函式內呼叫了這個函式本身，會發生什麼事情呢？因為每當電腦執行函式時，都會再次收到我們的函式呼叫，因此電腦將不斷重複執行這個函式。這就是遞迴，藉由在函式內呼叫函式本身，形成循環以重複執行程式。</p>
+<span id="more"></span>
+
+<p>以本題來說，假設我們今天有num組括號要匹配，可以想像成是有一個長度為 2 x num 的陣列，在這個陣列的每個項，我們都可以選擇要放左括號還是右括號。因此，我們宣告一個函式，讓他從第1項跑到第 2 x num 項。在討論每個項，或者說跑到每個節點時，我們都使用遞迴分別跑一次選擇左括號和右括號的情況，直到跑到最後一個節點，即跑完所有的匹配組合。</p>
+<p>在確定所有可能的匹配組合都有被討論到後，接下來我們要為遞迴加上限制條件，將我們真正想要的匹配組合留下。首先，雖然我們在各個位子都有左括號和右括號兩種選擇，但因為括號是兩兩一組的，因此左括號和右括號的總數都不應超過num個，如果我們跑一跑發現左括號或右括號的總數超過num的話，就不用再跑下去了；再來，合法的匹配組合在任一點的左括號數量一定大於等於右括號，因此如果我們跑一跑發現左括號的數量小於右括號，代表這不是合法的匹配組合，也不用再跑下去了。如此一來，跑到最後的匹配組合，一定都是合法的，就可以放心輸出了！</p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>遞迴是一種重複執行程式的方法，概念是先宣告一個函式，藉由在函式內呼叫函式本身，讓程式不斷跑下去。和同樣是重複執行程式的迴圈不同的是，迴圈的每一次運行都是從頭開始，常用於重複執行指定的動作；而遞迴因為會返回距離最近的「節點」，可以跑過每個節點、每個選擇的所有可能性，完成具有「分支」的討論，進一步運用在<a href="https://dotblogs.com.tw/ilikedogs/2020/03/23/151856">深度優先演算法(DFS)</a>上。因此，推薦大家在學習完函式與迴圈後，可以試著<a href="https://medium.com/appworks-school/%E9%80%B2%E5%85%A5%E9%81%9E%E8%BF%B4-recursion-%E7%9A%84%E4%B8%96%E7%95%8C-%E4%B8%80-59fa4b394ef6">學習遞迴</a>。</p>
+<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//宣告變數n，代表總共有幾組括號要匹配</span></span><br><span class="line"><span class="comment">//宣告變數num，令其值為2*n，代表總共有幾個位子要討論</span></span><br><span class="line"><span class="type">int</span> n, num;</span><br><span class="line"><span class="comment">//宣告一長度為30的陣列arr，代表可能的括號匹配組合</span></span><br><span class="line"><span class="type">char</span> arr[<span class="number">30</span>];</span><br><span class="line"><span class="comment">//宣告回傳值為void型態（不回傳）的函式dfs，討論每一項的可能性</span></span><br><span class="line"><span class="comment">//宣告變數now，代表現在討論到第幾項，或者說跑到第幾個節點</span></span><br><span class="line"><span class="comment">//宣告變數left、right，分別代表現在左括號和右括號的數量</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> now, <span class="type">int</span> left, <span class="type">int</span> right)</span> &#123;</span><br><span class="line">    <span class="comment">//若左括號或右括號數量大於n，或是左括號數量小於右括號，皆為不合法的匹配組合，可以直接返回</span></span><br><span class="line">    <span class="keyword">if</span>(left &gt; n || left &lt; right)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">//若跑到第num個節點，而沒有被終止，代表這是合法的匹配組合，可以輸出</span></span><br><span class="line">    <span class="comment">/*在結尾補/0再輸出字串，比以for迴圈輸出字元陣列快*/</span></span><br><span class="line">    <span class="keyword">if</span>(now == num) &#123;</span><br><span class="line">        arr[num] = <span class="string">&#x27;\0&#x27;</span>; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, arr);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//若此節選擇的是左括號，將左括號數量加一後進入下一項的討論</span></span><br><span class="line">    arr[now] = <span class="string">&#x27;(&#x27;</span>; </span><br><span class="line">    dfs(now+<span class="number">1</span>, left+<span class="number">1</span>, right); </span><br><span class="line">    <span class="comment">//若此節選擇的是右括號，將右括號數量加一後進入下一項的討論</span></span><br><span class="line">    arr[now] = <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">    dfs(now+<span class="number">1</span>, left, right+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//主函式</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//使用EOF寫法讀取每次輸入的n值</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">        <span class="comment">/*在這裡先把num算出來，每筆測資只需算一次，比每次遞迴時都將條件設為2*n快*/</span></span><br><span class="line">        num = <span class="number">2</span>*n;</span><br><span class="line">        <span class="comment">//呼叫函式dfs，藉由遞迴跑過所有可能的括號匹配組合，再將合法的匹配組合輸出 </span></span><br><span class="line">        dfs(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式教學</category>
+      </categories>
+      <tags>
+        <tag>C語言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Noah的小記3 那些寫程式時的好習慣</title>
+    <url>/Noah%E7%9A%84%E5%B0%8F%E8%A8%983-%E9%82%A3%E4%BA%9B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/</url>
+    <content><![CDATA[<h2 id="1-取有意義的變數名稱"><a href="#1-取有意義的變數名稱" class="headerlink" title="1. 取有意義的變數名稱"></a>1. 取有意義的變數名稱</h2><p>很多初學者在撰寫程式時，都會使用如a、b、c之類的單個英文字母作為變數名稱。</p>
+]]></content>
   </entry>
   <entry>
     <title>a225. 明明愛排列</title>
