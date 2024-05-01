@@ -361,82 +361,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/Noah%E7%9A%84%E5%B0%8F%E8%A8%983%20-%205%E5%80%8B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Codebar 程式酒吧">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Noah%E7%9A%84%E5%B0%8F%E8%A8%983%20-%205%E5%80%8B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/" class="post-title-link" itemprop="url">Noah的小記3 5個寫程式時的好習慣</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-04-16 08:57:34" itemprop="dateCreated datePublished" datetime="2024-04-16T08:57:34+08:00">2024-04-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-04-30 09:27:13" itemprop="dateModified" datetime="2024-04-30T09:27:13+08:00">2024-04-30</time>
-              </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-取有意義的變數名稱"><a href="#1-取有意義的變數名稱" class="headerlink" title="1. 取有意義的變數名稱"></a>1. 取有意義的變數名稱</h2><p>很多初學者在撰寫程式時，都會使用如a、b、c之類的單個英文字母作為變數名稱。這樣做的好處是不用花時間思考變數名稱怎麼取，需要多少就宣告多少。但相信許多人在編寫較長的程式時也注意到了，這種無意義的變數名稱就如同亂數一般，根本看不出它所代表的意思及用途。就如同以下的程式碼：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> b, c;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;b, &amp;c) != EOF) &#123;</span><br><span class="line">        <span class="type">int</span> a[b][c];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; b ; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span> ; j &lt; c ; j++)</span><br><span class="line">                scbnf(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span> ;j &lt; c ; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; b ; i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[i][j]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>是不是看不太出來這段程式碼在做甚麼？這是因為所有的變數名稱都不是有意義的名稱，<br>每次使用時都要往前找到他宣告的地方重看一次。且不說萬一因而在編寫程式時出現語意錯誤，效率也是明顯降低。</p>
-<h2 id="2-注意排版"><a href="#2-注意排版" class="headerlink" title="2. 注意排版"></a>2. 注意排版</h2><h2 id="3-加上註解"><a href="#3-加上註解" class="headerlink" title="3. 加上註解"></a>3. 加上註解</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a225-%E6%98%8E%E6%98%8E%E6%84%9B%E6%8E%92%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -606,10 +530,96 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebar 程式酒吧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/" class="post-title-link" itemprop="url">a224. 明明愛明明</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2024-04-13 09:39:05 / 修改時間：10:20:52" itemprop="dateCreated datePublished" datetime="2024-04-13T09:39:05+08:00">2024-04-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a224">https://zerojudge.tw/ShowProblem?problemid=a224</a></p>
+<h2 id="建議類題"><a href="#建議類題" class="headerlink" title="建議類題"></a>建議類題</h2><p><a href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題乍看之下就是單純判斷輸入字串是否為迴文，但須注意本題對迴文的定義是「只要重新安排順序後，符合迴文條件就算迴文」，也就是說字串的在輸入時的排列順序未必與可以形成迴文的順序相同。因此我們不能用當時<a href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">a022. 迴文</a>的想法，直接頭尾一組檢查字元是否相同，必須換種作法才行。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/a224-%E6%98%8E%E6%98%8E%E6%84%9B%E6%98%8E%E6%98%8E/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -675,7 +685,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
