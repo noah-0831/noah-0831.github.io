@@ -30,10 +30,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Noah的小記3 那些寫程式時的好習慣</title>
-    <url>/Noah%E7%9A%84%E5%B0%8F%E8%A8%983-%E9%82%A3%E4%BA%9B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/</url>
-    <content><![CDATA[<h2 id="1-取有意義的變數名稱"><a href="#1-取有意義的變數名稱" class="headerlink" title="1. 取有意義的變數名稱"></a>1. 取有意義的變數名稱</h2><p>很多初學者在撰寫程式時，都會使用如a、b、c之類的單個英文字母作為變數名稱。</p>
-]]></content>
+    <title>Noah的小記3 5個寫程式時的好習慣</title>
+    <url>/Noah%E7%9A%84%E5%B0%8F%E8%A8%983%20-%205%E5%80%8B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/</url>
+    <content><![CDATA[<h2 id="1-取有意義的變數名稱"><a href="#1-取有意義的變數名稱" class="headerlink" title="1. 取有意義的變數名稱"></a>1. 取有意義的變數名稱</h2><p>很多初學者在撰寫程式時，都會使用如a、b、c之類的單個英文字母作為變數名稱。這樣做的好處是不用花時間思考變數名稱怎麼取，需要多少就宣告多少。但相信許多人在編寫較長的程式時也注意到了，這種無意義的變數名稱就如同亂數一般，根本看不出它所代表的意思及用途。就如同以下的程式碼：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> b, c;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;b, &amp;c) != EOF) &#123;</span><br><span class="line">        <span class="type">int</span> a[b][c];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; b ; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span> ; j &lt; c ; j++)</span><br><span class="line">                scbnf(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span> ;j &lt; c ; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; b ; i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[i][j]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是不是看不太出來這段程式碼在做甚麼？這是因為所有的變數名稱都不是有意義的名稱，<br>每次使用時都要往前找到他宣告的地方重看一次。且不說萬一因而在編寫程式時出現語意錯誤，效率也是明顯降低。</p>
+<h2 id="2-注意排版"><a href="#2-注意排版" class="headerlink" title="2. 注意排版"></a>2. 注意排版</h2><h2 id="3-加上註解"><a href="#3-加上註解" class="headerlink" title="3. 加上註解"></a>3. 加上註解</h2>]]></content>
   </entry>
   <entry>
     <title>a225. 明明愛排列</title>
@@ -234,7 +236,7 @@
     <title>調酒日記 認識六大基酒</title>
     <url>/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98%EF%BC%8D%E8%AA%8D%E8%AD%98%E5%85%AD%E5%A4%A7%E5%9F%BA%E9%85%92/</url>
     <content><![CDATA[<p><img src="https://hackmd.io/_uploads/rycgMUxlA.jpg" alt="載物酒吧"></p>
-<p>在<a href="(https://noah-0831.github.io/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98-%E5%88%9D%E5%85%A5%E5%90%A7%E6%AA%AF/)">上一篇調酒日記</a>中，我們簡單的介紹了幾個調酒常見的步驟，以及需要注意的事情。那麼今天，我們就來向大家介紹幾種常見的酒類吧！</p>
+<p>在<a href="https://noah-0831.github.io/%E8%AA%BF%E9%85%92%E6%97%A5%E8%A8%98-%E5%88%9D%E5%85%A5%E5%90%A7%E6%AA%AF/">上一篇調酒日記</a>中，我們簡單的介紹了幾個調酒常見的步驟，以及需要注意的事情。那麼今天，我們就來向大家介紹幾種常見的酒類吧！</p>
 <h2 id="釀造酒與蒸餾酒"><a href="#釀造酒與蒸餾酒" class="headerlink" title="釀造酒與蒸餾酒"></a>釀造酒與蒸餾酒</h2><p>相信螢幕前的各位如果和我一樣是酒精愛好者，有稍微研究過酒類的話，應該對「釀造酒」和「蒸餾酒」這兩個名詞不會陌生。儘管世上的酒種千千萬萬，款式各異，但大致上都可以依照製造程序分為這兩種。釀造酒，又名發酵酒，顧名思義，就是用各式穀物、果類或其他含糖物質，經酵母菌、乳酸菌或其他細菌的發酵作用，將糖分轉為酒精而成的酒，常見的種類有小米酒、葡萄酒、荔枝酒、日本清酒等；而蒸餾酒和釀造酒相比，則是多了蒸餾的程序，能將酒水中原先含有的水分分離出來，因此酒精濃較發酵酒高，香氣也較為濃郁。也因此，一般調酒在用的六大基酒，都屬於蒸餾酒。</p>
 <span id="more"></span>
 

@@ -361,7 +361,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/Noah%E7%9A%84%E5%B0%8F%E8%A8%983-%E9%82%A3%E4%BA%9B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/Noah%E7%9A%84%E5%B0%8F%E8%A8%983%20-%205%E5%80%8B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -375,7 +375,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/Noah%E7%9A%84%E5%B0%8F%E8%A8%983-%E9%82%A3%E4%BA%9B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/" class="post-title-link" itemprop="url">Noah的小記3 那些寫程式時的好習慣</a>
+            <a href="/Noah%E7%9A%84%E5%B0%8F%E8%A8%983%20-%205%E5%80%8B%E5%AF%AB%E7%A8%8B%E5%BC%8F%E6%99%82%E7%9A%84%E5%A5%BD%E7%BF%92%E6%85%A3/" class="post-title-link" itemprop="url">Noah的小記3 5個寫程式時的好習慣</a>
         </h2>
 
         <div class="post-meta">
@@ -394,7 +394,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-04-24 19:41:40" itemprop="dateModified" datetime="2024-04-24T19:41:40+08:00">2024-04-24</time>
+                <time title="修改時間：2024-04-30 09:27:13" itemprop="dateModified" datetime="2024-04-30T09:27:13+08:00">2024-04-30</time>
               </span>
 
           
@@ -415,8 +415,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-取有意義的變數名稱"><a href="#1-取有意義的變數名稱" class="headerlink" title="1. 取有意義的變數名稱"></a>1. 取有意義的變數名稱</h2><p>很多初學者在撰寫程式時，都會使用如a、b、c之類的單個英文字母作為變數名稱。</p>
-
+          <h2 id="1-取有意義的變數名稱"><a href="#1-取有意義的變數名稱" class="headerlink" title="1. 取有意義的變數名稱"></a>1. 取有意義的變數名稱</h2><p>很多初學者在撰寫程式時，都會使用如a、b、c之類的單個英文字母作為變數名稱。這樣做的好處是不用花時間思考變數名稱怎麼取，需要多少就宣告多少。但相信許多人在編寫較長的程式時也注意到了，這種無意義的變數名稱就如同亂數一般，根本看不出它所代表的意思及用途。就如同以下的程式碼：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> b, c;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;b, &amp;c) != EOF) &#123;</span><br><span class="line">        <span class="type">int</span> a[b][c];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; b ; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span> ; j &lt; c ; j++)</span><br><span class="line">                scbnf(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span> ;j &lt; c ; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; b ; i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[i][j]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是不是看不太出來這段程式碼在做甚麼？這是因為所有的變數名稱都不是有意義的名稱，<br>每次使用時都要往前找到他宣告的地方重看一次。且不說萬一因而在編寫程式時出現語意錯誤，效率也是明顯降低。</p>
+<h2 id="2-注意排版"><a href="#2-注意排版" class="headerlink" title="2. 注意排版"></a>2. 注意排版</h2><h2 id="3-加上註解"><a href="#3-加上註解" class="headerlink" title="3. 加上註解"></a>3. 加上註解</h2>
       
     </div>
 
