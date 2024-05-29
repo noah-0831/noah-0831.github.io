@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"noah-0831.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#999999","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a004 解題思路根據題意，西元年被4整除且不被100整除，或被400整除者即為閏年。因此，我們可以利用取餘數的方式判斷輸入的年份是否能被4、100和400整除，進而判斷其是否為閏年。">
+  <meta name="description" content="首先，還是想感謝留宿計畫這樣的契機，給予我們團隊成員坐下來討論潛藏許久的構想，並付諸實現的機會。當然更要感謝全體夥伴，少了你們任何一位的參與，喵客學院的程式教育之路都不可能化為現實。 　　正如我們之前所說，雖然喵客學院是在今年正式啟動，但早在幾年前，我們團隊的成員就有過類似的發想，甚至已經轉化為具體行動。以我個人的經驗為例，最早的構思可以追溯到兩年前。當時高三的我，在沒有任何基礎的情況下，僅憑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a004. 文文的求婚">
-<meta property="og:url" content="https://noah-0831.github.io/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/">
+<meta property="og:title" content="喵客學院-彰化高中的Python程式教學之旅">
+<meta property="og:url" content="https://noah-0831.github.io/%E5%96%B5%E5%AE%A2%E5%AD%B8%E9%99%A2-%E5%BD%B0%E5%8C%96%E9%AB%98%E4%B8%AD%E7%9A%84Python%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8%E4%B9%8B%E6%97%85/">
 <meta property="og:site_name" content="Codebar 程式酒吧">
-<meta property="og:description" content="題目連結https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a004 解題思路根據題意，西元年被4整除且不被100整除，或被400整除者即為閏年。因此，我們可以利用取餘數的方式判斷輸入的年份是否能被4、100和400整除，進而判斷其是否為閏年。">
+<meta property="og:description" content="首先，還是想感謝留宿計畫這樣的契機，給予我們團隊成員坐下來討論潛藏許久的構想，並付諸實現的機會。當然更要感謝全體夥伴，少了你們任何一位的參與，喵客學院的程式教育之路都不可能化為現實。 　　正如我們之前所說，雖然喵客學院是在今年正式啟動，但早在幾年前，我們團隊的成員就有過類似的發想，甚至已經轉化為具體行動。以我個人的經驗為例，最早的構思可以追溯到兩年前。當時高三的我，在沒有任何基礎的情況下，僅憑">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-02-23T09:01:55.000Z">
-<meta property="article:modified_time" content="2024-04-06T16:38:07.979Z">
+<meta property="article:published_time" content="2024-05-29T12:30:20.000Z">
+<meta property="article:modified_time" content="2024-05-29T16:08:25.900Z">
 <meta property="article:author" content="Noah">
-<meta property="article:tag" content="C語言">
+<meta property="article:tag" content="喵客學院">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://noah-0831.github.io/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/">
+<link rel="canonical" href="https://noah-0831.github.io/%E5%96%B5%E5%AE%A2%E5%AD%B8%E9%99%A2-%E5%BD%B0%E5%8C%96%E9%AB%98%E4%B8%AD%E7%9A%84Python%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8%E4%B9%8B%E6%97%85/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>a004. 文文的求婚 | Codebar 程式酒吧</title>
+  <title>喵客學院-彰化高中的Python程式教學之旅 | Codebar 程式酒吧</title>
   
 
 
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A/">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/%E5%96%B5%E5%AE%A2%E5%AD%B8%E9%99%A2-%E5%BD%B0%E5%8C%96%E9%AB%98%E4%B8%AD%E7%9A%84Python%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8%E4%B9%8B%E6%97%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -204,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          a004. 文文的求婚
+          喵客學院-彰化高中的Python程式教學之旅
         </h1>
 
         <div class="post-meta">
@@ -216,24 +216,15 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2024-02-23 17:01:55" itemprop="dateCreated datePublished" datetime="2024-02-23T17:01:55+08:00">2024-02-23</time>
+              <time title="創建時間：2024-05-29 20:30:20" itemprop="dateCreated datePublished" datetime="2024-05-29T20:30:20+08:00">2024-05-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-04-07 00:38:07" itemprop="dateModified" datetime="2024-04-07T00:38:07+08:00">2024-04-07</time>
+                <time title="修改時間：2024-05-30 00:08:25" itemprop="dateModified" datetime="2024-05-30T00:08:25+08:00">2024-05-30</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
 
           
             <span class="post-meta-item" title="閱讀次數">
@@ -260,12 +251,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a004">https://zerojudge.tw/ShowProblem?problemid=a004</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>根據題意，西元年被4整除且不被100整除，或被400整除者即為閏年。因此，我們可以利用取餘數的方式判斷輸入的年份是否能被4、100和400整除，進而判斷其是否為閏年。</p>
-<span id="more"></span>
-
-<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>根據題意，測資檔會包含多組測資，因此需使用「EOF寫法」。所謂 EOF 並不是一種真實存在的字元，而是「End Of File」的縮寫，意思是一份檔案的結尾，也可以說是輸入的停止。通常程式在執行時會先讀取輸入，再依據輸入進行相對的行動，但我們未必能知道輸入有幾筆、到什麼時候結束，這時候我們就可以讓電腦自動偵測。一旦它偵測到EOF條件為True，即代表輸入停止，就會結束讀取輸入，如此我們的程式就不用事先指定輸入的筆數，可以不斷讀取輸入並執行直到輸入結束。</p>
-<h2 id="程式碼：C語言"><a href="#程式碼：C語言" class="headerlink" title="程式碼：C語言"></a>程式碼：C語言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//宣告變數year，代表西元年</span></span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">    <span class="comment">//使用EOF寫法判斷程式執行的條件</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;year) != EOF) &#123;</span><br><span class="line">        <span class="comment">//根據題意，西元年被4整除且不被100整除，或被400整除者即為閏年</span></span><br><span class="line">        <span class="keyword">if</span>(year%<span class="number">4</span> == <span class="number">0</span> &amp;&amp; year%<span class="number">100</span> != <span class="number">0</span> || year%<span class="number">400</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;閏年\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;平年\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>　　首先，還是想感謝留宿計畫這樣的契機，給予我們團隊成員坐下來討論潛藏許久的構想，並付諸實現的機會。當然更要感謝全體夥伴，少了你們任何一位的參與，喵客學院的程式教育之路都不可能化為現實。</p>
+<p>　　正如我們之前所說，雖然喵客學院是在今年正式啟動，但早在幾年前，我們團隊的成員就有過類似的發想，甚至已經轉化為具體行動。以我個人的經驗為例，最早的構思可以追溯到兩年前。當時高三的我，在沒有任何基礎的情況下，僅憑著對程式的熱忱，毅然投入了進階程式設計課程。從最初的自信，到成長路上的挫折與迷惘，我深刻體會到初學者載浮於茫茫學海之中的無力感。也因此在程式能力漸趨成熟後，開始著手撰寫一份以新手角度剖析題意，釐清解題思路，並轉化為程式碼的解題報告，甚至在去年正式創建部落格品牌，系統化經營程式教學部落格。但當然，只有一個人的力量還遠遠不足。因此，當我們發現彼此都有著同樣的目標，同樣永不放棄的天真時，我們開始思考：</p>
+<p>　　「我們能不能做些什麼，真正改變這個世界？」</p>
+<p>　　而喵客學院，就是我們給予世界的答覆。</p>
+<p>　　因為無法忘記自己在學習路上遇到的種種挫折，更無法坐視非都市型學校的學生正因為教育資源分布不均，而喪失可能改變一生的機會。四個人，用了三個月的時間，從經營社群媒體，到籌畫工作坊，再到前往非都市型學校舉辦營隊。一步步走出屬於我們的路，為眾多學子們開創了無限可能。</p>
+<p>　　還記得第一次到彰化高中場勘的時候，我還天真地以為可以搭乘高鐵直達。直到實地走訪後，才知道高鐵根本沒進入彰化市區，客運站也被深夜返家的學生們擠得水洩不通。當晚，我們是搭UBER到達下榻地點的，光是車程就花了30多分鐘。看著沿路沉沒在漆黑之中的田野，我第一次意識到自己的生活圈有多狹隘。原來，所謂的偏鄉，並不局限於山林荒野之間，視線難以企及之處。我們所認知的開發地區，也有開車一個小時才能到達的學校，有需要清晨六點出門的學生。給他們一個學習的機會，是我們的使命，也是不變的堅持。</p>
+<p>　　在營隊期間，很榮幸能擔任助教的角色，從旁協助他們成長。看著他們第一次接觸語法時的生澀，也不禁想起曾是初學者的那段時光。為了幫助他們快速理解，我喜歡用比喻的方式具象化說明抽象的程式語意，再逐行講解語法。這樣的教學過程，就彷彿在和過去的自己對話一般，在跨越時空的對話之下教學相長。不只專業能力的進步，在一次次與夥伴和學員互動的過程中，我也更加了解如何和人溝通與交流。儘管成長的過程難免辛苦，但看到學員們因為掌握所學的成就感而露出的笑容，尤其是沉浸在課程體驗，甚至會與同儕一同討論與競賽的瞬間，一切的努力都值得了。因為我們知道，我們已經點亮學員們心中的花火，那是足以改變人生的力量。</p>
+<p>　　在可預見的未來，我們對於喵客學院的投入與堅持仍會持續下去。事實上，除了長期的社群經營之外，營隊方面目前我們已經接獲家齊高中的邀請，經小組討論後預計將在下學期前往開設，不過細節還需要進一步和校方討論。工作坊的部分，我們已經完成課程的準備，包含招生文案與表單也已經就位，目前規畫分成3階段在下學期舉辦，期望拉開間隔後能吸引到更多人共襄盛舉。</p>
+<p>　　回看這一路走來，有歡笑，也有淚水。但我們並不害怕失敗，也從不為付出的心血後悔。因為我們很清楚，喵客學院的經營之路，現在才剛開始。</p>
+<p>　　「夢想這條路踏上了，跪著也要走完。」</p>
 
     </div>
 
@@ -273,24 +268,12 @@
     
     
       
-  <div class="popular-posts-header">相關文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a244-新手訓練-for-if\" rel="bookmark">a244. 新手訓練 ~ for + if</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a229-括號匹配問題\" rel="bookmark">a229. 括號匹配問題</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\a225-明明愛排列\" rel="bookmark">a225. 明明愛排列</a></div>
-    </li>
-  </ul>
 
 
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/C%E8%AA%9E%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> C語言</a>
+              <a href="/tags/%E5%96%B5%E5%AE%A2%E5%AD%B8%E9%99%A2/" rel="tag"><i class="fa fa-tag"></i> 喵客學院</a>
           </div>
 
         
@@ -299,13 +282,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93/" rel="prev" title="a003. 兩光法師占卜術">
-      <i class="fa fa-chevron-left"></i> a003. 兩光法師占卜術
+    <a href="/a248-%E6%96%B0%E6%89%8B%E8%A8%93%E7%B7%B4-%E9%99%A3%E5%88%97%E6%87%89%E7%94%A8/" rel="prev" title="a248. 新手訓練 ~ 陣列應用">
+      <i class="fa fa-chevron-left"></i> a248. 新手訓練 ~ 陣列應用
     </a></div>
-      <div class="post-nav-item">
-    <a href="/a005-Eva%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD/" rel="next" title="a005. Eva的回家作業">
-      a005. Eva的回家作業 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -364,7 +344,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E9%80%A3%E7%B5%90"><span class="nav-number">1.</span> <span class="nav-text">題目連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">3.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%EF%BC%9AC%E8%AA%9E%E8%A8%80"><span class="nav-number">4.</span> <span class="nav-text">程式碼：C語言</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
