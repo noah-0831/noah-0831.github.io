@@ -186,98 +186,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Noah">
-      <meta itemprop="description" content>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Codebar 程式酒吧">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/" class="post-title-link" itemprop="url">a024. 最大公因數(GCD)</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2024-02-29 16:31:53" itemprop="dateCreated datePublished" datetime="2024-02-29T16:31:53+08:00">2024-02-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2024-03-31 10:30:44" itemprop="dateModified" datetime="2024-03-31T10:30:44+08:00">2024-03-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="閱讀次數">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-users"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span class="firestore-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a024">https://zerojudge.tw/ShowProblem?problemid=a024</a></p>
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>求兩數最大公因數的辦法有很多種，可以將兩數個別的因數都先求出來，再取它們的交集得到最大公因數；也可以直接求兩數公因數的最大值。但本題測資的值較大，上述方法在ZeroJudge上執行時很可能會超時(TLE)。因此，建議使用<a target="_blank" rel="external nofollow noopener noreferrer" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">輾轉相除法</a>，快速計算最大公因數。</p>
-<p>輾轉相除法的概念是，兩數的最大公因數等於其中較小的數和兩數相除後的餘數的最大公因數。具體的做法是先將兩數中較大的數字除以較小的數字，基於除法運算後餘比商小的特性，可知剩下的餘一定會比原先較小的數字還小。這時原先較小的數字就成了新的運算中較大的數字，而餘則成了新的運算中較小的數字。重複運算至其中一數變成零為止，剩下的另一個數就是兩數的最大公因數。如果在看完上述文字解說後仍然無法立刻理解，可以參考<a target="_blank" rel="external nofollow noopener noreferrer" href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">維基百科上的動畫</a>，或是<a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.mathland.idv.tw/fun/euclidean.htm">昌爸工作坊提供的運算欄位列出的算式</a>，搭配實際運算或程式演示幫助理解。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8(GCD)/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a022-%E8%BF%B4%E6%96%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -634,6 +542,97 @@
 <p>過往我撰文時用的編輯器是HackMD，但隨著內容逐漸增加，我開始意識到系統性整理文章的的重要性，同時也希望拓展寫作的方向。因此才有了 Codebar 程式酒吧 的出現。未來 Codebar 程式酒吧 將會以提供各道程式題目的解題報告，以及一些活動的申請經歷與參與經驗為方向。希望藉由自己的力量，能幫助更多有相同經歷與需求的人。</p>
 <p><strong>感謝 方珮雯 老師，幫助我建立程式概念，完成人生第一份程式解題報告。</strong><br><strong>感謝 M_SQRT 大，協助我程式解報告的改進，給了我繼續努力的動力。</strong><br><strong>感謝 不輕易滿足、不輕言放棄的 頑固的自己，兩年走來仍在路上</strong></p>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://noah-0831.github.io/a013-%E7%BE%85%E9%A6%AC%E6%95%B8%E5%AD%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Noah">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Codebar 程式酒吧">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/a013-%E7%BE%85%E9%A6%AC%E6%95%B8%E5%AD%97/" class="post-title-link" itemprop="url">a013. 羅馬數字</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2024-02-25 16:19:52" itemprop="dateCreated datePublished" datetime="2024-02-25T16:19:52+08:00">2024-02-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2024-04-09 13:05:18" itemprop="dateModified" datetime="2024-04-09T13:05:18+08:00">2024-04-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%95%99%E5%AD%B8/" itemprop="url" rel="index"><span itemprop="name">程式教學</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目連結"><a href="#題目連結" class="headerlink" title="題目連結"></a>題目連結</h2><p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://zerojudge.tw/ShowProblem?problemid=a013">https://zerojudge.tw/ShowProblem?problemid=a013</a></p>
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>本題希望我們寫出可以進行羅馬數字減法的程式。而由於電腦無法直接進行羅馬數字的運算，因此我們須先將輸入的兩組羅馬數字轉為阿拉伯數字，然後再進行運算，最後將運算後的結果再轉回羅馬數字輸出。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/a013-%E7%BE%85%E9%A6%AC%E6%95%B8%E5%AD%97/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
